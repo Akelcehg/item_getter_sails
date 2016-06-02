@@ -1,0 +1,41 @@
+<h1>dasdasdas</h1>
+<div class="table-responsive">
+    <table id="mytable" class="table table-bordred table-striped">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Ссылка источника</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% items.forEach(function(item) { %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><a href="<%= item.link %>" target="_blank">На страницу</a></td>
+            <td width="10%">
+                <a href="#" class="btn btn-primary" role="button">Редактировать</a>
+            </td>
+            <td width="10%">
+                <a href="/items/test/<%= item.id %>" class="btn btn-info" role="button">Тестировать</a>
+            </td>
+            <td width="10%">
+                <a href="#" class="btn btn-danger" role="button">Удалить</a>
+            </td>
+        </tr>
+        <% }); %>
+        </tbody>
+    </table>
+    <div class="clearfix"></div>
+    <!-- <ul class="pagination pull-right">
+        <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul> -->
+</div>

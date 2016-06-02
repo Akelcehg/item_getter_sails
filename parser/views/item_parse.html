@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <i class="glyphicon glyphicon-cog pull-right"></i>
+            <h4>Парсинг одной страницы</h4>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form form-vertical">
+            <div class="control-group">
+                <label>Ссылка на страницу</label>
+                <div class="controls">
+                    <input type="text" name="link" class="form-control" placeholder="Ссылка на страницу" value="@{self.get['link']}">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="col-md-6">
+                    <div class="row">
+                        <label>Конфиг файл</label>
+                        <div class="controls">
+                            <select class="form-control" name='config_file'>
+                                @{options(model.items, self.get['config_file'],'name','config_file')}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        <br>
+                    </label>
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">
+                            Спарсить
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name='delete_file' @{checked(self.get[ 'delete_file'])};> Удалить файл
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="parsed_item_div">
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button> Результат парсинга страницы
+        <pre class="+parsed_item_obj">@{JSON.stringify(model.jsonObject, undefined, 4)}</pre></div>
+</div>

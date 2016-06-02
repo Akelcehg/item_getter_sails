@@ -55,7 +55,7 @@ usersSchema.methods.comparePassword = function (candidatePassword, cb) {
 };
 
 usersSchema.methods.testing = function () {
-    console.log ('testing ' + this.email);
+    console.log('testing ' + this.email);
 }
 
 exports.schema = mongoose.model('users', usersSchema);
