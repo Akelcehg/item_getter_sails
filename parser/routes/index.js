@@ -1,9 +1,17 @@
+var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
+var User = require('../models/users').schema;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+    var u = new User();
+    u.email ='testemail';
+    u.testing();
+    mongoose.model('users').find(function (err,data) {
+        console.log (data);
+    })
+    res.render('index', {title: 'Express updated'});
 });
 
 module.exports = router;
