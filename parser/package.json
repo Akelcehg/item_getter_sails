@@ -13,8 +13,11 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "express-ejs-layouts": "^2.1.0",
+    "mongoose": "^4.4.19",
     "morgan": "~1.6.1",
     "node-phantom-simple": "^2.2.4",
+    "nodemon": "^1.9.2",
     "phantomjs": "^2.1.7",
     "serve-favicon": "~2.3.0"
   }
