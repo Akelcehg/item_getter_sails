@@ -8,7 +8,7 @@ $(document).ready(function() {
         self.children('.default-icon').hide();
         self.children('.loading-icon').show();
         $.post({
-            url: "/admin/items/test_http",
+            url: "/items/test_http",
             //type: 'post',
             data: {
                 'itemId': itemId
@@ -44,7 +44,7 @@ $(document).ready(function() {
         $('.items_list_error').hide();
 
         $.post({
-            url: "/admin/items/test_links",
+            url: "/items/test_links",
             data: {
                 'itemId': itemId
             }
@@ -79,7 +79,7 @@ $(document).ready(function() {
         var itemLink = self.prev('a').attr('href');
 
         $.post({
-            url: "/admin/items/test_item_parse",
+            url: "/items/test_item_parse",
             data: {
                 'itemId': itemId,
                 'itemLink': itemLink
