@@ -1,0 +1,120 @@
+{
+    "items_list": {
+        "link_item": "div.ticket-item.paid div.m_head-ticket div.box-head div.item.head-ticket div.ticket-title a.address",
+        "link_attribute": "href"
+    },
+    "item_fields": [{
+        "name": "Цена",
+        "field_node": "div.price-seller span.price",
+        "field_attribute": "text()"
+    },{
+        "name": "Год",
+        "field_node": "h1.head span.msize span.year",
+        "field_attribute": "text()"
+    },{
+        "name": "Марка",
+        "field_node": "h1.head span[itemprop=brand]",
+        "field_attribute": "text()"
+    },{
+        "name": "Модель",
+        "field_node": "span[itemprop=name]",
+        "field_attribute": "text()"        
+    },{
+        "name": "Пробег",
+        "field_node": "div.base-information.delimeter div.run strong",
+        "field_attribute": "text()"
+    }, {
+        "name": "Телефон",
+        "field_node": "div.item-phone div.phone span",
+        "field_attribute": "text()"
+    }, {
+        "name": "Заголовок страницы",
+        "field_node": "div.heading h1.head",
+        "field_attribute": "title"
+    }, {
+        "name": "Состояние",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Состояние"
+    }, {
+        "name": "Безопасность",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Безопасность"
+    }, {
+        "name": "Комфорт",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Комфорт"
+    }, {
+        "name": "Мультимедиа",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Мультимедиа"
+    }, {
+        "name": "Прочее",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Прочее"
+    }, {
+        "name": "Описание",
+        "field_node": "dd.additional-data.show-line",
+        "field_attribute": "text()"
+    }, {
+        "name": "Тип транспорта",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Тип транспорта:"
+    }, {
+        "name": "Двигатель",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:"
+    }, {
+        "name": "Коробка передач",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Коробка передач:"
+    }, {
+        "name": "Привод",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Привод:"
+    }, {
+        "name": "Цвет",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Цвет:"
+    }, {
+        "name": "Город",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Город:"
+    }, {
+        "name": "Фото",
+        "field_node": "a.photo-85x56 img.loadPhoto",
+        "field_attribute": "data-src"
+    }]
+}

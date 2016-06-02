@@ -1,9 +1,9 @@
 //var Item = MODEL('item').schema;
 var Http = require('./http.js');
 var File = require('./file.js');
-var ItemConfig = require('./itemConfig.js');
-var FieldHandler = require('./fieldHandler.js');
-var _async = require('async');
+var ItemConfig = require('./itemConfig');
+var FieldHandler = require('./fieldHandler');
+var async = require('async');
 
 exports.install = function (options) {
 };
@@ -12,7 +12,7 @@ exports.uninstall = function (options) {
 };
 
 exports.parse = function () {
-    console.log ('parse');
+    console.log('parse');
 };
 
 exports.getItemLinks = function (itemsListPage, configFile) {
@@ -20,7 +20,6 @@ exports.getItemLinks = function (itemsListPage, configFile) {
     var listObject = configFile['items_list'];
 
     var fieldHandler = new FieldHandler(
-        //listObject['parent_container'],
         listObject['link_item'],
         listObject['link_attribute'],
         itemsListPage
@@ -28,7 +27,7 @@ exports.getItemLinks = function (itemsListPage, configFile) {
 
     return fieldHandler.getFieldValue();
 
-}
+};
 
 
 exports.parseItems = function (itemLinks) {

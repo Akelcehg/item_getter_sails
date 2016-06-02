@@ -1,0 +1,75 @@
+{
+    "items_list": {
+        "link_item": "div.row.advert-item .col-xs-12.col-sm-5.col-sm-push-4.title-teh-data .h4 a",
+        "link_attribute": "href"
+    },
+    "item_fields": [{
+        "name": "Фото",
+        "field_node": "a.thumbnail.col-md-3.col-sm-3.col-xs-3 img",
+        "field_attribute": "src"
+    },{
+        "name": "Цена",
+        "field_node": "div.usd.col-xs-6.col-sm-12 span",
+        "field_attribute": "text()"
+    }, {
+        "name": "Год выпуска",
+        "field_node": "tr.main td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr.main td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Год выпуска"
+    }, {
+        "name": "Тип двигателя",
+        "field_node": "tr.main td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr.main td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель"
+    }, {
+        "name": "Тип коробки передач",
+        "field_node": "tr.main td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr.main td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "КПП"
+    }, {
+        "name": "Пробег",
+        "field_node": "tr.main td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr.main td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Пробег"
+    }, {
+        "name": "Привод",
+        "field_node": "tr td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Привод"
+    }, {
+        "name": "Тип кузова",
+        "field_node": "tr td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Кузов"
+    }, {
+        "name": "Дверей",
+        "field_node": "tr td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Дверей"
+    }, {
+        "name": "Цвет",
+        "field_node": "tr td.val",
+        "field_attribute": "text()",
+        "bind_node": "tr td.lbl",
+        "bind_node_attribute": "text()",
+        "expected_value": "Цвет"
+    }, {
+        "name": "Описание",
+        "field_node": "div.car_dop_info.dotted_box div p",
+        "field_attribute": "text()"
+    }]
+}

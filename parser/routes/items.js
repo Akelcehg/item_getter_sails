@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var ItemsList = require(__dirname + '/../models/itemsList').schema;
-var Parser = require(__dirname + '/../modules/parser');
-var File = require(__dirname + '/../modules/file');
+var express = require('express'),
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    async = require('async'),
+    ItemsList = require(__dirname + '/../models/itemsList').schema,
+    Parser = require(__dirname + '/../modules/parser'),
+    File = require(__dirname + '/../modules/file'),
+    ItemConfig = require(__dirname + '/../modules/itemConfig'),
+    ItemHandler = require(__dirname + '/../modules/itemHandler');
 
 router.get('/', function (req, res, next) {
 
@@ -44,6 +47,43 @@ router.post('/test_http', function (req, res, next) {
                 res.json({'status': 'ok'});
             });
         } else res.json({'status': 'fail'});
+    });
+});
+
+router.post('/test_links', function (req, res, next) {
+
+    var itemId = req.body.itemId, file = new File();
+
+    async.waterfall([
+        function (callback) {
+            mongoose.model('items_list').findOne({_id: itemId}, function (err, item) {
+                callback(err, item);
+            });
+        },
+        function (item, callback) {
+            if (item) {
+                var itemConfigFile = new ItemConfig(item['config_file']);
+                itemConfigFile.getConfigFile(function (err, configFile) {
+                    callback(err, configFile, item)
+                });
+            } else {
+                callback('No items');
+            }
+        },
+        function (configFile, item, callback) {
+            Parser.getPageContent(item['link'], function (err, page) {
+                var parsedLinks = Parser.getItemLinks(page, configFile);
+                callback(err, {'status': 'ok', 'links': parsedLinks});
+            });
+        }
+
+    ], function (err, result) {
+        if (err) {
+            console.log('Item parse page error ' + err);
+            res.json({'status': 'fail'});
+        } else {
+            res.json(result);
+        }
     });
 });
 
