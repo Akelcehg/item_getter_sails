@@ -6,11 +6,12 @@
         </div>
     </div>
     <div class="panel-body">
-        <form class="form form-vertical">
+        <form class="form form-vertical" method="get">
             <div class="control-group">
                 <label>Ссылка на страницу</label>
                 <div class="controls">
-                    <input type="text" name="link" class="form-control" placeholder="Ссылка на страницу" value="@{self.get['link']}">
+                    <input type="text" name="link" class="form-control" placeholder="Ссылка на страницу"
+                           value="<%= queryObject.link %>">
                 </div>
             </div>
             <div class="control-group">
@@ -18,8 +19,14 @@
                     <div class="row">
                         <label>Конфиг файл</label>
                         <div class="controls">
+
                             <select class="form-control" name='config_file'>
-                                @{options(model.items, self.get['config_file'],'name','config_file')}
+                                <option value="">Select config</option>
+                                <% items.forEach(function(item) { %>
+                                <option <%= queryObject.config_file === item.config_file && 'selected' %>
+                                        value="<%= item.config_file %>"><%= item.config_file %></option>
+                                <% }); %>
+
                             </select>
                         </div>
                     </div>
@@ -37,7 +44,7 @@
                 <div class="col-md-12">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name='delete_file' @{checked(self.get[ 'delete_file'])};> Удалить файл
+                            <input type="checkbox" name='delete_file'> Удалить файл
                         </label>
                     </div>
                 </div>
@@ -47,6 +54,11 @@
 </div>
 <div class="parsed_item_div">
     <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">×</button> Результат парсинга страницы
-        <pre class="+parsed_item_obj">@{JSON.stringify(model.jsonObject, undefined, 4)}</pre></div>
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        Результат парсинга страницы
+
+        <pre class="+parsed_item_obj">
+            <% if (locals.jsonObject) JSON.stringify(jsonObject, undefined, 4) %>
+        </pre>
+    </div>
 </div>
