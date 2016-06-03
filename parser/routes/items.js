@@ -36,7 +36,6 @@ router.get('/test/:item_id', function (req, res, next) {
 router.post('/test_http', function (req, res, next) {
 
     var itemId = req.body.itemId, file = new File();
-
     mongoose.model('items_list').findOne({_id: itemId}, function (err, item) {
         if (!err && item) {
             Parser.getPageContent(item['link'], function (err, page) {
@@ -52,7 +51,7 @@ router.post('/test_http', function (req, res, next) {
 
 router.post('/test_links', function (req, res, next) {
 
-    var itemId = req.body.itemId, file = new File();
+    var itemId = req.body.itemId;
 
     async.waterfall([
         function (callback) {
@@ -72,6 +71,7 @@ router.post('/test_links', function (req, res, next) {
         },
         function (configFile, item, callback) {
             Parser.getPageContent(item['link'], function (err, page) {
+                console.log('Page recieved ' + page.length);
                 var parsedLinks = Parser.getItemLinks(page, configFile);
                 callback(err, {'status': 'ok', 'links': parsedLinks});
             });
