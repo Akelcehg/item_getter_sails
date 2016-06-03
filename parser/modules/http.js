@@ -82,10 +82,10 @@ Http.prototype.getPageContent = function (cb) {
 
     //var page = require('node-phantom-simple');
     driver.create({path: require('phantomjs').path}, function (err, phantom) {
-
+        if (err) console.log(err);
         return phantom.createPage(function (err, page) {
 
-
+            if (err) console.log(err);
 
             //page.viewportSize = { width: 1280, height: 1024 };
             //page.property('viewportSize', { width: 1024, height: 1024 });

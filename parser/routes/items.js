@@ -96,17 +96,78 @@ router.get('/parse', function (req, res, next) {
         link: req.query.link || '',
         config_file: req.query.config_file || ''
     };
-    console.log(queryObject);
 
-    mongoose.model('items_list').find(function (err, itemsList) {
-        if (err || !itemsList) {
-            res.render('404');
+    if (queryObject.link && queryObject.config_file) parseItem(queryObject, res);
+    else {
+        mongoose.model('items_list').find(function (err, itemsList) {
+            if (err || !itemsList) {
+                res.render('404');
+            } else {
+                //res.render('/item_test', {'item': item});
+                res.render('item_parse', {items: itemsList, queryObject: queryObject});
+            }
+        });
+    }
+});
+
+function parseItem(queryObject, res) {
+    var file = new File();
+    async.waterfall([
+        function (callback) {
+            mongoose.model('items_list').find(function (err, itemsList) {
+                callback(err, itemsList);
+            });
+        },
+        function (itemsList, callback) {
+            var itemConfigFile = new ItemConfig(queryObject.config_file);
+            itemConfigFile.getConfigFile(function (err, configFile) {
+                callback(err, configFile, itemsList)
+            });
+        },
+        function (configFile, itemsList, callback) {
+            file.getFile('./item_page_saved/' + queryObject.config_file + '.html', function (err, pageFile) {
+                callback(null, pageFile, configFile, itemsList);
+            });
+        },
+        function (pageFile, configFile, itemsList, callback) {
+            if (pageFile) {
+                var itemObject = new ItemHandler(configFile['item_fields'], pageFile);
+
+                itemObject.getItemAttributes();
+
+                callback(null, {
+                    'items': itemsList,
+                    'jsonObject': itemObject.returnItemAttributes(),
+                    queryObject: queryObject
+                });
+            } else {
+                Parser.getPageContent(queryObject.link, function (err, page) {
+
+                    file.saveFile('./item_page_saved/', queryObject.config_file + '.html', page, function () {
+
+                        if (err || !page) {
+                            callback(err, {'status': 'fail'});
+                        } else {
+                            var itemObject = new ItemHandler(configFile['item_fields'], page);
+                            itemObject.getItemAttributes();
+                            callback(err, {
+                                'items': itemsList,
+                                'jsonObject': itemObject.returnItemAttributes(),
+                                queryObject: queryObject
+                            });
+                        }
+                    });
+                });
+            }
+        }
+    ], function (err, result) {
+        if (err) {
+            console.log('Item parse page error ' + err);
+            res.json(result);
         } else {
-            //res.render('/item_test', {'item': item});
-            res.render('item_parse', {items: itemsList, queryObject: queryObject});
+            res.render('item_parse', result);
         }
     });
-
-});
+}
 
 module.exports = router;

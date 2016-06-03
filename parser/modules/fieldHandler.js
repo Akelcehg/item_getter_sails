@@ -41,7 +41,7 @@ FieldHandler.prototype.getNodesData = function () {
 
         var data = null;
         if (self.bind_node) {
-            if (compareBindValue($(this))) {
+            if (self.compareBindValue($(this))) {
                 data = getValueByAttributeType(self.nodeAttribute, parent);
                 if (data) data = data.trim();
                 nodeData.push(data);
@@ -64,8 +64,10 @@ function getValueByAttributeType(attribute, parent) {
     }
 }
 
-function compareBindValue(valueNodeParent) {
+//function compareBindValue(valueNodeParent) {
+FieldHandler.prototype.compareBindValue = function (valueNodeParent) {
     var self = this;
+
     var bindNodesArray = self.bind_node.split(' ');
 
     var bindNodeParent = valueNodeParent;

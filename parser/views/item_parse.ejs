@@ -56,9 +56,6 @@
     <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert">×</button>
         Результат парсинга страницы
-
-        <pre class="+parsed_item_obj">
-            <% if (locals.jsonObject) JSON.stringify(jsonObject, undefined, 4) %>
-        </pre>
+        <pre class="+parsed_item_obj"><%= jsonObject && JSON.stringify(jsonObject, undefined, 4) %></pre>
     </div>
 </div>
