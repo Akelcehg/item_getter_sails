@@ -96,7 +96,8 @@ router.get('/parse', function (req, res, next) {
         link: req.query.link || '',
         config_file: req.query.config_file || ''
     };
-console.log (queryObject);
+    console.log(queryObject);
+
     mongoose.model('items_list').find(function (err, itemsList) {
         if (err || !itemsList) {
             res.render('404');

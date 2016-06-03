@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts')
 var db = require('./db/mongoose');
 
-require('./models/users');
+//require('./models/users');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
