@@ -97,7 +97,16 @@ router.get('/parse', function (req, res, next) {
         config_file: req.query.config_file || ''
     };
 
-    if (queryObject.link && queryObject.config_file) parseItem(queryObject, res);
+    if (queryObject.link && queryObject.config_file) {
+        parseItem(queryObject, function (err, result) {
+            if (err) {
+                console.log('Item parse page error ' + err);
+                res.json(result);
+            } else {
+                res.render('item_parse', result);
+            }
+        });
+    }
     else {
         mongoose.model('items_list').find(function (err, itemsList) {
             if (err || !itemsList) {
@@ -110,7 +119,7 @@ router.get('/parse', function (req, res, next) {
     }
 });
 
-function parseItem(queryObject, res) {
+function parseItem(queryObject, cb) {
     var file = new File();
     async.waterfall([
         function (callback) {
@@ -161,12 +170,7 @@ function parseItem(queryObject, res) {
             }
         }
     ], function (err, result) {
-        if (err) {
-            console.log('Item parse page error ' + err);
-            res.json(result);
-        } else {
-            res.render('item_parse', result);
-        }
+        cb(err, result);
     });
 }
 
