@@ -90,8 +90,7 @@ router.post('/test_links', function (req, res, next) {
 });
 
 router.get('/parse', function (req, res, next) {
-    //https://auto.ria.com/auto_jaguar_xf_17506031.html
-    //console.log (req.query.link);
+
     var queryObject = {
         link: req.query.link || '',
         config_file: req.query.config_file || ''
@@ -106,8 +105,7 @@ router.get('/parse', function (req, res, next) {
                 res.render('item_parse', result);
             }
         });
-    }
-    else {
+    } else {
         mongoose.model('items_list').find(function (err, itemsList) {
             if (err || !itemsList) {
                 res.render('404');
