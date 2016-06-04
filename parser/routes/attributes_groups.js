@@ -1,5 +1,4 @@
-var mongoose = require('mongoose'),
-    express = require('express'),
+var express = require('express'),
     router = express.Router(),
     AttributesGroups = require('../models/attributesGroups').schema;
 
