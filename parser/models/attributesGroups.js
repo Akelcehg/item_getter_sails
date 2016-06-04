@@ -27,12 +27,14 @@ AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
 };
 
 AttributesGroupsSchema.methods.getAttributes = function (cb) {
+
     this.model('attributes_groups').findById(this._id, function (err, attributes) {
+        console.log (attributes);
         if (err) {
             console.log(err);
             cb(err, []);
         } else cb(null, attributes);
-    })
+    }).select('attributes');
 };
 
 exports.schema = mongoose.model('attributes_groups', AttributesGroupsSchema);
