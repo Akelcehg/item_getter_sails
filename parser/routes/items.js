@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
@@ -111,7 +109,7 @@ router.get('/parse', function (req, res, next) {
                 res.render('404');
             } else {
                 //res.render('/item_test', {'item': item});
-                res.render('item_parse', {items: itemsList, queryObject: queryObject});
+                res.render('item_parse', {items: itemsList, queryObject: queryObject, jsonObject: {}});
             }
         });
     }

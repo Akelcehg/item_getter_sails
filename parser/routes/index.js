@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
     u.testing();
     mongoose.model('users').find(function (err,data) {
         console.log (data);
-    })
+    }).select('email -_id');
     /*var ag = new AttributesGroups({
         group_name : 'testname',
         is_possible : false,
