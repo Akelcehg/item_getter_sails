@@ -8,6 +8,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/new', function (req, res, next) {
+    res.render('attributes_groups/new_group');
+});
+
 router.get('/:id', function (req, res, next) {
 
     var groupAttributes = new AttributesGroups({
