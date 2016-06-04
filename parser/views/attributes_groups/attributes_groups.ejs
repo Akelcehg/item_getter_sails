@@ -1,4 +1,4 @@
-<h1>Bootstrap Table Panel with Pagination</h1>
+<h1>Группы атрибутов</h1>
 
 <div class="panel panel-default panel-table">
     <div class="panel-heading">
@@ -30,7 +30,7 @@
                     <a class="btn btn-danger"><em class="glyphicon glyphicon-trash"></em></a>
                 </td>
                 <td class="col-md-1 hidden-xs" style="text-align: center;"><%= i+1 %></td>
-                <td><%= group.group_name %></td>
+                <td><a href="/attributes_groups/<%=group._id%>"><%= group.group_name %></a></td>
 
             </tr>
             <% }); %>

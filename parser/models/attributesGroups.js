@@ -13,7 +13,7 @@ AttributesGroupsSchema.set('collection', 'attributes_groups');
 AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
 
     var query = this.model('attributes_groups').find();
-    
+
     if (attrs) query.select(attrs);
 
     query.exec(function (err, items) {
@@ -24,6 +24,15 @@ AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
     });
 
 
+};
+
+AttributesGroupsSchema.methods.getAttributes = function (cb) {
+    this.model('attributes_groups').findById(this._id, function (err, attributes) {
+        if (err) {
+            console.log(err);
+            cb(err, []);
+        } else cb(null, attributes);
+    })
 };
 
 exports.schema = mongoose.model('attributes_groups', AttributesGroupsSchema);
