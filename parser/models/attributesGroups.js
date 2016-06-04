@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 
 var AttributesGroupsSchema = new Schema({
     group_name: String,
+    group_en_name: String,
     is_possible: Boolean,
     attributes: Array
 
@@ -22,19 +23,26 @@ AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
             cb(err, []);
         } else cb(null, items);
     });
-
-
 };
 
 AttributesGroupsSchema.methods.getAttributes = function (cb) {
 
     this.model('attributes_groups').findById(this._id, function (err, attributes) {
-        console.log (attributes);
+        console.log(attributes);
         if (err) {
             console.log(err);
             cb(err, []);
         } else cb(null, attributes);
     }).select('attributes');
+};
+
+AttributesGroupsSchema.statics.getPossible = function (cb) {
+    this.model('attributes_groups').find({'is_possible': true}, function (err, attributesGroups) {
+        if (err) {
+            console.log(err);
+            cb(err, []);
+        } else cb(null, attributesGroups);
+    })
 };
 
 exports.schema = mongoose.model('attributes_groups', AttributesGroupsSchema);

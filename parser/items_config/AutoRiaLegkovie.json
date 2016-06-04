@@ -5,34 +5,42 @@
     },
     "item_fields": [{
         "name": "Цена",
+        "field_name": "price",
         "field_node": "div.price-seller span.price",
         "field_attribute": "text()"
     },{
         "name": "Год",
+        "field_name": "year",
         "field_node": "h1.head span.msize span.year",
         "field_attribute": "text()"
     },{
         "name": "Марка",
+        "field_name": "make",
         "field_node": "h1.head span[itemprop=brand]",
         "field_attribute": "text()"
     },{
         "name": "Модель",
+        "field_name": "model",
         "field_node": "span[itemprop=name]",
         "field_attribute": "text()"        
     },{
         "name": "Пробег",
+        "field_name": "mileage",
         "field_node": "div.base-information.delimeter div.run strong",
         "field_attribute": "text()"
     }, {
         "name": "Телефон",
+        "field_name": "phone",
         "field_node": "div.item-phone div.phone span",
         "field_attribute": "text()"
     }, {
         "name": "Заголовок страницы",
+        "field_name": "page_heading",
         "field_node": "div.heading h1.head",
         "field_attribute": "title"
     }, {
         "name": "Состояние",
+        "field_name": "current_state",
         "field_node": "dd.show-line span.argument",
         "field_attribute": "text()",
         "bind_node": "dd.show-line span.label",
@@ -40,6 +48,7 @@
         "expected_value": "Состояние"
     }, {
         "name": "Безопасность",
+        "field_name": "safety",
         "field_node": "dd.show-line span.argument",
         "field_attribute": "text()",
         "bind_node": "dd.show-line span.label",
@@ -47,6 +56,7 @@
         "expected_value": "Безопасность"
     }, {
         "name": "Комфорт",
+        "field_name": "comfort",
         "field_node": "dd.show-line span.argument",
         "field_attribute": "text()",
         "bind_node": "dd.show-line span.label",
@@ -54,6 +64,7 @@
         "expected_value": "Комфорт"
     }, {
         "name": "Мультимедиа",
+        "field_name": "multimedia",
         "field_node": "dd.show-line span.argument",
         "field_attribute": "text()",
         "bind_node": "dd.show-line span.label",
@@ -61,6 +72,7 @@
         "expected_value": "Мультимедиа"
     }, {
         "name": "Прочее",
+        "field_name": "other",
         "field_node": "dd.show-line span.argument",
         "field_attribute": "text()",
         "bind_node": "dd.show-line span.label",
@@ -68,10 +80,12 @@
         "expected_value": "Прочее"
     }, {
         "name": "Описание",
+        "field_name": "description",
         "field_node": "dd.additional-data.show-line",
         "field_attribute": "text()"
     }, {
         "name": "Тип транспорта",
+        "field_name": "transport_type",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -79,6 +93,7 @@
         "expected_value": "Тип транспорта:"
     }, {
         "name": "Двигатель",
+        "field_name": "engine",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -86,6 +101,7 @@
         "expected_value": "Двигатель:"
     }, {
         "name": "Коробка передач",
+        "field_name": "transmission",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -93,6 +109,7 @@
         "expected_value": "Коробка передач:"
     }, {
         "name": "Привод",
+        "field_name": "drive",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -100,6 +117,7 @@
         "expected_value": "Привод:"
     }, {
         "name": "Цвет",
+        "field_name": "color",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -107,6 +125,7 @@
         "expected_value": "Цвет:"
     }, {
         "name": "Город",
+        "field_name": "city",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -114,6 +133,7 @@
         "expected_value": "Город:"
     }, {
         "name": "Фото",
+        "field_name": "photo",
         "field_node": "a.photo-85x56 img.loadPhoto",
         "field_attribute": "data-src"
     }]

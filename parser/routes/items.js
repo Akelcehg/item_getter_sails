@@ -139,11 +139,12 @@ function parseItem(queryObject, cb) {
                 var itemObject = new ItemHandler(configFile['item_fields'], pageFile);
 
                 itemObject.getItemAttributes();
-
-                callback(null, {
-                    'items': itemsList,
-                    'jsonObject': itemObject.returnItemAttributes(),
-                    queryObject: queryObject
+                itemObject.processPossibleValues(function () {
+                    callback(null, {
+                        'items': itemsList,
+                        'jsonObject': itemObject.returnItemAttributes(),
+                        queryObject: queryObject
+                    });
                 });
             } else {
                 Parser.getPageContent(queryObject.link, function (err, page) {
@@ -155,10 +156,12 @@ function parseItem(queryObject, cb) {
                         } else {
                             var itemObject = new ItemHandler(configFile['item_fields'], page);
                             itemObject.getItemAttributes();
-                            callback(err, {
-                                'items': itemsList,
-                                'jsonObject': itemObject.returnItemAttributes(),
-                                queryObject: queryObject
+                            itemObject.processPossibleValues(function () {
+                                callback(err, {
+                                    'items': itemsList,
+                                    'jsonObject': itemObject.returnItemAttributes(),
+                                    queryObject: queryObject
+                                });
                             });
                         }
                     });
