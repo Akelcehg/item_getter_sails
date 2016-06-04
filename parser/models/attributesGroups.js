@@ -1,17 +1,29 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var AttributesGroups = new Schema({
+var AttributesGroupsSchema = new Schema({
     group_name: String,
     is_possible: Boolean,
     attributes: Array
 
 });
 
-AttributesGroups.set('collection', 'attributes_groups');
+AttributesGroupsSchema.set('collection', 'attributes_groups');
 
-AttributesGroups.methods.saveItem = function () {
+AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
+
+    var query = this.model('attributes_groups').find();
+    
+    if (attrs) query.select(attrs);
+
+    query.exec(function (err, items) {
+        if (err) {
+            console.log(err);
+            cb(err, []);
+        } else cb(null, items);
+    });
+
 
 };
 
-exports.schema = mongoose.model('items', AttributesGroups);
+exports.schema = mongoose.model('attributes_groups', AttributesGroupsSchema);

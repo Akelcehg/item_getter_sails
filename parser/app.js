@@ -7,7 +7,6 @@ var express = require('express'),
     expressLayouts = require('express-ejs-layouts'),
     db = require('./db/mongoose');
 
-//require('./models/users');
 /*
  var routes = require('./routes/index');
  var users = require('./routes/users');*/

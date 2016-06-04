@@ -5,7 +5,9 @@ var mongoose = require('mongoose'),
 
 router.get('/', function (req, res, next) {
 
-    res.render('attributes_groups');
+    AttributesGroups.getAll('group_name _id', function (err, groups) {
+        res.render('attributes_groups', {AttributesGroups: groups});
+    });
 });
 
 module.exports = router;
