@@ -71,8 +71,8 @@ router.post('/test_links', function (req, res, next) {
         },
         function (configFile, item, callback) {
             Parser.getPageContent(item['link'], function (err, page) {
-                console.log('Page recieved ' + page.length);
-                var parsedLinks = Parser.getItemLinks(page, configFile);
+                var cheerioParsedPage = Parser.getParsedHttpPage(page);
+                var parsedLinks = Parser.getItemLinks(cheerioParsedPage, configFile);
                 callback(err, {'status': 'ok', 'links': parsedLinks});
             });
         }
@@ -136,7 +136,8 @@ function parseItem(queryObject, cb) {
         },
         function (pageFile, configFile, itemsList, callback) {
             if (pageFile) {
-                var itemObject = new ItemHandler(configFile['item_fields'], pageFile);
+
+                var itemObject = new ItemHandler(configFile['item_fields'], Parser.getParsedHttpPage(pageFile));
 
                 itemObject.getItemAttributes();
                 itemObject.processPossibleValues(function () {
@@ -149,12 +150,25 @@ function parseItem(queryObject, cb) {
             } else {
                 Parser.getPageContent(queryObject.link, function (err, page) {
 
+
+                    var cheerio = require('cheerio');
+                    var $ = cheerio.load(page, {
+                        normalizeWhitespace: true
+                    });
+                    $('script').remove();
+                    $('style').remove();
+                    $('meta').remove();
+                    //$.html();
+
+
+                    page = $.html();
+
                     file.saveFile('./item_page_saved/', queryObject.config_file + '.html', page, function () {
 
                         if (err || !page) {
                             callback(err, {'status': 'fail'});
                         } else {
-                            var itemObject = new ItemHandler(configFile['item_fields'], page);
+                            var itemObject = new ItemHandler(configFile['item_fields'], Parser.getParsedHttpPage(page));
                             itemObject.getItemAttributes();
                             itemObject.processPossibleValues(function () {
                                 callback(err, {

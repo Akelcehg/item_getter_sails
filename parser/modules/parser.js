@@ -3,13 +3,8 @@ var Http = require('./http.js');
 var File = require('./file.js');
 var ItemConfig = require('./itemConfig');
 var FieldHandler = require('./fieldHandler');
+var cheerio = require('cheerio');
 var async = require('async');
-
-exports.install = function (options) {
-};
-
-exports.uninstall = function (options) {
-};
 
 exports.parse = function () {
     console.log('parse');
@@ -92,6 +87,8 @@ exports.getPageContent = function (itemLink, cb) {
     });
 }
 
-exports.parseSingleItem = function (itemLink, configFile) {
-    return true;
+exports.getParsedHttpPage = function (page) {
+    return cheerio.load(page, {
+        normalizeWhitespace: true
+    });
 }

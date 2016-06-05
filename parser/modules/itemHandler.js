@@ -4,9 +4,7 @@ var cheerio = require('cheerio');
 var async = require('async');
 
 function ItemHandler(item_fields, item_page) {
-    this.item_page = cheerio.load(item_page, {
-        normalizeWhitespace: true
-    });
+    this.item_page = item_page;
     this.item_fields_config = item_fields;
     this.item_fields = {};
 }
