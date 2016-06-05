@@ -27,7 +27,7 @@ ItemHandler.prototype.getItemAttributes = function () {
             'value': fieldHandler.getFieldValue()
         };
         var fieldName = field_config['field_name'];
-        var fieldObj = {};
+        //var fieldObj = {};
         //fieldObj[fieldName] = itemFieldObject;
         self.item_fields[fieldName] = itemFieldObject;
         //self.item_fields.push(fieldObj);
@@ -42,7 +42,17 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
         async.each(groups, function (group, callback) {
 
             if (self.item_fields[group['group_en_name']]) {
-                console.log(self.item_fields[group['group_en_name']]);
+                var possibleObjectField = self.item_fields[group['group_en_name']];
+                console.log(possibleObjectField);
+
+                for (var i in group['attributes']) {
+                    console.log(group['attributes'][i]);
+                    if (possibleObjectField['value'][0].indexOf(group['attributes'][i]) > -1) {
+                        //console.log('содержит ' + group['attributes'][i]);
+                        possibleObjectField['value'] = [group['attributes'][i]];
+                        //possibleObjectField['display_value'] = [i];
+                    }
+                }
             }
             callback();
         }, function (err) {

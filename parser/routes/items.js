@@ -158,8 +158,6 @@ function parseItem(queryObject, cb) {
                     $('script').remove();
                     $('style').remove();
                     $('meta').remove();
-                    //$.html();
-
 
                     page = $.html();
 

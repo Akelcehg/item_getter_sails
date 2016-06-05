@@ -1,22 +1,24 @@
 <form method="POST">
     <fieldset class="form-group">
         <label for="exampleInputEmail1">Название группы</label>
-        <input type="text" class="form-control" name="group_name" placeholder="Название группы">
+        <input type="text" class="form-control" name="group_name" placeholder="Название группы" value="<%=group.group_name%>">
         <!--<small class="text-muted">We'll never share your email with anyone else.</small>-->
     </fieldset>
     <fieldset class="form-group">
         <label for="exampleInputEmail1">Название группы АНГЛ</label>
-        <input type="text" class="form-control" name="group_en_name" placeholder="Название группы АНГЛ">
+        <input type="text" class="form-control" name="group_en_name"
+               value="<%=group.group_en_name%>"
+               placeholder="Название группы АНГЛ">
     </fieldset>
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="is_possible" value="true"> Имеет значения ?
+            <input type="checkbox" name="is_possible" value="true" <%= group.is_possible===true && 'checked'%>> Имеет значения ?
         </label>
     </div>
 
     <fieldset class="form-group">
         <label for="exampleInputPassword1">Аттрибуты через запятую
-            <textarea class="form-control" name="attributes" cols="150" rows="5"></textarea>
+            <textarea class="form-control" name="attributes" cols="150" rows="5"><%=group.attributes%></textarea>
         </label>
     </fieldset>
 
