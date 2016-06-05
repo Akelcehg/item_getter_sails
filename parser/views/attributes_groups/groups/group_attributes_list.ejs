@@ -7,7 +7,8 @@
 
             </div>
             <div class="col col-xs-6 text-right">
-                <a href="/attributes/new_attribute/<%=group_id%>" type="button" class="btn btn-sm btn-primary btn-create">Добавить новый атрибут</a>
+                <a href="/attributes/new_attribute/<%= group_id %>" type="button"
+                   class="btn btn-sm btn-primary btn-create">Добавить новый атрибут</a>
             </div>
         </div>
     </div>
@@ -18,7 +19,9 @@
             <tr>
                 <th><em class="glyphicon glyphicon-cog"></em></th>
                 <th class="hidden-xs">№</th>
-                <th>Название группы</th>
+                <th>Название аттрибута</th>
+                <th>Название аттрибута англ.</th>
+                <th>Кол-во</th>
             </tr>
             </thead>
             <% Attributes.attributes.forEach(function(attribute, i) { %>
@@ -27,10 +30,13 @@
             <tr>
                 <td align="center">
                     <a class="btn btn-default"><em class="glyphicon glyphicon-pencil"></em></a>
-                    <a class="btn btn-danger"><em class="glyphicon glyphicon-trash"></em></a>
+                    <a href="/attributes/delete/<%= attribute.en_name %>" class="btn btn-danger"><em
+                                class="glyphicon glyphicon-trash"></em></a>
                 </td>
                 <td class="col-md-1 hidden-xs" style="text-align: center;"><%= i + 1 %></td>
-                <td><a href="/attributes_groups/attribute/<%= Attributes._id %>"><%= attribute %></a></td>
+                <td><a href="#"><%= attribute.name %></a></td>
+                <td><%= attribute.en_name %></td>
+                <td><%= attribute.count %></td>
 
             </tr>
             <% }); %>

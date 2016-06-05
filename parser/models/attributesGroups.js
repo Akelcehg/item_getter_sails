@@ -5,7 +5,7 @@ var AttributesGroupsSchema = new Schema({
     group_name: String,
     group_en_name: String,
     is_possible: Boolean,
-    attributes: Array
+    attributes: {type: Array, index: true}
 
 });
 

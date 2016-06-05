@@ -4,13 +4,13 @@ var mongoose = require('mongoose'),
 var Item = new Schema({
     link: String,
     name: String,
-    attributes: Array
+    attributes: {type: Object, index: true}
 
 });
 
 Item.set('collection', 'items');
 
-Item.methods.saveItem = function() {
+Item.methods.saveItem = function () {
 
 };
 
