@@ -1,5 +1,4 @@
 <h1>Группы атрибутов</h1>
-
 <div class="panel panel-default panel-table">
     <div class="panel-heading">
         <div class="row">
@@ -7,7 +6,7 @@
 
             </div>
             <div class="col col-xs-6 text-right">
-                <button type="button" class="btn btn-sm btn-primary btn-create">Добавить новую группу</button>
+                <a href="groups/new" type="button" class="btn btn-sm btn-primary btn-create">Добавить новую группу</a>
             </div>
         </div>
     </div>
@@ -17,20 +16,20 @@
             <thead>
             <tr>
                 <th><em class="glyphicon glyphicon-cog"></em></th>
-                <th class="hidden-xs">№</th>
+                <th style="text-align: center;" class="hidden-xs">№</th>
                 <th>Название группы</th>
             </tr>
             </thead>
-            <% Attributes.attributes.forEach(function(attribute, i) { %>
+            <% AttributesGroups.forEach(function(group, i) { %>
 
             <tbody>
             <tr>
                 <td align="center">
-                    <a class="btn btn-default"><em class="glyphicon glyphicon-pencil"></em></a>
-                    <a class="btn btn-danger"><em class="glyphicon glyphicon-trash"></em></a>
+                    <a href="/groups/edit/<%=group._id%>" class="btn btn-default"><em class="glyphicon glyphicon-pencil"></em></a>
+                    <a href="/groups/delete/<%=group._id%>" class="btn btn-danger"><em class="glyphicon glyphicon-trash"></em></a>
                 </td>
-                <td class="col-md-1 hidden-xs" style="text-align: center;"><%= i + 1 %></td>
-                <td><a href="/attributes_groups/attribute/<%= Attributes._id %>"><%= attribute %></a></td>
+                <td class="col-md-1 hidden-xs" style="text-align: center;"><%= i+1 %></td>
+                <td><a href="/groups/view/<%=group._id%>"><%= group.group_name %></a></td>
 
             </tr>
             <% }); %>

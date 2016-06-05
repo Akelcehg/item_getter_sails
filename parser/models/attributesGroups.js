@@ -45,4 +45,17 @@ AttributesGroupsSchema.statics.getPossible = function (cb) {
     })
 };
 
+AttributesGroupsSchema.statics.saveAttributeToGroup = function (groupId, attributeObj, cb) {
+    console.log(attributeObj);
+    this.model('attributes_groups').findByIdAndUpdate(groupId, {$push: {"attributes": attributeObj}}, {
+            safe: true,
+            upsert: true
+        },
+        function (err, model) {
+            if (err) console.log(err);
+            cb(err);
+        }
+    );
+};
+
 exports.schema = mongoose.model('attributes_groups', AttributesGroupsSchema);
