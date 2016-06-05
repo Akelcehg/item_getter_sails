@@ -18,9 +18,10 @@ FieldHandler.prototype.getFieldValue = function () {
 
 FieldHandler.prototype.getNodesData = function () {
     var self = this;
-    var $ = cheerio.load(this.page, {
+    /*var $ = cheerio.load(this.page, {
         normalizeWhitespace: true
-    });
+    });*/
+    var $ = this.page;
 
     var nodeData = [];
 
