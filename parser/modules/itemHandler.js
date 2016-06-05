@@ -6,7 +6,7 @@ var async = require('async');
 function ItemHandler(item_fields, item_page) {
     this.item_page = item_page;
     this.item_fields_config = item_fields;
-    this.item_fields = {};
+    this.item_fields = [];
 }
 
 ItemHandler.prototype.getItemAttributes = function () {
@@ -27,10 +27,12 @@ ItemHandler.prototype.getItemAttributes = function () {
             'value': fieldHandler.getFieldValue()
         };
         var fieldName = field_config['field_name'];
-        //var fieldObj = {};
-        //fieldObj[fieldName] = itemFieldObject;
-        self.item_fields[fieldName] = itemFieldObject;
+        var fieldObj = {};
+        fieldObj[fieldName] = itemFieldObject;
+        //self.item_fields[fieldName] = itemFieldObject;
         //self.item_fields.push(fieldObj);
+        self.item_fields.push(fieldObj);
+        //https://habrahabr.ru/post/177761/
     });
 };
 

@@ -3,6 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     async = require('async'),
     ItemsList = require(__dirname + '/../models/itemsList').schema,
+    Items = require(__dirname + '/../models/items').schema,
     Parser = require(__dirname + '/../modules/parser'),
     File = require(__dirname + '/../modules/file'),
     ItemConfig = require(__dirname + '/../modules/itemConfig'),
@@ -141,11 +142,25 @@ function parseItem(queryObject, cb) {
 
                 itemObject.getItemAttributes();
                 itemObject.processPossibleValues(function () {
-                    callback(null, {
-                        'items': itemsList,
-                        'jsonObject': itemObject.returnItemAttributes(),
-                        queryObject: queryObject
+
+                    /////save item
+                    var currentItem = new Items({
+                        link: queryObject.link,
+                        name: 'dasdas',
+                        attributes: itemObject.returnItemAttributes()
                     });
+
+
+                    /*currentItem.save(function (err) {
+
+                        if (err) console.log (err);*/
+                        callback(null, {
+                            'items': itemsList,
+                            'jsonObject': itemObject.returnItemAttributes(),
+                            queryObject: queryObject
+
+                        });
+                    //});
                 });
             } else {
                 Parser.getPageContent(queryObject.link, function (err, page) {

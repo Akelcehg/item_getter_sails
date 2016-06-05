@@ -4,14 +4,16 @@ var mongoose = require('mongoose'),
 var Item = new Schema({
     link: String,
     name: String,
-    attributes: {type: Object, index: true}
+    //attributes: {type: Array, index: true}
+    attributes:  Array
+    //attributes: Object
 
 });
 
 Item.set('collection', 'items');
 
-Item.methods.saveItem = function () {
-
+Item.methods.saveItem = function (attrbutesObject, cb) {
+    cb();
 };
 
 exports.schema = mongoose.model('items', Item);
