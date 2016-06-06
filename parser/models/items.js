@@ -1,20 +1,31 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema,
+    autoIncrement = require('mongoose-auto-increment');
 
-var Item = new Schema({
+var ItemSchema = new Schema({
     link: String,
     name: String,
-    //attributes: {type: Array, index: true}
-    attributes:  Array
+    itemId: Number,
+    addedDate: {type: Date, default: Date.now},
+    attributes: Object
     //attributes: Object
-
 });
 
-Item.set('collection', 'items');
+//ItemSchema.index({"attributes.price": 1});
+//ItemSchema.index({ "itemId": 1, "number": 1 }, { unique: true });
 
-Item.methods.saveItem = function (attrbutesObject, cb) {
+/*PersonSchema
+ .virtual('name.full')
+ .get(function () {
+ return this.name.first + ' ' + this.name.last;
+ });*/
+
+ItemSchema.set('collection', 'items');
+ItemSchema.plugin(autoIncrement.plugin, {model: 'item', field: 'itemId', startAt: 1});
+
+ItemSchema.methods.saveItem = function (attrbutesObject, cb) {
     cb();
 };
 
-exports.schema = mongoose.model('items', Item);
+exports.schema = mongoose.model('items', ItemSchema);
 exports.name = 'item';

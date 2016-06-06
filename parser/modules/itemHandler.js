@@ -6,7 +6,8 @@ var async = require('async');
 function ItemHandler(item_fields, item_page) {
     this.item_page = item_page;
     this.item_fields_config = item_fields;
-    this.item_fields = [];
+    //this.item_fields = [];
+    this.item_fields = {};
 }
 
 ItemHandler.prototype.getItemAttributes = function () {
@@ -22,16 +23,20 @@ ItemHandler.prototype.getItemAttributes = function () {
             field_config['bind_node_attribute'],
             field_config['expected_value']
         );
-        var itemFieldObject = {
-            'name': field_config['name'],
-            'value': fieldHandler.getFieldValue()
-        };
-        var fieldName = field_config['field_name'];
+        /*        var itemFieldObject = {
+         //'name': field_config['name'],
+         'value': fieldHandler.getFieldValue()
+         };*/
+/*        var fieldName = field_config['field_name'];
         var fieldObj = {};
         fieldObj[fieldName] = itemFieldObject;
-        //self.item_fields[fieldName] = itemFieldObject;
-        //self.item_fields.push(fieldObj);
-        self.item_fields.push(fieldObj);
+        self.item_fields[fieldName] = itemFieldObject;
+        var itemFieldObject = {};*/
+        var fieldName = field_config['field_name'];
+        self.item_fields[fieldName] = fieldHandler.getFieldValue();
+        //self.item_fields.push(itemFieldObject);
+        //self.item_fields.push(itemFieldObject);
+
         //https://habrahabr.ru/post/177761/
     });
 };

@@ -150,17 +150,17 @@ function parseItem(queryObject, cb) {
                         attributes: itemObject.returnItemAttributes()
                     });
 
+                    currentItem.save(function (err) {
 
-                    /*currentItem.save(function (err) {
+                        if (err) console.log (err);
 
-                        if (err) console.log (err);*/
                         callback(null, {
                             'items': itemsList,
                             'jsonObject': itemObject.returnItemAttributes(),
                             queryObject: queryObject
 
                         });
-                    //});
+                    });
                 });
             } else {
                 Parser.getPageContent(queryObject.link, function (err, page) {
