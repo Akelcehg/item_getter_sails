@@ -158,6 +158,8 @@
         "name": "Фото",
         "field_name": "photo",
         "field_node": "a.photo-85x56 img.loadPhoto",
-        "field_attribute": "data-src"
+        "field_attribute": "data-src",
+        "modifiers" : ["replaceString"],
+        "modifiers_values" : [["s.jpg","f.jpg"]]
     }]
 }
