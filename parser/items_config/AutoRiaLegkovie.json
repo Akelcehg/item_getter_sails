@@ -7,7 +7,8 @@
         "name": "Цена",
         "field_name": "price",
         "field_node": "div.price-seller span.price",
-        "field_attribute": "text()"
+        "field_attribute": "text()",
+        "modifiers" : ["digits"]
     },{
         "name": "Год",
         "field_name": "year",
@@ -27,7 +28,9 @@
         "name": "Пробег",
         "field_name": "mileage",
         "field_node": "div.base-information.delimeter div.run strong",
-        "field_attribute": "text()"
+        "field_attribute": "text()",
+        "modifiers" : ["replaceString","digits"],
+        "modifiers_values" : [["тыс. км","000"]]
     }, {
         "name": "Телефон",
         "field_name": "phone",
@@ -92,13 +95,33 @@
         "bind_node_attribute": "text()",
         "expected_value": "Тип транспорта:"
     }, {
-        "name": "Двигатель",
-        "field_name": "engine",
+        "name": "Объем двигателя",
+        "field_name": "engine_size",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:",
+        "modifiers" : ["getValueNextTo"],
+        "modifiers_values" : [["л."]]
+    },{
+        "name": "Тип двигателя",
+        "field_name": "engine_type",
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
         "bind_node_attribute": "text()",
         "expected_value": "Двигатель:"
+    },{
+        "name": "Мощность двигателя",
+        "field_name": "engine_power",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:",
+        "modifiers" : ["getValueNextTo","digits"],
+        "modifiers_values" : [["л.с."]]
     }, {
         "name": "Коробка передач",
         "field_name": "transmission",

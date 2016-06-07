@@ -21,8 +21,15 @@ ItemHandler.prototype.getItemAttributes = function () {
             self.item_page,
             field_config['bind_node'],
             field_config['bind_node_attribute'],
-            field_config['expected_value']
+            field_config['expected_value'],
+            field_config['modifiers'],
+            field_config['modifiers_values']
         );
+
+        var itemFieldObject = {
+         'value': fieldHandler.getFieldValue(),
+         'search_value': ''
+        };
         /*        var itemFieldObject = {
          //'name': field_config['name'],
          'value': fieldHandler.getFieldValue()
@@ -33,8 +40,10 @@ ItemHandler.prototype.getItemAttributes = function () {
         self.item_fields[fieldName] = itemFieldObject;
         var itemFieldObject = {};*/
         var fieldName = field_config['field_name'];
-        self.item_fields[fieldName] = fieldHandler.getFieldValue();
-        //self.item_fields.push(itemFieldObject);
+        
+        //self.item_fields[fieldName] = fieldHandler.getFieldValue();
+        self.item_fields[fieldName] = itemFieldObject;
+        
         //self.item_fields.push(itemFieldObject);
 
         //https://habrahabr.ru/post/177761/
