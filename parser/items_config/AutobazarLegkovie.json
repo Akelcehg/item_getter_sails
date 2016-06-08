@@ -5,14 +5,18 @@
     },
     "item_fields": [{
         "name": "Фото",
+        "field_name": "photo",
         "field_node": "a.thumbnail.col-md-3.col-sm-3.col-xs-3 img",
         "field_attribute": "src"
     },{
         "name": "Цена",
+        "field_name": "price",
         "field_node": "div.usd.col-xs-6.col-sm-12 span",
-        "field_attribute": "text()"
+        "field_attribute": "text()",
+        "modifiers" : ["digits"]
     }, {
         "name": "Год выпуска",
+        "field_name": "year",
         "field_node": "tr.main td.val",
         "field_attribute": "text()",
         "bind_node": "tr.main td.lbl",
@@ -20,6 +24,7 @@
         "expected_value": "Год выпуска"
     }, {
         "name": "Тип двигателя",
+        "field_name": "engine_type",
         "field_node": "tr.main td.val",
         "field_attribute": "text()",
         "bind_node": "tr.main td.lbl",
@@ -27,6 +32,7 @@
         "expected_value": "Двигатель"
     }, {
         "name": "Тип коробки передач",
+        "field_name": "transmission",
         "field_node": "tr.main td.val",
         "field_attribute": "text()",
         "bind_node": "tr.main td.lbl",
@@ -34,13 +40,16 @@
         "expected_value": "КПП"
     }, {
         "name": "Пробег",
+        "field_name": "mileage",
         "field_node": "tr.main td.val",
         "field_attribute": "text()",
         "bind_node": "tr.main td.lbl",
         "bind_node_attribute": "text()",
-        "expected_value": "Пробег"
+        "expected_value": "Пробег",
+        "modifiers" : ["digits"]
     }, {
         "name": "Привод",
+        "field_name": "drive",
         "field_node": "tr td.val",
         "field_attribute": "text()",
         "bind_node": "tr td.lbl",
@@ -48,6 +57,7 @@
         "expected_value": "Привод"
     }, {
         "name": "Тип кузова",
+        "field_name": "body_type",
         "field_node": "tr td.val",
         "field_attribute": "text()",
         "bind_node": "tr td.lbl",
@@ -55,6 +65,7 @@
         "expected_value": "Кузов"
     }, {
         "name": "Дверей",
+        "field_name": "dors_count",
         "field_node": "tr td.val",
         "field_attribute": "text()",
         "bind_node": "tr td.lbl",
@@ -62,6 +73,7 @@
         "expected_value": "Дверей"
     }, {
         "name": "Цвет",
+        "field_name": "color",
         "field_node": "tr td.val",
         "field_attribute": "text()",
         "bind_node": "tr td.lbl",
@@ -69,6 +81,7 @@
         "expected_value": "Цвет"
     }, {
         "name": "Описание",
+        "field_name": "description",
         "field_node": "div.car_dop_info.dotted_box div p",
         "field_attribute": "text()"
     }]

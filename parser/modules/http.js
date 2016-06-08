@@ -99,7 +99,10 @@ Http.prototype.getPageContent = function (cb) {
                 page.render('capture.png');
                 //page.render('twitter.png');
                 console.log("RENDERING PAGE " + count);
-                if (count === 0) {
+                console.log (renderTimeout);
+                //if (renderTimeout._called)                
+                //console.log (forcedRenderTimeout);
+                if (count === 0 || !renderTimeout || renderTimeout._called===false) {
                     clearTimeout(renderTimeout);
                     clearTimeout(forcedRenderTimeout);
 
@@ -107,7 +110,7 @@ Http.prototype.getPageContent = function (cb) {
 
                         page.get('content', function (err, html) {
                             console.log('COUNT ' + count);
-                            if (count === 0) {
+                            if (count === 0 || !renderTimeout || renderTimeout._called===false) {
                                 //clearTimeout(renderTimeout);
                                 phantom.exit();
                                 cb(null, html);

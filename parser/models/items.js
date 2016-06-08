@@ -6,7 +6,7 @@ var ItemSchema = new Schema({
     link: String,
     name: String,
     itemId: Number,
-    addedDate: {type: Date, default: Date.now},
+    createdAt: {type: Date, default: Date.now},
     attributes: Object
     //attributes: Object
 });

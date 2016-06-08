@@ -3,7 +3,6 @@ module.exports = {
         return nodeData.replace(/\D/g, '');
     },
     replaceString: function (nodeData, modifierData) {
-        console.log(modifierData);
         return nodeData.replace(modifierData[0], modifierData[1]);
     },
     getValueNextTo: function (nodeData, modifierData) {

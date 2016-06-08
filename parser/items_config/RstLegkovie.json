@@ -1,0 +1,165 @@
+{
+    "items_list": {
+        "link_item": "div.rst-ocb-i.rst-ocb-i-premium.rst-uix-radius a.rst-ocb-i-a",
+        "link_attribute": "href"
+    },
+    "item_fields": [{
+        "name": "Цена",
+        "field_name": "price",
+        "field_node": "span.rst-uix-price-param span.rst-uix-grey",
+        "field_attribute": "text()",
+        "modifiers" : ["digits"]
+    },{
+        "name": "Год",
+        "field_name": "year",
+        "field_node": "h1.head span.msize span.year",
+        "field_attribute": "text()"
+    },{
+        "name": "Марка",
+        "field_name": "make",
+        "field_node": "h1.head span[itemprop=brand]",
+        "field_attribute": "text()"
+    },{
+        "name": "Модель",
+        "field_name": "model",
+        "field_node": "span[itemprop=name]",
+        "field_attribute": "text()"        
+    },{
+        "name": "Пробег",
+        "field_name": "mileage",
+        "field_node": "div.base-information.delimeter div.run strong",
+        "field_attribute": "text()",
+        "modifiers" : ["replaceString","digits"],
+        "modifiers_values" : [["тыс. км","000"]]
+    }, {
+        "name": "Телефон",
+        "field_name": "phone",
+        "field_node": "div.item-phone div.phone span",
+        "field_attribute": "text()"
+    }, {
+        "name": "Заголовок страницы",
+        "field_name": "page_heading",
+        "field_node": "div.heading h1.head",
+        "field_attribute": "title"
+    }, {
+        "name": "Состояние",
+        "field_name": "current_state",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Состояние"
+    }, {
+        "name": "Безопасность",
+        "field_name": "safety",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Безопасность"
+    }, {
+        "name": "Комфорт",
+        "field_name": "comfort",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Комфорт"
+    }, {
+        "name": "Мультимедиа",
+        "field_name": "multimedia",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Мультимедиа"
+    }, {
+        "name": "Прочее",
+        "field_name": "other",
+        "field_node": "dd.show-line span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd.show-line span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Прочее"
+    }, {
+        "name": "Описание",
+        "field_name": "description",
+        "field_node": "div.rst-page-oldcars-item-option-block-container.rst-page-oldcars-item-option-block-container-desc.rst-uix-block-more",
+        "field_attribute": "text()"
+    }, {
+        "name": "Тип транспорта",
+        "field_name": "transport_type",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Тип транспорта:"
+    }, {
+        "name": "Объем двигателя",
+        "field_name": "engine_size",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:",
+        "modifiers" : ["getValueNextTo"],
+        "modifiers_values" : [["л."]]
+    },{
+        "name": "Тип двигателя",
+        "field_name": "engine_type",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:"
+    },{
+        "name": "Мощность двигателя",
+        "field_name": "engine_power",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Двигатель:",
+        "modifiers" : ["getValueNextTo","digits"],
+        "modifiers_values" : [["л.с."]]
+    }, {
+        "name": "Коробка передач",
+        "field_name": "transmission",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Коробка передач:"
+    }, {
+        "name": "Привод",
+        "field_name": "drive",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Привод:"
+    }, {
+        "name": "Цвет",
+        "field_name": "color",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Цвет:"
+    }, {
+        "name": "Город",
+        "field_name": "city",
+        "field_node": "dd span.argument",
+        "field_attribute": "text()",
+        "bind_node": "dd span.label",
+        "bind_node_attribute": "text()",
+        "expected_value": "Город:"
+    }, {
+        "name": "Фото",
+        "field_name": "photo",
+        "field_node": "a.photo-85x56 img.loadPhoto",
+        "field_attribute": "data-src",
+        "modifiers" : ["replaceString"],
+        "modifiers_values" : [["s.jpg","f.jpg"]]
+    }]
+}

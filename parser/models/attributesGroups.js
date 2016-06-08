@@ -5,7 +5,15 @@ var AttributesGroupsSchema = new Schema({
     group_name: String,
     group_en_name: String,
     is_possible: Boolean,
-    attributes: Array        
+    createdAt: { type: Date, default: Date.now },
+    //attributes: Array
+    attributes: [{
+        attributeId : Number,
+        name: String,
+        en_name: String,
+        count: { type: Number, default: 0 },
+        createdAt: { type: Date, default: Date.now }
+    }]
 });
 
 //AttributesGroupsSchema.index({ "_userId": 1, "number": 1 }, { unique: true });
