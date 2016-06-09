@@ -9,94 +9,96 @@ var express = require('express'),
     ItemConfig = require(__dirname + '/../modules/itemConfig'),
     ItemHandler = require(__dirname + '/../modules/itemHandler');
 
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
 
     var itemsList = new ItemsList();
 
-    itemsList.getAllItems(function (err, items) {
+    itemsList.getAllItems(function(err, items) {
         if (err) {
             res.render('error');
         } else {
-            res.render('items_list', {'items': items});
+            res.render('items_list', { 'items': items });
         }
     });
 });
 
-router.get('/test/:item_id', function (req, res, next) {
+router.get('/test/:item_id', function(req, res, next) {
     var itemId = req.params.item_id;
-    mongoose.model('items_list').findOne({_id: itemId}, function (err, item) {
+    mongoose.model('items_list').findOne({ _id: itemId }, function(err, item) {
         if (err || !item) {
             res.render('error');
         } else {
-            res.render('item_test', {'item': item});
+            res.render('item_test', { 'item': item });
         }
     });
 
 });
 
-router.post('/test_http', function (req, res, next) {
+router.post('/test_http', function(req, res, next) {
 
-    var itemId = req.body.itemId, file = new File();
-    mongoose.model('items_list').findOne({_id: itemId}, function (err, item) {
+    var itemId = req.body.itemId,
+        file = new File();
+    mongoose.model('items_list').findOne({ _id: itemId }, function(err, item) {
         if (!err && item) {
-            Parser.getPageContent(item['link'], function (err, page) {
+            Parser.getPageContent(item['link'], function(err, page) {
 
-                file.saveFile('./', 'test.html', page, function () {
+                file.saveFile('./', 'test.html', page, function() {
                     console.log('saved');
                 });
-                res.json({'status': 'ok'});
+                res.json({ 'status': 'ok' });
             });
-        } else res.json({'status': 'fail'});
+        } else res.json({ 'status': 'fail' });
     });
 });
 
-router.post('/test_links', function (req, res, next) {
+router.post('/test_links', function(req, res, next) {
 
     var itemId = req.body.itemId;
 
     async.waterfall([
-        function (callback) {
-            mongoose.model('items_list').findOne({_id: itemId}, function (err, item) {
+        function(callback) {
+            mongoose.model('items_list').findOne({ _id: itemId }, function(err, item) {
                 callback(err, item);
             });
         },
-        function (item, callback) {
+        function(item, callback) {
             if (item) {
                 var itemConfigFile = new ItemConfig(item['config_file']);
-                itemConfigFile.getConfigFile(function (err, configFile) {
+                itemConfigFile.getConfigFile(function(err, configFile) {
                     callback(err, configFile, item)
                 });
             } else {
                 callback('No items');
             }
         },
-        function (configFile, item, callback) {
-            Parser.getPageContent(item['link'], function (err, page) {
+        function(configFile, item, callback) {
+            Parser.getPageContent(item['link'], function(err, page) {
                 var cheerioParsedPage = Parser.getParsedHttpPage(page);
                 var parsedLinks = Parser.getItemLinks(cheerioParsedPage, configFile);
-                callback(err, {'status': 'ok', 'links': parsedLinks});
+                callback(err, { 'status': 'ok', 'links': parsedLinks });
             });
         }
 
-    ], function (err, result) {
+    ], function(err, result) {
         if (err) {
             console.log('Item parse page error ' + err);
-            res.json({'status': 'fail'});
+            res.json({ 'status': 'fail' });
         } else {
             res.json(result);
         }
     });
 });
 
-router.get('/parse', function (req, res, next) {
+router.get('/parse', function(req, res, next) {
 
     var queryObject = {
         link: req.query.link || '',
+        delete_file: req.query.delete_file || false,
         config_file: req.query.config_file || ''
     };
 
     if (queryObject.link && queryObject.config_file) {
-        parseItem(queryObject, function (err, result) {
+        parseItem(queryObject, function(err, result) {
             if (err) {
                 console.log('Item parse page error ' + err);
                 res.json(result);
@@ -105,12 +107,12 @@ router.get('/parse', function (req, res, next) {
             }
         });
     } else {
-        mongoose.model('items_list').find(function (err, itemsList) {
+        mongoose.model('items_list').find(function(err, itemsList) {
             if (err || !itemsList) {
                 res.render('404');
             } else {
                 //res.render('/item_test', {'item': item});
-                res.render('item_parse', {items: itemsList, queryObject: queryObject, jsonObject: {}});
+                res.render('item_parse', { items: itemsList, queryObject: queryObject, jsonObject: {} });
             }
         });
     }
@@ -119,40 +121,47 @@ router.get('/parse', function (req, res, next) {
 function parseItem(queryObject, cb) {
     var file = new File();
     async.waterfall([
-        function (callback) {
-            mongoose.model('items_list').find(function (err, itemsList) {
+        function(callback) {
+            mongoose.model('items_list').find(function(err, itemsList) {
                 callback(err, itemsList);
             });
         },
-        function (itemsList, callback) {
+        function(itemsList, callback) {
             var itemConfigFile = new ItemConfig(queryObject.config_file);
-            itemConfigFile.getConfigFile(function (err, configFile) {
+            itemConfigFile.getConfigFile(function(err, configFile) {
                 callback(err, configFile, itemsList)
             });
         },
-        function (configFile, itemsList, callback) {
-            file.getFile('./item_page_saved/' + queryObject.config_file + '.html', function (err, pageFile) {
+        function(configFile, itemsList, callback) {
+            file.getFile('./item_page_saved/' + queryObject.config_file + '.html', function(err, pageFile) {
                 callback(null, pageFile, configFile, itemsList);
             });
         },
-        function (pageFile, configFile, itemsList, callback) {
+        function(pageFile, configFile, itemsList, callback) {
+            if (pageFile && queryObject.delete_file == 'true') {
+
+                file.deleteFile('./item_page_saved/' + queryObject.config_file + '.html', function(err) {
+                    pageFile = null;
+                    callback(null, pageFile, configFile, itemsList);
+                });
+
+            } else callback(null, pageFile, configFile, itemsList);
+        },
+        function(pageFile, configFile, itemsList, callback) {
             if (pageFile) {
 
                 var itemObject = new ItemHandler(configFile['item_fields'], Parser.getParsedHttpPage(pageFile));
 
                 itemObject.getItemAttributes();
-                itemObject.processPossibleValues(function () {
-
-                    /////save item
+                itemObject.processPossibleValues(function() {
                     var currentItem = new Items({
                         link: queryObject.link,
-                        name: 'dasdas',
                         attributes: itemObject.returnItemAttributes()
                     });
 
-                    currentItem.save(function (err) {
+                    currentItem.save(function(err) {
 
-                        if (err) console.log (err);
+                        if (err) console.log(err);
 
                         callback(null, {
                             'items': itemsList,
@@ -162,8 +171,10 @@ function parseItem(queryObject, cb) {
                         });
                     });
                 });
+
+
             } else {
-                Parser.getPageContent(queryObject.link, function (err, page) {
+                Parser.getPageContent(queryObject.link, function(err, page) {
 
 
                     var cheerio = require('cheerio');
@@ -176,14 +187,14 @@ function parseItem(queryObject, cb) {
 
                     page = $.html();
 
-                    file.saveFile('./item_page_saved/', queryObject.config_file + '.html', page, function () {
+                    file.saveFile('./item_page_saved/', queryObject.config_file + '.html', page, function() {
 
                         if (err || !page) {
-                            callback(err, {'status': 'fail'});
+                            callback(err, { 'status': 'fail' });
                         } else {
                             var itemObject = new ItemHandler(configFile['item_fields'], Parser.getParsedHttpPage(page));
                             itemObject.getItemAttributes();
-                            itemObject.processPossibleValues(function () {
+                            itemObject.processPossibleValues(function() {
                                 callback(err, {
                                     'items': itemsList,
                                     'jsonObject': itemObject.returnItemAttributes(),
@@ -195,7 +206,7 @@ function parseItem(queryObject, cb) {
                 });
             }
         }
-    ], function (err, result) {
+    ], function(err, result) {
         cb(err, result);
     });
 }

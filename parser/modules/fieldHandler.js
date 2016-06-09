@@ -59,7 +59,7 @@ FieldHandler.prototype.getNodesData = function() {
 
     });
 
-    if (self.modifiers) {
+    if (self.modifiers && nodeData) {
         nodeData = self.executeModifiers(nodeData);
     }
 
@@ -101,9 +101,11 @@ FieldHandler.prototype.executeModifiers = function(nodeData) {
 
     for (var i in this.modifiers) {
         for (var j in nodeData) {
-            if (this.modifiers_values) {
-                nodeData[j] = modifier[this.modifiers[i]](nodeData[j], this.modifiers_values[i]);
-            } else nodeData[j] = modifier[this.modifiers[i]](nodeData[j]);
+            if (nodeData[j]) {
+                if (this.modifiers_values) {
+                    nodeData[j] = modifier[this.modifiers[i]](nodeData[j], this.modifiers_values[i]);
+                } else nodeData[j] = modifier[this.modifiers[i]](nodeData[j]);
+            }
         }
 
     }
