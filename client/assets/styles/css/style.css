@@ -1330,7 +1330,7 @@ body.boxed .body{
 	-ms-transition:all 0.3s ease 0.2s;
 	-o-transition:all 0.3s ease 0.2s;
 	transition:all 0.3s ease 0.1s;
-	background:#fff;
+	background:white;
 	/*box-shadow:0 1px 0 rgba(0,0,0,.05);*/
 }
 .touch .site-header{
@@ -1986,6 +1986,7 @@ body.boxed .body{
 .top-header{
 	/*background:#252525;	*/
 	/*background:#f0f2fa;*/
+	background:white;
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 	height:40px;
 	line-height:40px;
