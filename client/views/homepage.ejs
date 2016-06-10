@@ -5,48 +5,48 @@
       <div class="accordion">
         <div class="panel panel-default">
           <div class="panel-heading" style="background-color: #e96c4c; padding-top: 5px; padding-bottom: 0;">
-            <h3 style="color:white; text-align: center;">Тип транспорта</h3>
+              <h3 style="color:white; text-align: center; font-size: 20px;">АВТО ПО ТИПУ ТРАНСПОРТА</h3>
           </div>
           <div class="panel-body">
 
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">431232</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
             <div class="accordion-group panel">
               <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
               </div>
             </div>
           </div>
@@ -71,11 +71,12 @@
           </div>
         </div>
         <div id="results-holder" class="results-grid-view">
-
+          <h3>Последние добавленные авто</h3>
           <% items.forEach(function(item, i) { %>
           <div class="result-item format-standard" style="height: 480px;">
             <div class="result-item-image">
-              <a href="vehicle-details.html" class="media-box"><img src="<%= item['attributes']['photo']['value'][0] %>" alt=""><span
+              <a href="vehicle-details.html" class="media-box"><img src="<%= item['attributes']['photo']['value'][0] %>"
+                                                                    alt=""><span
                   class="zoom"><span class="icon"><i class="icon-plus"></i></span></span></a>
               <span class="label label-default vehicle-age">2012</span>
               <div class="result-item-view-buttons">
@@ -85,7 +86,8 @@
               </div>
             </div>
             <div class="result-item-in">
-              <h4 class="result-item-title"><a href="vehicle-details.html"><%= item['attributes']['page_heading']['value'][0] %></a></h4>
+              <h4 class="result-item-title"><a
+                  href="vehicle-details.html"><%= item['attributes']['page_heading']['value'][0] %></a></h4>
               <div class="result-item-cont">
                 <div class="result-item-block col1">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec
@@ -107,8 +109,8 @@
                   <li><i class="fa fa-caret-right"></i> 4 door Sedan</li>
                   <li><i class="fa fa-caret-right"></i> 6 cyl, 3.0 L Petrol</li>
                   <li><i class="fa fa-caret-right"></i> 6 speed Automatic</li>
-            <!--      <li><i class="fa fa-caret-right"></i> 4x4 Wheel Drive</li>
-                  <li><i class="fa fa-caret-right"></i> Listed by Individual</li>-->
+                  <!--      <li><i class="fa fa-caret-right"></i> 4x4 Wheel Drive</li>
+                        <li><i class="fa fa-caret-right"></i> Listed by Individual</li>-->
                 </ul>
               </div>
             </div>
@@ -154,69 +156,73 @@
   </div>
 
   <div class="col-md-12">
-    <div class="tabs">
-      <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#0">АВТО ПО ГОРОДАМ</a></li>
-      </ul>
-      <div class="tab-content">
-        <div id="0" class="tab-pane active">
-          <div class="container">
-            <div class="row">
+    <div class="panel with-nav-tabs panel-default">
+      <div class="panel-heading" style="background-color: #e96c4c;">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab1default" data-toggle="tab">АВТО ПО ГОРОДАМ</a></li>
+          <li><a href="#tab2default" data-toggle="tab">АВТО ПО МАРКАМ</a></li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab1default">
 
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+            <div class="row cities-row">
+
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                <a href="#">ОДЕССА</a>
+              </div>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13124</span>
+                <a href="#">ИВАНО-ФРАНКОВСК </a>
+              </div>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13213124</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
-                <a href="#">1Cras justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">444314</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">1421</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">142</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13214</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14322</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge color" style="float: right;">14</span>
+              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
                 <a href="#">1Cras justo justo justo </a>
               </div>
             </div>
+
           </div>
-
+          <div class="tab-pane fade" id="tab2default">Default 2</div>
         </div>
-
       </div>
     </div>
-    <section class="spacer-30"></section>
   </div>
+</div>
 
 
 </div>
