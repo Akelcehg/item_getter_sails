@@ -10,7 +10,7 @@ module.exports = {
   index: function (req, res) {
     Items.getLatestItems({
       itemsLimit: 6
-    }, function (err, items) {      
+    }, function (err, items) {
       if (err) {
         return res.notFound("Couldn't find latest Items");
       } else return res.view("homepage", {items: items});
