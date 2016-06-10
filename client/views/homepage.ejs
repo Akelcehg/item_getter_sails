@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="col-md-12">
-    <div class="col-md-3 search-filters" id="Search-Filters">
+    <div class="col-md-3 search-filters">
       <div class="accordion">
         <div class="panel panel-default">
           <div class="panel-heading" style="background-color: #e96c4c; padding-top: 5px; padding-bottom: 0;">
@@ -73,7 +73,7 @@
         <div id="results-holder" class="results-grid-view">
 
           <% items.forEach(function(item, i) { %>
-          <div class="result-item format-standard" style="height: 475px;">
+          <div class="result-item format-standard" style="height: 480px;">
             <div class="result-item-image">
               <a href="vehicle-details.html" class="media-box"><img src="<%= item['attributes']['photo']['value'][0] %>" alt=""><span
                   class="zoom"><span class="icon"><i class="icon-plus"></i></span></span></a>
