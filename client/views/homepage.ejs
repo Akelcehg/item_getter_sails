@@ -1,6 +1,5 @@
 <div class="container">
-
-
+ 
   <div class="col-md-12">
     <div class="col-md-3 search-filters" id="Search-Filters">
 
@@ -37,145 +36,57 @@
             <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
           </div>
         </div>
+        <div class="accordion-group panel">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+          </div>
+        </div>
+        <div class="accordion-group panel">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge right">42</span> </a>
+          </div>
+        </div>
 
       </div>
 
       <!--<a href="#" class="btn-default btn-sm btn"><i class="fa fa-refresh"></i> Reset search</a>
       <a href="#" class="btn-primary btn-sm btn"><i class="fa fa-folder-o"></i> Save search</a>-->
-
     </div>
     <div class="col-md-9">
       <section class="listing-block recent-vehicles">
         <div class="listing-header">
           <h3>Recently Listed Vehicles</h3>
         </div>
+
+        <% items.forEach(function(item, i) { %>
         <div class="col-md-4">
           <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
+            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box">
+              <img src="<%= item['attributes']['photo']['value'][0] %>"
+                   class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
+                   srcset="<%= item['attributes']['photo']['value'][0] %> 600w, <%= item['attributes']['photo']['value'][0] %> 300w"
+                   sizes="(max-width: 600px) 100vw, 600px"><span class="zoom">
+                <span class="icon"><i class="icon-plus"></i></span></span></a>
             <div class="vehicle-block-content">
               <span class="label label-default vehicle-age">2009</span><span
                 class="label label-success premium-listing">Brand New</span>
               <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
+                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">
+<%= item['attributes']['page_heading']['value'][0] %>
+                </a></h5>
+              <span class="vehicle-meta">Mazda, Gold,  by <abbr
                   class="user-type" title="Listed by Dealer">Dealer</abbr></span>
                <span
-                class="vehicle-cost">$80000</span>
+                 class="vehicle-cost">$80000</span>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
-            <div class="vehicle-block-content">
-              <span class="label label-default vehicle-age">2009</span><span
-                class="label label-success premium-listing">Brand New</span>
-              <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
-                  class="user-type" title="Listed by Dealer">Dealer</abbr></span>
-              <span
-                class="vehicle-cost">$80000</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
-            <div class="vehicle-block-content">
-              <span class="label label-default vehicle-age">2009</span><span
-                class="label label-success premium-listing">Brand New</span>
-              <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
-                  class="user-type" title="Listed by Dealer">Dealer</abbr></span>
-              <span
-                class="vehicle-cost">$80000</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
-            <div class="vehicle-block-content">
-              <span class="label label-default vehicle-age">2009</span><span
-                class="label label-success premium-listing">Brand New</span>
-              <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
-                  class="user-type" title="Listed by Dealer">Dealer</abbr></span>
-              <span
-                class="vehicle-cost">$80000</span>
-            </div>
-          </div>
-        </div>
+        <% }); %>
 
-        <div class="col-md-4">
-          <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
-            <div class="vehicle-block-content">
-              <span class="label label-default vehicle-age">2009</span><span
-                class="label label-success premium-listing">Brand New</span>
-              <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
-                  class="user-type" title="Listed by Dealer">Dealer</abbr></span>
-              <span
-                class="vehicle-cost">$80000</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="vehicle-block format-standard">
-            <a href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/" class="media-box"><img
-                src="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg"
-                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="car6"
-                srcset="http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61.jpg 600w, http://preview.imithemes.com/autostars-wp/wp-content/uploads/2015/05/car61-300x200.jpg 300w"
-                sizes="(max-width: 600px) 100vw, 600px"><span class="zoom"><span class="icon"><i
-                    class="icon-plus"></i></span></span></a>
-            <div class="vehicle-block-content">
-              <span class="label label-default vehicle-age">2009</span><span
-                class="label label-success premium-listing">Brand New</span>
-              <h5 class="vehicle-title"><a
-                  href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">Mazda
-                  Mazda 3 Brand New </a></h5>                                                <span class="vehicle-meta">Mazda, Gold,  by <abbr
-                  class="user-type" title="Listed by Dealer">Dealer</abbr></span>
-             <span
-                class="vehicle-cost">$80000</span>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   </div>
 
-
-  <section class="spacer-60"></section>
 
   <div class="col-md-12">
     <div class="tabs">

@@ -8,8 +8,13 @@
 module.exports = {
 
   index: function (req, res) {
-
-    return res.view("homepage");
+    Items.getLatestItems({
+      itemsLimit: 6
+    }, function (err, items) {      
+      if (err) {
+        return res.notFound("Couldn't find latest Items");
+      } else return res.view("homepage", {items: items});
+    });
   }
 
 };

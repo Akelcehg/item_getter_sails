@@ -8,7 +8,26 @@
 module.exports = {
 
   attributes: {
+    link: 'string',
+    name: 'string',
+    itemId: 'integer',
+    createdAt: {type: 'date'},
+    attributes: 'json'
+  },
+
+  getLatestItems: function (opts, cb) {
+
+    var defaultItemsLimit = 6,
+      itemsLimit = opts.itemsLimit || defaultItemsLimit;
+
+    var query = Items.find();
+    query.limit(itemsLimit);
+    query.sort('createdAt DESC');
+    query.exec(function (err, data) {
+      cb(err, data);
+    });
 
   }
+
 };
 

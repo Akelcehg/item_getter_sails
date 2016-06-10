@@ -1,34 +1,14 @@
     <div class="site-header-wrapper">
-        <header class="site-header">
+        <!-- Top Header -->
+           <header class="top-header mmenu">
             <div class="container sp-cont">
-                <div class="site-logo">
-                    <h1><a href="index.html"><img src="images/logo.png" alt="Logo"></a></h1>
-                    <!-- <span class="site-tagline">Buying or Selling,<br>just got easier!</span> -->
-                </div>
-                <div class="header-right">
-                    <div class="user-login-panel">
-                        <a href="#" class="user-login-btn" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i></a>
-                    </div>
-                    <div class="topnav dd-menu">
-                        <ul class="top-navigation sf-menu">
-                            <li><a href="results-list.html">Buy</a></li>
-                            <li><a href="add-listing-pricing.html">Sell</a></li>
-                            <li><a href="joinus.html">Join</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- End Site Header -->
-        <div class="navbar">
-            <div class="container sp-cont">
-                <div class="search-function">
-                    <a href="#" class="search-trigger"><i class="fa fa-search"></i></a>
-                    <span><i class="fa fa-phone"></i> Call us <strong>1800 011 2211</strong> <em>or</em> search</span>
-                </div>
-                <a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
-                <!-- Main Navigation -->
-                <nav class="main-navigation dd-menu toggle-menu" role="navigation">
+                <ul class="pull-right social-icons social-icons-colored">
+                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <div class="dd-menu toggle-menu">
                     <ul class="sf-menu">
                         <li><a href="javascript:void(0)">Home</a>
                             <ul class="dropdown">
@@ -43,7 +23,8 @@
                                     <ul class="dropdown">
                                         <li><a href="index.html">Default(Flexslider)</a></li>
                                         <li><a href="index-revslider.html">Slider Revolution <span class="label label-danger">New</span></a></li>
-                                        <li><a href="hero-carousel.html">Full Width Carousel</a></li>
+                                        <li><a href="banner-slider.html">Banner Slider</a></li>
+                                        <li><a href="hero-carousel.html">Full Screen Carousel</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="javascript:void(0)">Search Form Positions</a>
@@ -72,8 +53,8 @@
                                 <li><a href="add-listing-pricing.html">Pricing</a></li>
                                 <li><a href="shortcodes.html">Shortcodes</a></li>
                                 <li><a href="typography.html">Typography</a></li>
-                                <li><a href="dealers-search.html">Dealer Search</a></li>
-                                <li><a href="dealers-search-results.html">Dealer Search Results</a></li>
+                                <li><a href="dealer-search.html">Dealer Search</a></li>
+                                <li><a href="dealer-search-results.html">Dealer Search Results</a></li>
                             </ul>
                         </li>
                         <li class="megamenu"><a href="index.html">Mega Menu</a>
@@ -160,159 +141,32 @@
                             </ul>
                         </li>
                     </ul>
-                </nav>
-                <!-- Search Form -->
-                <div class="search-form">
-                    <div class="search-form-inner">
-                        <form>
-                            <h3>Find a Car with our Quick Search</h3>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Postcode</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Body Type</label>
-                                            <select name="Body Type" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>Wagon</option>
-                                                <option>Minivan</option>
-                                                <option>Coupe</option>
-                                                <option>Crossover</option>
-                                                <option>Van</option>
-                                                <option>SUV</option>
-                                                <option>Minicar</option>
-                                                <option>Sedan</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Make</label>
-                                            <select name="Make" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>Jaguar</option>
-                                                <option>BMW</option>
-                                                <option>Mercedes</option>
-                                                <option>Porsche</option>
-                                                <option>Nissan</option>
-                                                <option>Mazda</option>
-                                                <option>Acura</option>
-                                                <option>Audi</option>
-                                                <option>Bugatti</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Model</label>
-                                            <select name="Model" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>GTX</option>
-                                                <option>GTR</option>
-                                                <option>GTS</option>
-                                                <option>RLX</option>
-                                                <option>M6</option>
-                                                <option>S Class</option>
-                                                <option>C Class</option>
-                                                <option>B Class</option>
-                                                <option>A Class</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> Brand new only
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" id="inlineCheckbox2" value="option2"> Certified
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Min Year</label>
-                                            <select name="Min Year" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>2005</option>
-                                                <option>2006</option>
-                                                <option>2007</option>
-                                                <option>2008</option>
-                                                <option>2009</option>
-                                                <option>2010</option>
-                                                <option>2011</option>
-                                                <option>2012</option>
-                                                <option>2013</option>
-                                                <option>2014</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Max Year</label>
-                                            <select name="Max Year" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>2005</option>
-                                                <option>2006</option>
-                                                <option>2007</option>
-                                                <option>2008</option>
-                                                <option>2009</option>
-                                                <option>2010</option>
-                                                <option>2011</option>
-                                                <option>2012</option>
-                                                <option>2013</option>
-                                                <option>2014</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Min Mileage</label>
-                                            <select name="Min Mileage" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>10000</option>
-                                                <option>20000</option>
-                                                <option>30000</option>
-                                                <option>40000</option>
-                                                <option>50000</option>
-                                                <option>60000</option>
-                                                <option>70000</option>
-                                                <option>80000</option>
-                                                <option>90000</option>
-                                                <option>100000</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Max Mileage</label>
-                                            <select name="Max Mileage" class="form-control selectpicker">
-                                                <option selected>Any</option>
-                                                <option>10000</option>
-                                                <option>20000</option>
-                                                <option>30000</option>
-                                                <option>40000</option>
-                                                <option>50000</option>
-                                                <option>60000</option>
-                                                <option>70000</option>
-                                                <option>80000</option>
-                                                <option>90000</option>
-                                                <option>100000</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="submit" class="btn btn-block btn-info btn-lg" value="Find my vehicle now">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                </div>
+                <a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
+            </div>
+        </header>
+        <!-- Site Main Header -->
+        <header class="site-header">
+            <div class="container sp-cont">
+                <div class="site-logo">
+                    <h1><a href="index.html"><img src="images/logo.png" alt="Logo"></a></h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-login-panel">
+                        <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#loginModal">Login</a>
+                        <a href="joinus.html" class="btn btn-primary btn-sm">SignUp</a>
                     </div>
+                    <form class="search-form-minimal hidden-xs hidden-sm">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" size="40" placeholder="Enter model, make, zipcode etc. to search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Search!</button>
+                            </span>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
+        </header>
+     
+        <!-- End Site Header -->
     </div>
-    

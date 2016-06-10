@@ -1,8 +1,8 @@
 /*------------------------------------------------------------------
 [Master Stylesheet]
 Project:	AutoStars
-Version:	1.0
-Last change:	01/15/15
+Version:	1.1
+Last change:	02/17/15
 Author:	imithemes 
 -------------------------------------------------------------------*/
 /* Stylesheets and Google fonts import */
@@ -705,7 +705,7 @@ p.meta-data{
 	height:28px;
 	text-align:center;
 	line-height:28px;
-	color:#ccc;
+	color:white;
 	display:block;
 	text-decoration:none;
 	border:none;
@@ -715,19 +715,24 @@ p.meta-data{
 .social-icons-colored li a:hover{
 	color:#fff;
 }
-.social-icons-colored li.facebook a:hover{
+/*.social-icons-colored li.facebook a:hover{*/
+.social-icons-colored li.facebook {
 	background:#3B5998;
 }
-.social-icons-colored li.twitter a:hover{
+/*.social-icons-colored li.twitter a:hover{*/
+.social-icons-colored li.twitter {
 	background:#00ACED;
 }
-.social-icons-colored li.behance a:hover{
+/*.social-icons-colored li.behance a:hover{*/
+.social-icons-colored li.behance {
 	background:#1769FF;
 }
-.social-icons-colored li.delicious a:hover{
+/*.social-icons-colored li.delicious a:hover{*/
+.social-icons-colored li.delicious {
 	background:#3274D1;
 }
-.social-icons-colored li.deviantart a:hover{
+/*.social-icons-colored li.deviantart a:hover{*/
+.social-icons-colored li.deviantart {
 	background:#4B5D50;
 }
 .social-icons-colored li.digg a:hover{
@@ -742,10 +747,12 @@ p.meta-data{
 .social-icons-colored li.github a:hover{
 	background:#4183C4;
 }
-.social-icons-colored li.google a:hover{
+/*.social-icons-colored li.google a:hover{*/
+.social-icons-colored li.google {
 	background:#245DC1;
 }
-.social-icons-colored li.googleplus a:hover{
+/*.social-icons-colored li.googleplus a:hover{*/
+.social-icons-colored li.googleplus {
 	background:#D14836;
 }
 .social-icons-colored li.instagram a:hover{
@@ -754,7 +761,8 @@ p.meta-data{
 .social-icons-colored li.jsfiddle a:hover{
 	background:#4679A4;
 }
-.social-icons-colored li.linkedin a:hover{
+/*.social-icons-colored li.linkedin a:hover{*/
+.social-icons-colored li.linkedin {
 	background:#007FB1;
 }
 .social-icons-colored li.pinterest a:hover{
@@ -1268,7 +1276,7 @@ body{
 	overflow-x:hidden;
 }
 .body{
-	padding-top:125px;
+	/*padding-top:125px;*/
 }
 body.boxed{
 	background-color:#666;
@@ -1289,7 +1297,7 @@ body.boxed .body{
 	background:none;
 }
 .site-header-wrapper{
-	position:fixed;
+	/*position:fixed;*/
 	width:100%;
 	z-index:999;
 	left:0;
@@ -1323,7 +1331,7 @@ body.boxed .body{
 	-o-transition:all 0.3s ease 0.2s;
 	transition:all 0.3s ease 0.1s;
 	background:#fff;
-	box-shadow:0 1px 0 rgba(0,0,0,.05);
+	/*box-shadow:0 1px 0 rgba(0,0,0,.05);*/
 }
 .touch .site-header{
 	-webkit-transition:none;
@@ -1887,7 +1895,7 @@ body.boxed .body{
 	top:-54px;
 	margin-bottom:-54px;
 }
-.header-v3 .hero-area, .header-v2 .hero-area, , .header-v4 .hero-area{
+.header-v3 .hero-area, .header-v2 .hero-area, .header-v4 .hero-area{
 	top:0;
 	margin-bottom:0;
 }
@@ -1976,7 +1984,9 @@ body.boxed .body{
 }
 /* Header v3 */
 .top-header{
-	background:#252525;
+	/*background:#252525;	*/
+	background:#f0f2fa;	
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 	height:40px;
 	line-height:40px;
 }
@@ -1993,7 +2003,7 @@ body.boxed .body{
 	line-height:40px;
 	font-size:13px;
 	text-transform:uppercase;
-	color:#999;
+	color:#414042;
 	display:block;
 	letter-spacing:1px;
 }
@@ -2005,6 +2015,15 @@ body.boxed .body{
 }
 .top-header .dd-menu > ul > li.megamenu > ul{
 	top:100%;
+}
+.header-v3 .header-right{
+	float:none;
+}
+.header-v3 .search-form-minimal{
+	width:50%;
+}
+.header-v3 .body{
+	/*padding-top:115px;*/
 }
 
 /* Header v4 */
@@ -2803,6 +2822,9 @@ h1.page-title{
 	background:#eee;
 	border-bottom:1px solid #eee;
 	padding:15px 0;
+}
+.is-sticky .actions-bar{
+	width:100%;
 }
 .listing-sort-btn{
 	font-weight:normal;
@@ -4238,6 +4260,36 @@ h1.page-title{
 	margin-bottom:10px;
 	padding-bottom:7px;
 }
+/* Start Added in v1.1 */
+.widget li.list-group-item{
+	margin-bottom:0;
+	border-bottom:0;
+}
+@media print {.single-vehicle-details .recent-vehicles, .calculator-widget, .seller-contact-widget, .additional-images, .single-listing-actions, .badge-premium-listing, .utility-bar, .page-header, .header-right, .navbar, .site-footer{
+	display:none;
+}
+.list-group{
+	max-width:100%;
+}
+body{
+	overflow-x:visible;
+}
+}
+.tp-banner-container{
+	width:100%;
+	position:relative;
+	padding:0;
+}
+.tp-banner{
+	width:100%;
+	position:relative;
+}
+.tp-banner-fullscreen-container {
+	width:100%;
+	position:relative;
+	padding:0;
+}
+/* End Added in v1.1 */
 .widget_categories ul li{
 	color:#ccc;
 	font-size:12px;
@@ -4344,6 +4396,9 @@ h1.page-title{
 .twitter-widget ul{
 	margin:0;
 	list-style-type:none;
+}
+.twitter-widget ul li{
+	margin:7px 0;
 }
 #back-to-top{
 	position:fixed;
@@ -4990,39 +5045,6 @@ h1.page-title{
 .pricing-table.two-cols > div {
 	width: 50%;
 }
-/* Start Added in v1.1 */
-.widget li.list-group-item{
-	margin-bottom:0;
-	border-bottom:0;
-}
-.is-sticky .actions-bar{
-	width:100%;
-}
-@media print {.single-vehicle-details .recent-vehicles, .calculator-widget, .seller-contact-widget, .additional-images, .single-listing-actions, .badge-premium-listing, .utility-bar, .page-header, .header-right, .navbar, .site-footer{
-	display:none;
-}
-.list-group{
-	max-width:100%;
-}
-body{
-	overflow-x:visible;
-}
-}
-.tp-banner-container{
-	width:100%;
-	position:relative;
-	padding:0;
-}
-.tp-banner{
-	width:100%;
-	position:relative;
-}
-.tp-banner-fullscreen-container {
-		width:100%;
-		position:relative;
-		padding:0;
-}
-/* End Added in v1.1 */
 /* ==================================================
    7. Responsive Media Queries
 ================================================== */
@@ -5670,4 +5692,21 @@ body{
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
 	
+}
+
+@media only screen and (max-width: 767px) {
+    .is-sticky .actions-bar {
+        top: 0 !important;
+        z-index: 999999999;
+    }
+
+    #Search-Filters {
+        position: relative;
+        z-index: 999;
+        width: 100%;
+        background: #FFF;
+        height: 100%;
+        overflow: auto;
+        top: 69px !important;
+    }
 }
