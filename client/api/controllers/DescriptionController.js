@@ -8,7 +8,9 @@
 module.exports = {
 
   index: function (req, res) {
-    return res.view("description");
+    Items.getLatestItems({itemsLimit: 1}, function (err, item) {
+      return res.view("description", {item: item[0]});
+    });
   }
 
 };

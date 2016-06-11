@@ -36,16 +36,18 @@ div.search-form-inner.main-page {
 .row.cities-row a:hover {
   text-decoration: underline;
 }
-.transport-type{
+
+.transport-type {
   color: #256799;
   border: 0;
   position: relative;
   display: block;
   padding: 10px 0;
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 0;
 }
+
 .row.cities-row a {
   /*color: #414042;*/
   color: #256799;
