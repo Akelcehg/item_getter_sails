@@ -10,16 +10,16 @@ var AUTOSTARS = window.AUTOSTARS || {};
 		$('.contact-form').each(function(){
 			var formInstance = $(this);
 			formInstance.submit(function(){
-		
+
 			var action = $(this).attr('action');
-		
+
 			$("#message").slideUp(750,function() {
 			$('#message').hide();
-		
+
 			$('#submit')
 				.after('<img src="images/assets/ajax-loader.gif" class="loader" />')
 				.attr('disabled','disabled');
-		
+
 			$.post(action, {
 				fname: $('#fname').val(),
 				lname: $('#lname').val(),
@@ -33,7 +33,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 					$('.contact-form img.loader').fadeOut('slow',function(){$(this).remove()});
 					$('#submit').removeAttr('disabled');
 					if(data.match('success') != null) $('.contact-form').slideUp('slow');
-		
+
 				}
 			);
 			});
@@ -47,22 +47,22 @@ var AUTOSTARS = window.AUTOSTARS || {};
 	AUTOSTARS.scrollToTop = function(){
 		var windowWidth = $(window).width(),
 			didScroll = false;
-	
+
 		var $arrow = $('#back-to-top');
-	
+
 		$arrow.on("click", function(e) {
 			$('body,html').animate({ scrollTop: "0" }, 750, 'easeOutExpo' );
 			e.preventDefault();
 		})
-	
+
 		$(window).scroll(function() {
 			didScroll = true;
 		});
-	
+
 		setInterval(function() {
 			if( didScroll ) {
 				didScroll = false;
-	
+
 				if( $(window).scrollTop() > 200 ) {
 					$arrow.fadeIn();
 				} else {
@@ -76,15 +76,15 @@ var AUTOSTARS = window.AUTOSTARS || {};
 ================================================== */
 	AUTOSTARS.accordion = function(){
 		var accordion_trigger = $('.accordion-heading.accordionize');
-		
+
 		accordion_trigger.delegate('.accordion-toggle','click', function(event){
 			if($(this).hasClass('active')){
 				$(this).removeClass('active');
 				$(this).addClass('inactive');
 			}
 			else{
-				accordion_trigger.find('.active').addClass('inactive');          
-				accordion_trigger.find('.active').removeClass('active');   
+				accordion_trigger.find('.active').addClass('inactive');
+				accordion_trigger.find('.active').removeClass('active');
 				$(this).removeClass('inactive');
 				$(this).addClass('active');
 			}
@@ -96,7 +96,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 ================================================== */
 	AUTOSTARS.toggle = function(){
 		var accordion_trigger_toggle = $('.accordion-heading.togglize');
-		
+
 		accordion_trigger_toggle.delegate('.accordion-toggle','click', function(event){
 			if($(this).hasClass('active')){
 				$(this).removeClass('active');
@@ -112,12 +112,12 @@ var AUTOSTARS = window.AUTOSTARS || {};
 /* ==================================================
    Tooltip
 ================================================== */
-	AUTOSTARS.toolTip = function(){ 
-		$('a[data-toggle=tooltip]').tooltip(); 
+	AUTOSTARS.toolTip = function(){
 		$('a[data-toggle=tooltip]').tooltip();
-		$('a[data-toggle=popover]').popover({html:true}).on("click", function(e) { 
-       		e.preventDefault(); 
-       		$(this).focus(); 
+		$('a[data-toggle=tooltip]').tooltip();
+		$('a[data-toggle=popover]').popover({html:true}).on("click", function(e) {
+       		e.preventDefault();
+       		$(this).focus();
 		});
 	}
 /* ==================================================
@@ -125,7 +125,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 ================================================== */
 	AUTOSTARS.TwitterWidget = function() {
 		$('.twitter-widget').each(function(){
-			var twitterInstance = $(this); 
+			var twitterInstance = $(this);
 			var twitterTweets = twitterInstance.attr("data-tweets-count") ? twitterInstance.attr("data-tweets-count") : "1"
 			twitterInstance.twittie({
             	dateFormat: '%b. %d, %Y',
@@ -140,7 +140,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 ================================================== */
 /*	AUTOSTARS.heroflex = function() {
 		$('.heroflex').each(function(){
-				var carouselInstance = $(this); 
+				var carouselInstance = $(this);
 				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
 				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
 				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
@@ -148,20 +148,20 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
 				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
 				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
+
 				carouselInstance.flexslider({
 					animation: carouselStyle,
-					easing: "swing",               
-					direction: carouselDirection,       
-					slideshow: carouselAutoplay,              
-					slideshowSpeed: carouselSpeed,         
-					animationSpeed: 600,         
-					initDelay: 0,              
-					randomize: false,            
-					pauseOnHover: carouselPause,       
-					controlNav: carouselPagination,           
-					directionNav: carouselArrows,            
-					prevText: "",         
+					easing: "swing",
+					direction: carouselDirection,
+					slideshow: carouselAutoplay,
+					slideshowSpeed: carouselSpeed,
+					animationSpeed: 600,
+					initDelay: 0,
+					randomize: false,
+					pauseOnHover: carouselPause,
+					controlNav: carouselPagination,
+					directionNav: carouselArrows,
+					prevText: "",
 					nextText: ""
 				});
 		});
@@ -171,7 +171,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 ================================================== */
 	AUTOSTARS.galleryflex = function() {
 		$('.galleryflex').each(function(){
-				var carouselInstance = $(this); 
+				var carouselInstance = $(this);
 				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
 				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
 				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
@@ -179,20 +179,20 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
 				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
 				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
+
 				carouselInstance.flexslider({
 					animation: carouselStyle,
-					easing: "swing",               
-					direction: carouselDirection,       
-					slideshow: carouselAutoplay,              
-					slideshowSpeed: carouselSpeed,         
-					animationSpeed: 600,         
-					initDelay: 0,              
-					randomize: false,            
-					pauseOnHover: carouselPause,       
-					controlNav: carouselPagination,           
-					directionNav: carouselArrows,            
-					prevText: "",          
+					easing: "swing",
+					direction: carouselDirection,
+					slideshow: carouselAutoplay,
+					slideshowSpeed: carouselSpeed,
+					animationSpeed: 600,
+					initDelay: 0,
+					randomize: false,
+					pauseOnHover: carouselPause,
+					controlNav: carouselPagination,
+					directionNav: carouselArrows,
+					prevText: "",
 					nextText: ""
 				});
 		});
@@ -200,9 +200,9 @@ var AUTOSTARS = window.AUTOSTARS || {};
 /* ==================================================
    Owl Carousel
 ================================================== */
-	/*AUTOSTARS.OwlCarousel = function() {
+	AUTOSTARS.OwlCarousel = function() {
 		$('.owl-carousel').each(function(){
-				var carouselInstance = $(this); 
+				var carouselInstance = $(this);
 				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
 				var carouselitemsDesktop = carouselInstance.attr("data-items-desktop") ? carouselInstance.attr("data-items-desktop") : "4"
 				var carouselitemsDesktopSmall = carouselInstance.attr("data-items-desktop-small") ? carouselInstance.attr("data-items-desktop-small") : "3"
@@ -213,7 +213,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
 				var carouselSingle = carouselInstance.attr("data-single-item") == 'yes' ? true : false
 				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				
+
 				carouselInstance.owlCarousel({
 					items: carouselColumns,
 					autoPlay : carouselAutoplay,
@@ -230,7 +230,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 					transitionStyle: 'carouselStyle'
 				});
 		});
-	}*/
+	}
 /* ==================================================
    PrettyPhoto
 ================================================== */
@@ -299,7 +299,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				}
 				else {
 				}
-				
+
 				//Updates scroll position
 				lastScroll = st;
 			});
@@ -307,8 +307,8 @@ var AUTOSTARS = window.AUTOSTARS || {};
 		if( $(window).width() > 992 ) {
 			menuScroll();
 		}
-				
-	
+
+
 		setInterval(function() {
 			if( $(window).scrollTop() > 30 ) {
 				$header.addClass('sticky-header');
@@ -316,7 +316,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				$header.removeClass('sticky-header');
 			}
 		}, 250);
-		
+
 	}
 /* ==================================================
 	Responsive Nav Menu
@@ -347,7 +347,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 /* ==================================================
    IsoTope Portfolio
 ================================================== */
-		AUTOSTARS.IsoTope = function() {	
+		AUTOSTARS.IsoTope = function() {
 		$("ul.sort-source").each(function() {
 
 			var source = $(this);
@@ -419,12 +419,12 @@ var AUTOSTARS = window.AUTOSTARS || {};
 				itemSelector: ".grid-item",
 				layoutMode: 'sloppyMasonry'
 			});
-			if ($(".grid-holder").length > 0){	
+			if ($(".grid-holder").length > 0){
 				var $container_blog = $('.grid-holder');
 				$container_blog.isotope({
 				itemSelector : '.grid-item'
 				});
-		
+
 				$(window).resize(function() {
 				var $container_blog = $('.grid-holder');
 				$container_blog.isotope({
@@ -437,25 +437,25 @@ var AUTOSTARS = window.AUTOSTARS || {};
 /* ==================================================
    IsoTope Portfolio
 ================================================== */
-/*		AUTOSTARS.Password = function() {		
+/*		AUTOSTARS.Password = function() {
 			var $input = $('.password-input');
 			var $output = $('.password-output');
-		
+
 			$.passy.requirements.length.min = 4;
-		
-			var feedback = [ 
+
+			var feedback = [
 				{ width: '20%', color: '#d9534f' },
 				{ width: '50%', color: '#f0ad4e' },
 				{ width: '80%', color: '#5bc0de' },
 				{ width: '100%', color: '#5cb85c' }
 		   ];
-		
+
 			$input.passy(function(strength, valid) {
 				$output.css('background-color', feedback[strength].color);
 				$output.css('width', feedback[strength].width);
-				
+
 			});
-		
+
 			$('.password-generate').on("click", function() {
 				$input.passy('generate', 8);
 			});
@@ -464,13 +464,13 @@ var AUTOSTARS = window.AUTOSTARS || {};
 /* ==================================================
    Search Results Listing
 ================================================== */
-		AUTOSTARS.RESULTS = function() {	
+		AUTOSTARS.RESULTS = function() {
 			var $tallestCol;
 			$('#results-holder').each(function(){
 			   $tallestCol = 0;
 			   $(this).find('.result-item').each(function(){
 					($(this).height() > $tallestCol) ? $tallestCol = $(this).height() : $tallestCol = $tallestCol;
-				});   
+				});
 				if($tallestCol == 0) $tallestCol = 'auto';
 				$(".result-item").css('height',$tallestCol);
 			});
@@ -484,7 +484,7 @@ var AUTOSTARS = window.AUTOSTARS || {};
 			$tallestCol = 0;
 			$(this).find('> div .features').each(function(){
 				($(this).height() > $tallestCol) ? $tallestCol = $(this).height() : $tallestCol = $tallestCol;
-			});	
+			});
 			if($tallestCol == 0) $tallestCol = 'auto';
 			$(this).find('> div .features').css('height',$tallestCol);
 		});
@@ -500,7 +500,7 @@ $(document).ready(function(){
 	AUTOSTARS.toolTip();
 	AUTOSTARS.TwitterWidget();
 	AUTOSTARS.galleryflex();
-	//AUTOSTARS.OwlCarousel();
+	AUTOSTARS.OwlCarousel();
 	AUTOSTARS.PrettyPhoto();
 	AUTOSTARS.SuperFish();
 	AUTOSTARS.Counters();
@@ -531,12 +531,12 @@ $(document).ready(function(){
 		$(".tbsticky").sticky({topSpacing:soffset, bottomSpacing: boffset});
 		$(".tbssticky").sticky({topSpacing:goffset, bottomSpacing: boffset});
 	}
-	
+
 	$('.dropdown-toggle.selectpicker').on("click",function(e){
 		$('.bootstrap-select .dropdown-menu').css("visibility", "visible");
 		e.preventDefault;
 	});
-	
+
 	// Add Listing Form Page
 	$(".listing-form-steps li").on("click", function(){
 		$(this).removeClass("completed");
@@ -565,7 +565,7 @@ $(document).ready(function(){
 	$('.listing-add-form .noregisteredv').on("click", function() {
 		$(".registration-details").slideUp();
 	});
-	
+
 	// Listing Page
 	$(".toggle-make a").on("click", function(){
 		$(".by-type-options").slideToggle();
@@ -611,42 +611,42 @@ $(document).ready(function(){
 		GridViewStopFunction();
 		return false;
 	});
-	
+
 	$("#results-list-view").on("click", function(){
 		$(".waiting").fadeIn();
 		ListViewFunction();
 		ListViewStopFunction();
 		return false;
 	});
-	
+
 	if($("#results-holder").hasClass("results-grid-view")){
 		AUTOSTARS.RESULTS();
 	}
 	//* Advanced Search Trigger
-	$('.search-advanced-trigger').on("click", function() {	
+	$('.search-advanced-trigger').on("click", function() {
 		if ($(this).hasClass('advanced')) {
 			$(this).removeClass('advanced');
 			$(".advanced-search-row").slideDown();
 			$(this).html('Basic Search <i class="fa fa-arrow-up"></i>');
 		} else {
-			
+
 			$(this).addClass('advanced');
 			$(".advanced-search-row").slideUp();
 			$(this).html('Advanced Search <i class="fa fa-arrow-down"></i>');
-		}	
+		}
 		return false;
 	});
-	
+
 	$("#Show-Filters").on("click", function(){
 		$("#Search-Filters").slideToggle();
 	});
-	
+
 	// Tabs deep linking
 	$('a[data-toggle="tab"]').on("click", function(e) {
 		e.preventDefault();
 		$('a[href="' + $(this).attr('href') + '"]').tab('show');
 	});
-	
+
 	// Vehicle Details Clone
 	$( ".badge-premium-listing" ).clone().appendTo( ".single-listing-actions" );
 });
@@ -741,7 +741,7 @@ $("[data-appear-progress-animation]").each(function() {
 // Parallax Jquery Callings
 if(!Modernizr.touch) {
 	$(window).on('load', function () {
-		parallaxInit();						  
+		parallaxInit();
 	});
 }
 function parallaxInit() {

@@ -1,138 +1,134 @@
-<div class="container">
+<% include partials/search_form.ejs %>
+<div class="main" role="main">
+  <div id="content" class="content full padding-b0">
+    <div class="container">
 
-  <div class="col-md-12">
-    <div class="col-md-3 search-filters">
-      <div class="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading" style="background-color: #e96c4c; padding-top: 5px; padding-bottom: 0;">
-              <h3 style="color:white; text-align: center; font-size: 20px;">АВТО ПО ТИПУ ТРАНСПОРТА</h3>
+      <div class="col-md-12">
+
+        <div class="col-md-3 search-filters">
+          <h3>Тип транспорта</h3>
+          <div class="accordion">
+
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+            <div class="accordion-group panel">
+              <div class="accordion-heading">
+                <a class="transport-type" href="/legkovie">Легковые <p style="color: black;display: inline; float: right;">431232</p>
+                </a>
+              </div>
+            </div>
+
           </div>
-          <div class="panel-body">
 
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">431232</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-            <div class="accordion-group panel">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" href="/legkovie">Легковые <span class="badge bg-info right">42</span> </a>
-              </div>
-            </div>
-          </div>
 
+          <!--<a href="#" class="btn-default btn-sm btn"><i class="fa fa-refresh"></i> Reset search</a>
+          <a href="#" class="btn-primary btn-sm btn"><i class="fa fa-folder-o"></i> Save search</a>-->
         </div>
-      </div>
-      <div class="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading" style="background-color: #e96c4c; padding-top: 5px; padding-bottom: 0;">
-              <h3 style="color:white; text-align: center; font-size: 20px;">АВТО ПО ТИПУ КУЗОВА</h3>
-          </div>
-          <div class="panel-body">
-
-         dasdsa
-          </div>
-
-        </div>
-      </div>
-
-      <!--<a href="#" class="btn-default btn-sm btn"><i class="fa fa-refresh"></i> Reset search</a>
-      <a href="#" class="btn-primary btn-sm btn"><i class="fa fa-folder-o"></i> Save search</a>-->
-    </div>
 
 
-    <div class="col-md-9 results-container">
-      <div class="results-container-in">
-        <div class="waiting" style="display:none;">
-          <div class="spinner">
-            <div class="rect1"></div>
-            <div class="rect2"></div>
-            <div class="rect3"></div>
-            <div class="rect4"></div>
-            <div class="rect5"></div>
-          </div>
-        </div>
-        <div id="results-holder" class="results-grid-view">
-          <h3>Последние добавленные авто</h3>
-          <% items.forEach(function(item, i) { %>
-          <div class="result-item format-standard" style="height: 480px;">
-            <div class="result-item-image">
-              <a href="vehicle-details.html" class="media-box"><img src="<%= item['attributes']['photo']['value'][0] %>"
-                                                                    alt=""><span
-                  class="zoom"><span class="icon"><i class="icon-plus"></i></span></span></a>
-              <span class="label label-default vehicle-age">2012</span>
-              <div class="result-item-view-buttons">
-                <!--<a href="https://www.youtube.com/watch?v=P5mvnA4BV7Y" data-rel="prettyPhoto"><i class="fa fa-play"></i>
-                  View video</a>-->
-                <a href="vehicle-details.html"><i class="fa fa-plus"></i> Подробнее</a>
+        <div class="col-md-9 results-container">
+          <div class="results-container-in">
+            <div class="waiting" style="display:none;">
+              <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
               </div>
             </div>
-            <div class="result-item-in">
-              <h4 class="result-item-title"><a
-                  href="vehicle-details.html"><%= item['attributes']['page_heading']['value'][0] %></a></h4>
-              <div class="result-item-cont">
-                <div class="result-item-block col1">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec
-                    facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam..</p>
-                </div>
-                <div class="result-item-block col2">
-                  <div class="result-item-pricing">
-                    <div class="price">$45000</div>
-                  </div>
-                  <div class="result-item-action-buttons">
-                    <a href="#" class="btn btn-default btn-sm"><i class="fa fa-star-o"></i> Сохранить</a>
-                    <a href="vehicle-details.html" class="btn btn-default btn-sm">Enquire</a><br>
-                    <a href="#" class="distance-calc"><i class="fa fa-map-marker"></i> Одесса</a>
+            <div id="results-holder" class="results-grid-view">
+              <h3>Последние добавленные авто</h3>
+              <% items.forEach(function(item, i) { %>
+              <div class="result-item format-standard" style="height: 480px;">
+                <div class="result-item-image">
+                  <a href="vehicle-details.html" class="media-box"><img
+                      src="<%= item['attributes']['photo']['value'][0] %>"
+                      alt=""><span
+                      class="zoom"><span class="icon"><i class="icon-plus"></i></span></span></a>
+                  <span class="label label-default vehicle-age">2012</span>
+                  <div class="result-item-view-buttons">
+                    <!--<a href="https://www.youtube.com/watch?v=P5mvnA4BV7Y" data-rel="prettyPhoto"><i class="fa fa-play"></i>
+                      View video</a>-->
+                    <a href="vehicle-details.html"><i class="fa fa-plus"></i> Подробнее</a>
                   </div>
                 </div>
+                <div class="result-item-in">
+                  <h4 class="result-item-title"><a
+                      href="vehicle-details.html"><%= item['attributes']['page_heading']['value'][0] %></a></h4>
+                  <div class="result-item-cont">
+                    <div class="result-item-block col1">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec
+                        facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam..</p>
+                    </div>
+                    <div class="result-item-block col2">
+                      <div class="result-item-pricing">
+                        <div class="price">$45000</div>
+                      </div>
+                      <div class="result-item-action-buttons">
+                        <a href="#" class="btn btn-default btn-sm"><i class="fa fa-star-o"></i> Сохранить</a>
+                        <a href="vehicle-details.html" class="btn btn-default btn-sm">Enquire</a><br>
+                        <a href="#" class="distance-calc"><i class="fa fa-map-marker"></i> Одесса</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="result-item-features">
+                    <ul class="inline">
+                      <li><i class="fa fa-caret-right"></i> 4 door Sedan</li>
+                      <li><i class="fa fa-caret-right"></i> 6 cyl, 3.0 L Petrol</li>
+                      <li><i class="fa fa-caret-right"></i> 6 speed Automatic</li>
+                      <!--      <li><i class="fa fa-caret-right"></i> 4x4 Wheel Drive</li>
+                            <li><i class="fa fa-caret-right"></i> Listed by Individual</li>-->
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="result-item-features">
-                <ul class="inline">
-                  <li><i class="fa fa-caret-right"></i> 4 door Sedan</li>
-                  <li><i class="fa fa-caret-right"></i> 6 cyl, 3.0 L Petrol</li>
-                  <li><i class="fa fa-caret-right"></i> 6 speed Automatic</li>
-                  <!--      <li><i class="fa fa-caret-right"></i> 4x4 Wheel Drive</li>
-                        <li><i class="fa fa-caret-right"></i> Listed by Individual</li>-->
-                </ul>
-              </div>
+              <% }); %>
+
             </div>
           </div>
-          <% }); %>
-
         </div>
-      </div>
-    </div>
-    <!--<div class="col-md-9">
+        <!--<div class="col-md-9">
       <section class="listing-block recent-vehicles">
         <div class="listing-header">
           <h3>Recently Listed Vehicles</h3>
@@ -165,76 +161,166 @@
 
       </section>
     </div>-->
-  </div>
-
-  <div class="col-md-12">
-    <div class="panel with-nav-tabs panel-default">
-      <div class="panel-heading" style="background-color: #e96c4c;">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab1default" data-toggle="tab">АВТО ПО ГОРОДАМ</a></li>
-          <li><a href="#tab2default" data-toggle="tab">АВТО ПО МАРКАМ</a></li>
-        </ul>
       </div>
-      <div class="panel-body">
-        <div class="tab-content">
-          <div class="tab-pane fade in active" id="tab1default">
+<!--
 
-            <div class="row cities-row">
-
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">ОДЕССА</a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13124</span>
-                <a href="#">ИВАНО-ФРАНКОВСК </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13213124</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">444314</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">1421</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">142</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">13214</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14322</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-              <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
-                <a href="#">1Cras justo justo justo </a>
-              </div>
-            </div>
-
+      <div class="col-md-12">
+        <div class="panel with-nav-tabs panel-default">
+          <div class="panel-heading" style="background-color: #e96c4c;">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab1default" data-toggle="tab">АВТО ПО ГОРОДАМ</a></li>
+              <li><a href="#tab2default" data-toggle="tab">АВТО ПО МАРКАМ</a></li>
+            </ul>
           </div>
-          <div class="tab-pane fade" id="tab2default">Default 2</div>
+          <div class="panel-body">
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="tab1default">
+
+                <div class="row cities-row">
+
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div><div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div><div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div><div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div><div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div><div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="tab2default">Default 2</div>
+            </div>
+          </div>
         </div>
       </div>
+-->
+
+      <div class="col-md-12">
+        <div class="tabs">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#sampletab1" aria-expanded="true"> АВТО ПО ГОРОДАМ</a></li>
+            <li class=""><a data-toggle="tab" href="#sampletab2" aria-expanded="false"> АВТО ПО МАРКАМ </a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="sampletab1" class="tab-pane active">
+              <div class="row cities-row">
+
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p></a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div><div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div><div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div><div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div><div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div><div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="#">Одесса - <p style="display: inline; color:black;">13124</p> </a>
+                </div>
+              </div>
+            </div>
+            <div id="sampletab2" class="tab-pane">
+              <div class="row cities-row">
+
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">ОДЕССА</a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">13124</span>
+                  <a href="#">ИВАНО-ФРАНКОВСК </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">13213124</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">444314</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">1421</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">142</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">13214</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14312</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14322</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+                <div class="col-md-3"><span class="badge bg-info" style="float: right;">14</span>
+                  <a href="#">1Cras justo justo justo </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-30"></div>
+
     </div>
+
   </div>
 </div>
 
-
-</div>

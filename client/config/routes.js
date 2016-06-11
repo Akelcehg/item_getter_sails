@@ -32,7 +32,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/':  'IndexController.index'
+  '/':  'IndexController.index',
+  '/description':  'DescriptionController.index'
 
 
   /***************************************************************************

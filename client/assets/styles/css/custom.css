@@ -4,10 +4,12 @@
 
 span.badge {
   font-size: 14px;
+  font-weight: normal;
 }
 
 .bg-info {
   background-color: #5cb85c;
+  /*background-color: #3f8eb8;*/
 }
 
 div.search-form-inner.main-page {
@@ -27,8 +29,26 @@ div.search-form-inner.main-page {
   text-align: justify;
 }
 
+.row.cities-row .col-md-3 {
+  border-bottom: 1px solid #efefef;
+}
+
+.row.cities-row a:hover {
+  text-decoration: underline;
+}
+.transport-type{
+  color: #256799;
+  border: 0;
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
 .row.cities-row a {
-  color: #414042;
+  /*color: #414042;*/
+  color: #256799;
 }
 
 .panel.with-nav-tabs .panel-heading {

@@ -1266,7 +1266,7 @@ html[xmlns] .slides {
    6. Site Structure & Appearance
 ================================================== */
 body{
-	background-color: #fdfdfd;
+	/*background-color: #fdfdfd;*/
 	/*color:#414042;*/
 	font-size:14px;
 	font-weight:400;
@@ -3076,7 +3076,7 @@ h1.page-title{
 	color:#414042;
 }
 .search-filters .accordion-group a{
-	color:#414042;
+	/*color:#414042;*/
 }
 .search-filters .accordion-heading.accordionize .accordion-toggle i, .search-filters .accordion-heading.togglize .accordion-toggle i{
 	right:0;
