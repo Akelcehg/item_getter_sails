@@ -1,3 +1,5 @@
 parser/node_modules/
 client/node_modules/
 .idea/
+npm-debug.log
+parser/views/partials/menu_old.ejs
