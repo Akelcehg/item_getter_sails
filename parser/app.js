@@ -32,6 +32,7 @@ app.use('/items', require('./routes/items'));
 ///app.use('/attributes_groups', require('./routes/attributes_groups'));
 app.use('/groups', require('./routes/groups'));
 app.use('/attributes', require('./routes/attributes'));
+app.use('/controls', require('./routes/controls'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -44,7 +44,7 @@ div.search-form-inner.main-page {
   display: block;
   padding: 10px 0;
   font-size: 16px;
-  text-transform: lowercase;
+  text-transform: none;
   letter-spacing: 0;
 }
 
