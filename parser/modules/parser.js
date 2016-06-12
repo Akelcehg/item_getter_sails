@@ -6,9 +6,7 @@ var FieldHandler = require('./fieldHandler');
 var cheerio = require('cheerio');
 var async = require('async');
 
-exports.parse = function () {
-    console.log('parse');
-};
+var ItemsList = require('../models/itemsList').schema;    
 
 exports.getItemLinks = function (itemsListPage, configFile) {
 
@@ -18,77 +16,89 @@ exports.getItemLinks = function (itemsListPage, configFile) {
         listObject['link_item'],
         listObject['link_attribute'],
         itemsListPage
-    );
-
-    return fieldHandler.getFieldValue();
-
-};
-
-
-exports.parseItems = function (itemLinks) {
-
-    //var item = new Item();  
-    // var itemPage = new Http(itemLinks[0]);
-    // itemPage.getPageContent(function(err, itemPageContent) {
-
-    /*    var f = new File();
-     f.saveFile('/', 'itempage.html', itemPageContent, function() {
-     console.log('each done series');
-     });*/
-
-    // });
-
-    var f = new File();
-    f.getFile('./itempage.html', function (err, page) {
-
-
+        );
+    
+    var links = fieldHandler.getFieldValue();
+    
+    //add domains to lins if dont have
+    var updatedLinks = links.map(function(link) {
+        if(!link.indexOf(listObject['domain']) > -1) {
+            return listObject['domain'] + link;
+        } else return link;
     });
 
-    /*_async.eachSeries(itemLinks, function(itemLink, callback) {
+    //return fieldHandler.getFieldValue();
+    return updatedLinks;
+};
 
-     var itemPage = new Http(itemLink);
-     itemPage.getPageContent(function(err,itemPageContent) {
-
-     console.log('each done series');
-
-     callback(err);
-
-     });
-     }, function(err) {
-     if (err) {
-     console.log('Error processing link ' + err);
-     } else {
-     console.log('All links processed');
-     }
-     });*/
-
-    /*itemLinks.forEach(function(itemLink, i, arr) {
-     async(function*() {
-     var itemPage = new Http(itemLink);
-     yield sync(itemPage.getPageContent)();
-     })();
-     })(function(err) {
-     if (err) console.log(err);
-     });*/
+exports.processLink = function(link,configFile,cb){    
+    var self = this;    
+    //get link page content    
+    self.getPageContent(link,function(err,page){
+        var parsedPage = self.getParsedHttpPage(page);
+        
+        var normalItemPageLinks = self.getItemLinks(parsedPage,configFile)
 
 
-    //get item page
-    //load item config file
-    //process item page => modify item values
-    //save item to db    
+        cb(err);
+    });
+    
+}
 
-    //var user = new Users(self.body);
+exports.processItems = function(linksArray,cb){    
+    cb();
+}
+
+exports.processEachItemLinks = function(itemsArray,cb){
+    var self = this;
+    /*get link*/
+    /*get page**/
+    /*parse page*/
+    /*save item**/
+
+    async.each(itemsArray, function(item, itemProcessCb) {
+
+        var itemConfigFile = new ItemConfig(item['config_file']);
+        itemConfigFile.getConfigFile(function(err, configFile) {    
+            //Getting config file once for Item
+            async.eachSeries(item.link, function(itemLink, linkProcessCb) {
+
+                self.processLink(itemLink,configFile,function(err){
+                    linkProcessCb(err);           
+                });
+
+            }, function(err){        
+                itemProcessCb(err);
+            });     
+        });       
+
+    }, function(err){
+        cb(err);
+    });    
+
 }
 
 exports.getPageContent = function (itemLink, cb) {
     var page = new Http(itemLink);
     page.getPageContent(function (err, html) {
-        cb(err, html);
-    });
+     cb(err, html);
+ });
 }
 
 exports.getParsedHttpPage = function (page) {
-    return cheerio.load(page, {
+    var $ = cheerio.load(page, {
         normalizeWhitespace: true
+    });
+    $('script').remove();
+    $('style').remove();
+    $('meta').remove();
+
+    return $;
+}
+
+exports.getActiveItems = function(cb){
+    //get items from db to parse. with links and config files
+    ItemsList.getActiveItemsList(function(err,list){
+        cb(err,list);
     });
 }

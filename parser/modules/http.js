@@ -4,8 +4,8 @@ var driver = require('node-phantom-simple');
 // Constructor
 function Http(link) {
     //async(function*() {
-    this.link = link;
-    this.page_actions = [];
+        this.link = link;
+        this.page_actions = [];
     //})();
 }
 
@@ -40,23 +40,23 @@ Http.prototype.getPageContent2 = function(cb) {
                                 setTimeout(function() {
                                     /*page.evaluate(function() {
                                      window.scrollTo(0, document.body.scrollHeight);
-                                     });*/
+                                 });*/
 
-                                    page.set('viewportSize', { width: 1024, height: 768 });
-                                    page.render('capture.png');
+                                 page.set('viewportSize', { width: 1024, height: 768 });
+                                 page.render('capture.png');
 
-                                    page.get('content', function(err, html) {
-                                        page.evaluate(function() {
-                                            window.scrollTo(0, document.body.scrollHeight);
-                                        });
+                                 page.get('content', function(err, html) {
+                                    page.evaluate(function() {
+                                        window.scrollTo(0, document.body.scrollHeight);
+                                    });
                                         ///setTimeout(function() {
 
-                                        cb(err, html);
-                                        browser.exit();
+                                            cb(err, html);
+                                            browser.exit();
                                         //}, 10000);
                                     });
 
-                                }, 10000);
+                             }, 10000);
                             }, 10000);
 
                         });
@@ -71,32 +71,23 @@ Http.prototype.getPageContent2 = function(cb) {
 Http.prototype.getPageContent = function(cb) {
     var self = this;
     var resourceWait = 3000,
-        maxRenderWait = 5000,
-        //url = 'https://twitter.com/nodejs',
-        //url = 'https://auto.ria.com/search/?category_id=0&marka_id=0&model_id=0&state=0#state[0]=0&s_yers[0]=0&po_yers[0]=0&currency=1&marka_id[0]=0&model_id[0]=0&countpage=10',
-        url = self.link,
-        count = 0,
-        forcedRenderTimeout,
-        renderTimeout;
-    var r = 0;
-    var re = 0;
+    maxRenderWait = 5000,
+    url = self.link,
+    count = 0,
+    forcedRenderTimeout,
+    renderTimeout;        
 
-    //var page = require('node-phantom-simple');
     driver.create({ path: require('phantomjs').path }, function(err, phantom) {
         if (err) console.log(err);
         return phantom.createPage(function(err, page) {
 
             if (err) console.log(err);
 
-            //page.viewportSize = { width: 1280, height: 1024 };
-            //page.property('viewportSize', { width: 1024, height: 1024 });
-
             page.set('viewportSize', { width: 1024, height: 9000 });
-            //page.set('settings.loadImages', 'false');
 
             function returnPageData() {
                 setTimeout(function() {
-                    page.render('capture2.png');
+                    page.render('capture.png');
                     page.get('content', function(err, html) {
                         phantom.exit();
                         cb(null, html);
@@ -106,57 +97,20 @@ Http.prototype.getPageContent = function(cb) {
             }
 
             function doRender() {
-                //page.set('viewportSize', { width: 1024, height: 768 });
-
                 page.render('capture.png');
-
-                //page.render('twitter.png');
                 console.log("RENDERING PAGE " + count);
-                console.log(r);
-                console.log(re);
-                return;
-                //console.log(renderTimeout);
-                //if (renderTimeout._called)
-                //console.log (forcedRenderTimeout);
-
-
-                //if (count === 0 || !renderTimeout || renderTimeout._called===false) {
-                /*if (count === 0) {
-                    clearTimeout(renderTimeout);
-                    clearTimeout(forcedRenderTimeout);*/
-
-
-                //setTimeout(function() {
-
-                //page.get('content', function(err, html) {
-                //console.log('COUNT ' + count);
-                /*if (count === 0 || !renderTimeout || renderTimeout._called === false) {*/
-                //clearTimeout(renderTimeout);
-                //phantom.exit();
-                //  cb(null, html);
-                /*}*/
-
-                //                    });
-                //              }, 2000);
-                /*}*/
             }
 
             page.onResourceRequested = function(req) {
                 count += 1;
-                r++;
-                //console.log('> ' + req.id + ' - ' + req.url);
                 clearTimeout(renderTimeout);
 
             };
 
             page.onResourceReceived = function(res) {
-                re++;
                 if (!res.stage || res.stage === 'end') {
-                    count -= 1;
-                    //console.log(res.id + ' ' + res.status + ' - ' + res.url);
-                    if (count === 0) {
-                        console.log('COUNT EQUALS ZERO');
-                        console.log(renderTimeout);
+                    count -= 1;                    
+                    if (count === 0) {                        
                         renderTimeout = setTimeout(doRender, resourceWait);
                     }
                 }
@@ -173,9 +127,7 @@ Http.prototype.getPageContent = function(cb) {
                         returnPageData();
                         doRender();
                     }, maxRenderWait);
-
                 }
-
             });
         });
     });

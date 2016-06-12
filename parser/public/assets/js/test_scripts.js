@@ -50,7 +50,7 @@ $(document).ready(function() {
                 'itemId': itemId
             }
         }).done(function(response) {
-console.log (response);
+
             self.removeClass('disabled');
             self.children('.default-icon').show();
             self.children('.loading-icon').hide();
@@ -106,6 +106,24 @@ console.log (response);
             }
         });
         e.preventDefault();
+    });    
+
+    $("#start_parse").click(function(e) {
+
+        var self = $(this);        
+
+        $.post({
+            url: "/controls/start_parse/"
+        }).done(function(response) {
+
+            if (response['status'] === 'ok') {                
+                $.Notification.notify('success','top right','Запуска парсера', 'Успешно запущен')
+            } else {
+                $.Notification.notify('error','top right','Запуска парсера', 'Успешно запущен')
+            }
+        });
+        e.preventDefault();
     });
+
 
 });

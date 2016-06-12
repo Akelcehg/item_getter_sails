@@ -1,9 +1,10 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+Schema = mongoose.Schema;
 
 var itemsListSchema = new Schema({
-    link: String,
-    name: String,
+    link: Array,
+    name: String,    
+    active: { type: Boolean, default: true },
     config_file: String
 
 });
@@ -15,6 +16,14 @@ itemsListSchema.methods.getAllItems = function (cb) {
             console.log(err);
             cb(err, []);
         } else cb(null, items);
+    });
+};
+
+itemsListSchema.statics.getActiveItemsList = function (cb) {
+    this.model('items_list').find({
+        'active' : true
+    },function (err, items) {        
+        cb(err, items);
     });
 };
 

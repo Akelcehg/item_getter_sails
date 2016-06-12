@@ -1,7 +1,8 @@
 {
     "items_list": {
         "link_item": "div.row.advert-item .col-xs-12.col-sm-5.col-sm-push-4.title-teh-data .h4 a",
-        "link_attribute": "href"
+        "link_attribute": "href",
+        "domain" : ""
     },
     "item_fields": [{
         "name": "Фото",

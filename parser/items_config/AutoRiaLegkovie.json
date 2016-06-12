@@ -1,7 +1,8 @@
 {
     "items_list": {
         "link_item": "div.ticket-item.paid div.m_head-ticket div.box-head div.item.head-ticket div.ticket-title a.address",
-        "link_attribute": "href"
+        "link_attribute": "href",
+        "domain" : "https://auto.ria.com"
     },
     "item_fields": [{
         "name": "Цена",
