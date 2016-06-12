@@ -21,13 +21,10 @@ router.post('/start_parse', function (req, res, next) {
 				callback(err, itemPageContent);
 			});			
 
-		},/*
-		function(arg1, callback) {
-
-			callback(null, 'done');
-		}*/
+		}
 		], function (err, result) {			
 			if (err) console.log (err);
+			else console.log ('Done')
 			res.json({'status' : 'ok'});
 		});
 

@@ -82,10 +82,12 @@
               <% items.forEach(function(item, i) { %>
               <div class="result-item format-standard" style="height: 480px;">
                 <div class="result-item-image">
-                  <a href="vehicle-details.html" class="media-box"><img
-                      src="<%= item['attributes']['photo']['value'][0] %>"
-                      alt=""><span
-                      class="zoom"><span class="icon"><i class="icon-plus"></i></span></span></a>
+                  <a href="vehicle-details.html" class="media-box">
+                  <div style="max-height: 150px;overflow: hidden;">
+                    <img src="<%= item['attributes']['photo']['value'][0] %>" alt="">
+                  </div>
+                  <!-- <span class="zoom"><span class="icon"><i class="icon-plus"></i></span></span> -->
+                  </a>
                   <span class="label label-default vehicle-age">2012</span>
                   <div class="result-item-view-buttons">
                     <!--<a href="https://www.youtube.com/watch?v=P5mvnA4BV7Y" data-rel="prettyPhoto"><i class="fa fa-play"></i>
@@ -95,7 +97,7 @@
                 </div>
                 <div class="result-item-in">
                   <h4 class="result-item-title"><a
-                      href="vehicle-details.html"><%= item['attributes']['page_heading']['value'][0] %></a></h4>
+                      href="vehicle-details.html"><%= item['link'] %></a></h4>
                   <div class="result-item-cont">
                     <div class="result-item-block col1">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec
@@ -148,7 +150,7 @@
                 class="label label-success premium-listing">Brand New</span>
               <h5 class="vehicle-title"><a
                   href="http://preview.imithemes.com/autostars-wp/cars/mazda-mazda-3-brand-new/">
-                  <%= item['attributes']['page_heading']['value'][0] %>
+                  
                 </a></h5>
               <span class="vehicle-meta">Mazda, Gold,  by <abbr
                   class="user-type" title="Listed by Dealer">Dealer</abbr></span>

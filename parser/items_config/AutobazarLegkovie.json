@@ -2,13 +2,15 @@
     "items_list": {
         "link_item": "div.row.advert-item .col-xs-12.col-sm-5.col-sm-push-4.title-teh-data .h4 a",
         "link_attribute": "href",
-        "domain" : ""
+        "domain" : "http://avtobazar.ua"
     },
     "item_fields": [{
         "name": "Фото",
         "field_name": "photo",
         "field_node": "a.thumbnail.col-md-3.col-sm-3.col-xs-3 img",
-        "field_attribute": "src"
+        "field_attribute": "src",
+        "modifiers" : ["replaceString"],
+        "modifiers_values" : [["/r150/","/r650/"]]
     },{
         "name": "Цена",
         "field_name": "price",

@@ -7,6 +7,8 @@ var cheerio = require('cheerio');
 var async = require('async');
 
 var ItemsList = require('../models/itemsList').schema;    
+var Items = require(__dirname + '/../models/items').schema;
+var ItemHandler = require(__dirname + '/../modules/itemHandler');
 
 exports.getItemLinks = function (itemsListPage, configFile) {
 
@@ -20,11 +22,16 @@ exports.getItemLinks = function (itemsListPage, configFile) {
     
     var links = fieldHandler.getFieldValue();
     
+    
     //add domains to lins if dont have
     var updatedLinks = links.map(function(link) {
-        if(!link.indexOf(listObject['domain']) > -1) {
-            return listObject['domain'] + link;
-        } else return link;
+        if  (link == undefined) {            
+            links.splice(links.indexOf(link), 1);
+        } else {
+            if(link.indexOf(listObject['domain']) == -1) {
+                return listObject['domain'] + link;
+            } else return link;
+        }
     });
 
     //return fieldHandler.getFieldValue();
@@ -34,19 +41,52 @@ exports.getItemLinks = function (itemsListPage, configFile) {
 exports.processLink = function(link,configFile,cb){    
     var self = this;    
     //get link page content    
-    self.getPageContent(link,function(err,page){
-        var parsedPage = self.getParsedHttpPage(page);
+    self.getPageContent(link,function(err,page){        
+        if (!err){
+            var parsedPage = self.getParsedHttpPage(page);
+
+            var normalItemPageLinks = self.getItemLinks(parsedPage,configFile)
+
+            self.processItems(normalItemPageLinks,configFile,function(err){
+                cb(err);    
+            });
+        } else cb(null);
         
-        var normalItemPageLinks = self.getItemLinks(parsedPage,configFile)
-
-
-        cb(err);
     });
     
 }
 
-exports.processItems = function(linksArray,cb){    
-    cb();
+exports.processItems = function(linksArray,configFile,cb){    
+
+    var self = this;
+
+    async.eachSeries(linksArray, function(link, callback) {
+
+        console.log (link);
+        self.getPageContent(link, function(err, page) {
+            if (!err){
+                var parsedPage = self.getParsedHttpPage(page);            
+                var itemObject = new ItemHandler(configFile['item_fields'], parsedPage);
+
+                itemObject.getItemAttributes();
+                itemObject.processPossibleValues(function() {
+
+                 var currentItem = new Items({
+                    link: link,
+                    attributes: itemObject.returnItemAttributes()
+                });
+
+                 currentItem.save(function(err) {
+                    callback(err);
+                });
+             });
+            } else callback (null);
+
+        });
+
+    }, function(err){
+        cb(err);
+    });    
 }
 
 exports.processEachItemLinks = function(itemsArray,cb){
@@ -61,7 +101,8 @@ exports.processEachItemLinks = function(itemsArray,cb){
         var itemConfigFile = new ItemConfig(item['config_file']);
         itemConfigFile.getConfigFile(function(err, configFile) {    
             //Getting config file once for Item
-            async.eachSeries(item.link, function(itemLink, linkProcessCb) {
+            //Should Parallel Items for One Link ?
+            async.each(item.link, function(itemLink, linkProcessCb) {
 
                 self.processLink(itemLink,configFile,function(err){
                     linkProcessCb(err);           
@@ -81,8 +122,8 @@ exports.processEachItemLinks = function(itemsArray,cb){
 exports.getPageContent = function (itemLink, cb) {
     var page = new Http(itemLink);
     page.getPageContent(function (err, html) {
-     cb(err, html);
- });
+       cb(err, html);
+   });
 }
 
 exports.getParsedHttpPage = function (page) {

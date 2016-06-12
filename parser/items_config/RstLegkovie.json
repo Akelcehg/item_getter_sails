@@ -1,7 +1,8 @@
 {
     "items_list": {
         "link_item": "div.rst-ocb-i.rst-ocb-i-premium.rst-uix-radius a.rst-ocb-i-a",
-        "link_attribute": "href"
+        "link_attribute": "href",
+        "domain" : "http://rst.ua"
     },
     "item_fields": [{
         "name": "Цена",
