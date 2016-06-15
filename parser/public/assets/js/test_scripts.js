@@ -125,5 +125,22 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $("#convert_json").click(function(e) {
+
+        var self = $(this);        
+
+        $.post({
+            url: "/controls/convert_json/"
+        }).done(function(response) {
+
+            if (response['status'] === 'ok') {                
+                $.Notification.notify('success','top right','Запуска парсера', 'Успешно запущен')
+            } else {
+                $.Notification.notify('error','top right','Запуска парсера', 'Успешно запущен')
+            }
+        });
+        e.preventDefault();
+    });
+
 
 });

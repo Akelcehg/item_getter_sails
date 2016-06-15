@@ -9,8 +9,8 @@ var AttributesGroupsSchema = new Schema({
     //attributes: Array
     attributes: [{
         attributeId : Number,
-        name: String,
-        en_name: String,
+        name: String,        
+        en_name: { type: String, default: "" },
         count: { type: Number, default: 0 },
         createdAt: { type: Date, default: Date.now }
     }]

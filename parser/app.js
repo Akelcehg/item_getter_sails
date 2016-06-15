@@ -37,7 +37,7 @@ app.use('/controls', require('./routes/controls'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
-    err.status = 404;
+    err.status = 404;    
     next(err);
 });
 
@@ -48,6 +48,7 @@ app.use(function (req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
+        console.log (err.message);
         res.render('error', {
             message: err.message,
             error: err
@@ -59,6 +60,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
+    console.log (err.message);
     res.render('error', {
         message: err.message,
         error: {}

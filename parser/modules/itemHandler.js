@@ -53,7 +53,7 @@ ItemHandler.prototype.getItemAttributes = function () {
 ItemHandler.prototype.processPossibleValues = function (cb) {
 
     var self = this;
-
+//fix this
     AttributesGroups.getPossible(function (err, groups) {
         async.each(groups, function (group, callback) {
 
