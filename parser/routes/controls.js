@@ -37,10 +37,10 @@ router.post('/convert_json', function (req, res, next) {
 
 	var request = require('request');
 	var translit = require('translitit-cyrillic-russian-to-latin');
-	request('https://auto.ria.com/api/countries/brands?langId=2&categoryId=1', function (error, response, body) {
+	request('https://auto.ria.com/api/states?langId=2', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
-			
 			var parsed = JSON.parse(body);
+
 var fs =require('fs');
 			fs.readFile('test.json', function (err, data) {
 				var x = JSON.parse(data);
@@ -50,19 +50,24 @@ var fs =require('fs');
 
 //https://auto.ria.com/api/categories/1/marks/98/models?langId=2
 
-			/*var obj = {
-				"group_name" : "Марка автомобиля",
-				"group_en_name" : "car_make",
+			var obj = {
+				"group_name" : "Области",
+				"group_en_name" : "states",
 				"is_possible" : true,
 				"attributes" : [ 				
 				],		
-			};*/
+			};
 			var arr = [];
+
 			
 			console.log('Http = ' + parsed.length);
 			for (var i in parsed) {
+				//var s = translit(parsed[i].name.replace(' ','_').toLowerCase());
+				//console.log (s);
 
-				(function (ii) {
+				//obj.attributes.push({name : parsed[i].name,en_name:translit(s)});
+
+				/*(function (ii) {
 					var s = translit(parsed[ii].name.replace(' ','_').toLowerCase());
 					//console.log (s);
 					var index = 1;
@@ -75,7 +80,8 @@ var fs =require('fs');
 						"attributes" : [
 						],
 					};
-					/*request('https://auto.ria.com/api/categories/1/marks/'+parsed[ii].value+'/models?langId=2', function (error, response, bodyGroups) {
+					//request('https://auto.ria.com/api/categories/1/marks/'+parsed[ii].value+'/models?langId=2', function (error, response, bodyGroups) {
+					request('https://auto.ria.com/api/states/'+parsed[ii].value+'/cities?langId=2', function (error, response, bodyGroups) {
 						if (!error && response.statusCode == 200) {
 
 							var parsed2 = JSON.parse(bodyGroups);
@@ -97,8 +103,8 @@ var fs =require('fs');
 								console.log('Hello World > helloworld.txt ' + s);
 							});
 						}
-					});*/
-			}(i));
+					});
+			}(i));*/
 
 
 			}
@@ -109,8 +115,7 @@ var fs =require('fs');
 fs.writeFile('test.json', JSON.stringify(obj), function (err) {
 	if (err) return console.log(err);
 	console.log('Hello World > helloworld.txt');
-});
-*/
+});*/
 
 /*			var newGroup = new AttributesGroups(obj);
 			newGroup.save(function (err) {
