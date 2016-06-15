@@ -62,14 +62,14 @@ var fs =require('fs');
 			console.log('Http = ' + parsed.length);
 			for (var i in parsed) {
 
-				//(function (ii) {
-					var s = translit(parsed[i].name.replace(' ','_').toLowerCase());
+				(function (ii) {
+					var s = translit(parsed[ii].name.replace(' ','_').toLowerCase());
 					//console.log (s);
 					var index = 1;
 					var count = parsed.length;
 					var obj = {};
 					obj = {
-						"group_name" : s,
+						"group_name" : parsed[ii].name,
 						"group_en_name" : translit(s),
 						"is_possible" : true,
 						"attributes" : [
@@ -98,7 +98,7 @@ var fs =require('fs');
 							});
 						}
 					});*/
-			//}(i));
+			}(i));
 
 
 			}
