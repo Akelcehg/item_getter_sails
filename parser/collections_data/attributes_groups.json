@@ -40,6 +40,2684 @@
     ]
   },
   {
+    "group_name": "Области",
+    "group_en_name": "states",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Винницкая",
+        "en_name": "vynnytskaia"
+      },
+      {
+        "name": "Волынская",
+        "en_name": "volynskaia"
+      },
+      {
+        "name": "Днепропетровская",
+        "en_name": "dnepropetrovskaia"
+      },
+      {
+        "name": "Донецкая",
+        "en_name": "donetskaia"
+      },
+      {
+        "name": "Житомирская",
+        "en_name": "zhytomyrskaia"
+      },
+      {
+        "name": "Закарпатская",
+        "en_name": "zakarpatskaia"
+      },
+      {
+        "name": "Запорожская",
+        "en_name": "zaporozhskaia"
+      },
+      {
+        "name": "Ивано-Франковская",
+        "en_name": "yvano-frankovskaia"
+      },
+      {
+        "name": "Киевская",
+        "en_name": "kyevskaia"
+      },
+      {
+        "name": "Кировоградская",
+        "en_name": "kyrovogradskaia"
+      },
+      {
+        "name": "Луганская",
+        "en_name": "luganskaia"
+      },
+      {
+        "name": "Львовская",
+        "en_name": "lvovskaia"
+      },
+      {
+        "name": "Николаевская",
+        "en_name": "nykolaevskaia"
+      },
+      {
+        "name": "Одесская",
+        "en_name": "odesskaia"
+      },
+      {
+        "name": "Полтавская",
+        "en_name": "poltavskaia"
+      },
+      {
+        "name": "Республика Крым",
+        "en_name": "respublyka_krym"
+      },
+      {
+        "name": "Ровенская",
+        "en_name": "rovenskaia"
+      },
+      {
+        "name": "Сумская",
+        "en_name": "sumskaia"
+      },
+      {
+        "name": "Тернопольская",
+        "en_name": "ternopolskaia"
+      },
+      {
+        "name": "Харьковская",
+        "en_name": "kharkovskaia"
+      },
+      {
+        "name": "Херсонская",
+        "en_name": "khersonskaia"
+      },
+      {
+        "name": "Хмельницкая",
+        "en_name": "khmelnytskaia"
+      },
+      {
+        "name": "Черкасская",
+        "en_name": "cherkasskaia"
+      },
+      {
+        "name": "Черниговская",
+        "en_name": "chernygovskaia"
+      },
+      {
+        "name": "Черновицкая",
+        "en_name": "chernovytskaia"
+      }
+    ]
+  },
+  {
+    "group_name": "Волынская",
+    "group_en_name": "volynskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Луцк",
+        "en_name": "lutsk"
+      },
+      {
+        "name": "Владимир-Волынский",
+        "en_name": "vladymyr-volynskyi"
+      },
+      {
+        "name": "Горохов",
+        "en_name": "gorokhov"
+      },
+      {
+        "name": "Иваничи",
+        "en_name": "yvanychy"
+      },
+      {
+        "name": "Камень-Каширский",
+        "en_name": "kamen-kashyrskyi"
+      },
+      {
+        "name": "Киверцы",
+        "en_name": "kyvertsy"
+      },
+      {
+        "name": "Ковель",
+        "en_name": "kovel"
+      },
+      {
+        "name": "Локачи",
+        "en_name": "lokachy"
+      },
+      {
+        "name": "Любешов",
+        "en_name": "liubeshov"
+      },
+      {
+        "name": "Любомль",
+        "en_name": "liuboml"
+      },
+      {
+        "name": "Маневичи",
+        "en_name": "manevychy"
+      },
+      {
+        "name": "Нововолынск",
+        "en_name": "novovolynsk"
+      },
+      {
+        "name": "Ратно",
+        "en_name": "ratno"
+      },
+      {
+        "name": "Рожище",
+        "en_name": "rozhyshche"
+      },
+      {
+        "name": "Старая Выжевка",
+        "en_name": "staraia_vyzhevka"
+      },
+      {
+        "name": "Турийск",
+        "en_name": "turyisk"
+      },
+      {
+        "name": "Шацк",
+        "en_name": "shatsk"
+      }
+    ]
+  },
+  {
+    "group_name": "Закарпатская",
+    "group_en_name": "zakarpatskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Ужгород",
+        "en_name": "uzhgorod"
+      },
+      {
+        "name": "Берегово",
+        "en_name": "beregovo"
+      },
+      {
+        "name": "Великий Березный",
+        "en_name": "velykyi_bereznyi"
+      },
+      {
+        "name": "Виноградов",
+        "en_name": "vynogradov"
+      },
+      {
+        "name": "Воловец",
+        "en_name": "volovets"
+      },
+      {
+        "name": "Иршавa",
+        "en_name": "yrshava"
+      },
+      {
+        "name": "Межгорье",
+        "en_name": "mezhgore"
+      },
+      {
+        "name": "Мукачево",
+        "en_name": "mukachevo"
+      },
+      {
+        "name": "Перечин",
+        "en_name": "perechyn"
+      },
+      {
+        "name": "Рахов",
+        "en_name": "rakhov"
+      },
+      {
+        "name": "Свалява",
+        "en_name": "svaliava"
+      },
+      {
+        "name": "Тячев",
+        "en_name": "tiachev"
+      },
+      {
+        "name": "Хуст",
+        "en_name": "khust"
+      },
+      {
+        "name": "Чоп",
+        "en_name": "chop"
+      },
+      {
+        "name": "Ждениево",
+        "en_name": "zhdenyevo"
+      },
+      {
+        "name": "Драгобрат",
+        "en_name": "dragobrat"
+      },
+      {
+        "name": "Поляна",
+        "en_name": "poliana"
+      }
+    ]
+  },
+  {
+    "group_name": "Житомирская",
+    "group_en_name": "zhytomyrskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Житомир",
+        "en_name": "zhytomyr"
+      },
+      {
+        "name": "Андрушевка",
+        "en_name": "andrushevka"
+      },
+      {
+        "name": "Барановка",
+        "en_name": "baranovka"
+      },
+      {
+        "name": "Бердичев",
+        "en_name": "berdychev"
+      },
+      {
+        "name": "Брусилов",
+        "en_name": "brusylov"
+      },
+      {
+        "name": "Володарск-Волынский",
+        "en_name": "volodarsk-volynskyi"
+      },
+      {
+        "name": "Емильчино",
+        "en_name": "emylchyno"
+      },
+      {
+        "name": "Коростень",
+        "en_name": "korosten"
+      },
+      {
+        "name": "Коростышев",
+        "en_name": "korostyshev"
+      },
+      {
+        "name": "Лугины",
+        "en_name": "lugyny"
+      },
+      {
+        "name": "Любар",
+        "en_name": "liubar"
+      },
+      {
+        "name": "Малин",
+        "en_name": "malyn"
+      },
+      {
+        "name": "Народичи",
+        "en_name": "narodychy"
+      },
+      {
+        "name": "Новоград-Волынский",
+        "en_name": "novograd-volynskyi"
+      },
+      {
+        "name": "Овруч",
+        "en_name": "ovruch"
+      },
+      {
+        "name": "Олевск",
+        "en_name": "olevsk"
+      },
+      {
+        "name": "Попельня",
+        "en_name": "popelnia"
+      },
+      {
+        "name": "Радомышль",
+        "en_name": "radomyshl"
+      },
+      {
+        "name": "Ружин",
+        "en_name": "ruzhyn"
+      },
+      {
+        "name": "Червоноармейск",
+        "en_name": "chervonoarmeisk"
+      },
+      {
+        "name": "Черняхов",
+        "en_name": "cherniakhov"
+      },
+      {
+        "name": "Чуднов",
+        "en_name": "chudnov"
+      },
+      {
+        "name": "Романов",
+        "en_name": "romanov"
+      }
+    ]
+  },
+  {
+    "group_name": "Запорожская",
+    "group_en_name": "zaporozhskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Запорожье",
+        "en_name": "zaporozhe"
+      },
+      {
+        "name": "Мелитополь",
+        "en_name": "melytopol"
+      },
+      {
+        "name": "Бердянск",
+        "en_name": "berdiansk"
+      },
+      {
+        "name": "Васильевка",
+        "en_name": "vasylevka"
+      },
+      {
+        "name": "Великая Белозерка",
+        "en_name": "velykaia_belozerka"
+      },
+      {
+        "name": "Веселоe",
+        "en_name": "veseloe"
+      },
+      {
+        "name": "Вольнянск",
+        "en_name": "volniansk"
+      },
+      {
+        "name": "Гуляйполe",
+        "en_name": "guliaipole"
+      },
+      {
+        "name": "Энергодар",
+        "en_name": "energodar"
+      },
+      {
+        "name": "Каменка-Днепровская",
+        "en_name": "kamenka-dneprovskaia"
+      },
+      {
+        "name": "Куйбышево",
+        "en_name": "kuibyshevo"
+      },
+      {
+        "name": "Михайловка",
+        "en_name": "mykhailovka"
+      },
+      {
+        "name": "Новониколаевка",
+        "en_name": "novonykolaevka"
+      },
+      {
+        "name": "Орехов",
+        "en_name": "orekhov"
+      },
+      {
+        "name": "Пологи",
+        "en_name": "pology"
+      },
+      {
+        "name": "Приазовское",
+        "en_name": "pryazovskoe"
+      },
+      {
+        "name": "Приморск",
+        "en_name": "prymorsk"
+      },
+      {
+        "name": "Розовка",
+        "en_name": "rozovka"
+      },
+      {
+        "name": "Токмак",
+        "en_name": "tokmak"
+      },
+      {
+        "name": "Черниговка",
+        "en_name": "chernygovka"
+      },
+      {
+        "name": "Акимовка",
+        "en_name": "akymovka"
+      },
+      {
+        "name": "Кирилловка",
+        "en_name": "kyryllovka"
+      },
+      {
+        "name": "Днепрорудное",
+        "en_name": "dneprorudnoe"
+      }
+    ]
+  },
+  {
+    "group_name": "Киевская",
+    "group_en_name": "kyevskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Киев",
+        "en_name": "kyev"
+      },
+      {
+        "name": "Барышевка",
+        "en_name": "baryshevka"
+      },
+      {
+        "name": "Белая Церковь",
+        "en_name": "belaia_tserkov"
+      },
+      {
+        "name": "Богуслав",
+        "en_name": "boguslav"
+      },
+      {
+        "name": "Борисполь",
+        "en_name": "boryspol"
+      },
+      {
+        "name": "Бородянка",
+        "en_name": "borodianka"
+      },
+      {
+        "name": "Бровары",
+        "en_name": "brovary"
+      },
+      {
+        "name": "Васильков",
+        "en_name": "vasylkov"
+      },
+      {
+        "name": "Вышгород",
+        "en_name": "vyshgorod"
+      },
+      {
+        "name": "Володарка",
+        "en_name": "volodarka"
+      },
+      {
+        "name": "Згуровка",
+        "en_name": "zghurovka"
+      },
+      {
+        "name": "Иванков",
+        "en_name": "yvankov"
+      },
+      {
+        "name": "Ирпень",
+        "en_name": "yrpen"
+      },
+      {
+        "name": "Кагарлык",
+        "en_name": "kagarlyk"
+      },
+      {
+        "name": "Макаров",
+        "en_name": "makarov"
+      },
+      {
+        "name": "Мироновка",
+        "en_name": "myronovka"
+      },
+      {
+        "name": "Обухов",
+        "en_name": "obukhov"
+      },
+      {
+        "name": "Переяслав-Хмельницкий",
+        "en_name": "pereiaslav-khmelnytskyi"
+      },
+      {
+        "name": "Полесское",
+        "en_name": "polesskoe"
+      },
+      {
+        "name": "Ракитное",
+        "en_name": "rakytnoe"
+      },
+      {
+        "name": "Сквирa",
+        "en_name": "skvyra"
+      },
+      {
+        "name": "Славутич",
+        "en_name": "slavutych"
+      },
+      {
+        "name": "Ставище",
+        "en_name": "stavyshche"
+      },
+      {
+        "name": "Тараща",
+        "en_name": "tarashcha"
+      },
+      {
+        "name": "Тетиев",
+        "en_name": "tetyev"
+      },
+      {
+        "name": "Фастов",
+        "en_name": "fastov"
+      },
+      {
+        "name": "Яготин",
+        "en_name": "iagotyn"
+      },
+      {
+        "name": "Вишневое",
+        "en_name": "vyshnevoe"
+      },
+      {
+        "name": "Украинка",
+        "en_name": "ukraynka"
+      },
+      {
+        "name": "Буча",
+        "en_name": "bucha"
+      },
+      {
+        "name": "Ржищев",
+        "en_name": "rzhyshchev"
+      },
+      {
+        "name": "Березань",
+        "en_name": "berezan"
+      },
+      {
+        "name": "Боярка",
+        "en_name": "boiarka"
+      },
+      {
+        "name": "Софиевская Борщаговка",
+        "en_name": "sofyevskaia_borshchagovka"
+      },
+      {
+        "name": "Чубинское",
+        "en_name": "chubynskoe"
+      },
+      {
+        "name": "Калиновка",
+        "en_name": "kalynovka"
+      }
+    ]
+  },
+  {
+    "group_name": "Львовская",
+    "group_en_name": "lvovskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Львов",
+        "en_name": "lvov"
+      },
+      {
+        "name": "Борислав",
+        "en_name": "boryslav"
+      },
+      {
+        "name": "Броды",
+        "en_name": "brody"
+      },
+      {
+        "name": "Буск",
+        "en_name": "busk"
+      },
+      {
+        "name": "Городок",
+        "en_name": "gorodok"
+      },
+      {
+        "name": "Дрогобыч",
+        "en_name": "drogobych"
+      },
+      {
+        "name": "Жидачов\t",
+        "en_name": "zhydachov\t"
+      },
+      {
+        "name": "Жолква",
+        "en_name": "zholkva"
+      },
+      {
+        "name": "Золочев",
+        "en_name": "zolochev"
+      },
+      {
+        "name": "Каменка-Бугская",
+        "en_name": "kamenka-bugskaia"
+      },
+      {
+        "name": "Николаев",
+        "en_name": "nykolaev"
+      },
+      {
+        "name": "Мостиска",
+        "en_name": "mostyska"
+      },
+      {
+        "name": "Перемышляны",
+        "en_name": "peremyshliany"
+      },
+      {
+        "name": "Пустомыты",
+        "en_name": "pustomyty"
+      },
+      {
+        "name": "Радехов",
+        "en_name": "radekhov"
+      },
+      {
+        "name": "Самбор",
+        "en_name": "sambor"
+      },
+      {
+        "name": "Сколе",
+        "en_name": "skole"
+      },
+      {
+        "name": "Сокаль",
+        "en_name": "sokal"
+      },
+      {
+        "name": "Старый Самбор",
+        "en_name": "staryi_sambor"
+      },
+      {
+        "name": "Стрый",
+        "en_name": "stryi"
+      },
+      {
+        "name": "Трускавец",
+        "en_name": "truskavets"
+      },
+      {
+        "name": "Турка",
+        "en_name": "turka"
+      },
+      {
+        "name": "Червоноград",
+        "en_name": "chervonograd"
+      },
+      {
+        "name": "Яворов",
+        "en_name": "iavorov"
+      },
+      {
+        "name": "Сосновка",
+        "en_name": "sosnovka"
+      },
+      {
+        "name": "Славское",
+        "en_name": "slavskoe"
+      },
+      {
+        "name": "Новий Роздол",
+        "en_name": "novyi_rozdol"
+      },
+      {
+        "name": "Моршин",
+        "en_name": "morshyn"
+      },
+      {
+        "name": "Новояворовск",
+        "en_name": "novoiavorovsk"
+      },
+      {
+        "name": "Ходоров",
+        "en_name": "khodorov"
+      }
+    ]
+  },
+  {
+    "group_name": "Луганская",
+    "group_en_name": "luganskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Луганск",
+        "en_name": "lugansk"
+      },
+      {
+        "name": "Алчевск",
+        "en_name": "alchevsk"
+      },
+      {
+        "name": "Антрацит",
+        "en_name": "antratsyt"
+      },
+      {
+        "name": "Беловодск",
+        "en_name": "belovodsk"
+      },
+      {
+        "name": "Белокуракинo",
+        "en_name": "belokurakyno"
+      },
+      {
+        "name": "Брянка",
+        "en_name": "brianka"
+      },
+      {
+        "name": "Кировск",
+        "en_name": "kyrovsk"
+      },
+      {
+        "name": "Краснодон",
+        "en_name": "krasnodon"
+      },
+      {
+        "name": "Красный Луч",
+        "en_name": "krasnyi_luch"
+      },
+      {
+        "name": "Кременная",
+        "en_name": "kremennaia"
+      },
+      {
+        "name": "Лисичанск",
+        "en_name": "lysychansk"
+      },
+      {
+        "name": "Лутугино",
+        "en_name": "lutugyno"
+      },
+      {
+        "name": "Марковка",
+        "en_name": "markovka"
+      },
+      {
+        "name": "Меловое",
+        "en_name": "melovoe"
+      },
+      {
+        "name": "Новоайдар",
+        "en_name": "novoaidar"
+      },
+      {
+        "name": "Новопсков",
+        "en_name": "novopskov"
+      },
+      {
+        "name": "Первомайск",
+        "en_name": "pervomaisk"
+      },
+      {
+        "name": "Перевальск",
+        "en_name": "perevalsk"
+      },
+      {
+        "name": "Попасная",
+        "en_name": "popasnaia"
+      },
+      {
+        "name": "Ровеньки",
+        "en_name": "rovenky"
+      },
+      {
+        "name": "Рубежное",
+        "en_name": "rubezhnoe"
+      },
+      {
+        "name": "Сватовo",
+        "en_name": "svatovo"
+      },
+      {
+        "name": "Свердловск",
+        "en_name": "sverdlovsk"
+      },
+      {
+        "name": "Северодонецк",
+        "en_name": "severodonetsk"
+      },
+      {
+        "name": "Славяносербск",
+        "en_name": "slavianoserbsk"
+      },
+      {
+        "name": "Станично-Луганское",
+        "en_name": "stanychno-luganskoe"
+      },
+      {
+        "name": "Старобельск",
+        "en_name": "starobelsk"
+      },
+      {
+        "name": "Стаханов",
+        "en_name": "stakhanov"
+      },
+      {
+        "name": "Троицкое",
+        "en_name": "troytskoe"
+      },
+      {
+        "name": "Счастье",
+        "en_name": "schaste"
+      }
+    ]
+  },
+  {
+    "group_name": "Николаевская",
+    "group_en_name": "nykolaevskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Николаев",
+        "en_name": "nykolaev"
+      },
+      {
+        "name": "Арбузинка",
+        "en_name": "arbuzynka"
+      },
+      {
+        "name": "Баштанка",
+        "en_name": "bashtanka"
+      },
+      {
+        "name": "Березанка",
+        "en_name": "berezanka"
+      },
+      {
+        "name": "Березнеговатое",
+        "en_name": "bereznegovatoe"
+      },
+      {
+        "name": "Братское",
+        "en_name": "bratskoe"
+      },
+      {
+        "name": "Веселиново",
+        "en_name": "veselynovo"
+      },
+      {
+        "name": "Вознесенск",
+        "en_name": "voznesensk"
+      },
+      {
+        "name": "Врадиевка",
+        "en_name": "vradyevka"
+      },
+      {
+        "name": "Доманевка",
+        "en_name": "domanevka"
+      },
+      {
+        "name": "Еланец",
+        "en_name": "elanets"
+      },
+      {
+        "name": "Жовтневый район",
+        "en_name": "zhovtnevyi_raion"
+      },
+      {
+        "name": "Казанка",
+        "en_name": "kazanka"
+      },
+      {
+        "name": "Кривое Озеро",
+        "en_name": "kryvoe_ozero"
+      },
+      {
+        "name": "Новый Буг",
+        "en_name": "novyi_bug"
+      },
+      {
+        "name": "Новая Одесса",
+        "en_name": "novaia_odessa"
+      },
+      {
+        "name": "Очаков",
+        "en_name": "ochakov"
+      },
+      {
+        "name": "Первомайск",
+        "en_name": "pervomaisk"
+      },
+      {
+        "name": "Снигиревка",
+        "en_name": "snygyrevka"
+      },
+      {
+        "name": "Южноукраинск",
+        "en_name": "iuzhnoukraynsk"
+      },
+      {
+        "name": "Коблево",
+        "en_name": "koblevo"
+      }
+    ]
+  },
+  {
+    "group_name": "Ровенская",
+    "group_en_name": "rovenskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Ровно",
+        "en_name": "rovno"
+      },
+      {
+        "name": "Березно",
+        "en_name": "berezno"
+      },
+      {
+        "name": "Владимирец",
+        "en_name": "vladymyrets"
+      },
+      {
+        "name": "Гоща",
+        "en_name": "goshcha"
+      },
+      {
+        "name": "Демидовка",
+        "en_name": "demydovka"
+      },
+      {
+        "name": "Дубно",
+        "en_name": "dubno"
+      },
+      {
+        "name": "Дубровица",
+        "en_name": "dubrovytsa"
+      },
+      {
+        "name": "Заречное",
+        "en_name": "zarechnoe"
+      },
+      {
+        "name": "Здолбунов",
+        "en_name": "zdolbunov"
+      },
+      {
+        "name": "Корец",
+        "en_name": "korets"
+      },
+      {
+        "name": "Костополь",
+        "en_name": "kostopol"
+      },
+      {
+        "name": "Кузнецовск",
+        "en_name": "kuznetsovsk"
+      },
+      {
+        "name": "Млынов",
+        "en_name": "mlynov"
+      },
+      {
+        "name": "Острог",
+        "en_name": "ostrog"
+      },
+      {
+        "name": "Радивилов",
+        "en_name": "radyvylov"
+      },
+      {
+        "name": "Ракитное",
+        "en_name": "rakytnoe"
+      },
+      {
+        "name": "Сарны",
+        "en_name": "sarny"
+      }
+    ]
+  },
+  {
+    "group_name": "Одесская",
+    "group_en_name": "odesskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Одесса",
+        "en_name": "odessa"
+      },
+      {
+        "name": "Ананьев",
+        "en_name": "ananev"
+      },
+      {
+        "name": "Арциз",
+        "en_name": "artsyz"
+      },
+      {
+        "name": "Балта",
+        "en_name": "balta"
+      },
+      {
+        "name": "Березовка",
+        "en_name": "berezovka"
+      },
+      {
+        "name": "Белгород-Днестровский",
+        "en_name": "belgorod-dnestrovskyi"
+      },
+      {
+        "name": "Беляевка",
+        "en_name": "beliaevka"
+      },
+      {
+        "name": "Болград",
+        "en_name": "bolgrad"
+      },
+      {
+        "name": "Великая Михайловка",
+        "en_name": "velykaia_mykhailovka"
+      },
+      {
+        "name": "Ивановка",
+        "en_name": "yvanovka"
+      },
+      {
+        "name": "Измаил",
+        "en_name": "yzmayl"
+      },
+      {
+        "name": "Ильичевск",
+        "en_name": "ylychevsk"
+      },
+      {
+        "name": "Килия",
+        "en_name": "kylyia"
+      },
+      {
+        "name": "Кодыма",
+        "en_name": "kodyma"
+      },
+      {
+        "name": "Коминтерновское",
+        "en_name": "komynternovskoe"
+      },
+      {
+        "name": "Котовск",
+        "en_name": "kotovsk"
+      },
+      {
+        "name": "Красные Окны",
+        "en_name": "krasnye_okny"
+      },
+      {
+        "name": "Любашевка",
+        "en_name": "liubashevka"
+      },
+      {
+        "name": "Николаевка",
+        "en_name": "nykolaevka"
+      },
+      {
+        "name": "Овидиополь",
+        "en_name": "ovydyopol"
+      },
+      {
+        "name": "Рени",
+        "en_name": "reny"
+      },
+      {
+        "name": "Раздельная",
+        "en_name": "razdelnaia"
+      },
+      {
+        "name": "Саврань",
+        "en_name": "savran"
+      },
+      {
+        "name": "Сарата",
+        "en_name": "sarata"
+      },
+      {
+        "name": "Тарутино",
+        "en_name": "tarutyno"
+      },
+      {
+        "name": "Татарбунари",
+        "en_name": "tatarbunary"
+      },
+      {
+        "name": "Фрунзовка",
+        "en_name": "frunzovka"
+      },
+      {
+        "name": "Ширяево",
+        "en_name": "shyriaevo"
+      },
+      {
+        "name": "Затока",
+        "en_name": "zatoka"
+      },
+      {
+        "name": "Теплодар",
+        "en_name": "teplodar"
+      },
+      {
+        "name": "Южный",
+        "en_name": "iuzhnyi"
+      }
+    ]
+  },
+  {
+    "group_name": "Хмельницкая",
+    "group_en_name": "khmelnytskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Хмельницкий",
+        "en_name": "khmelnytskyi"
+      },
+      {
+        "name": "Белогорье",
+        "en_name": "belogore"
+      },
+      {
+        "name": "Виньковцы",
+        "en_name": "vynkovtsy"
+      },
+      {
+        "name": "Волочиск",
+        "en_name": "volochysk"
+      },
+      {
+        "name": "Городок",
+        "en_name": "gorodok"
+      },
+      {
+        "name": "Деражня",
+        "en_name": "derazhnia"
+      },
+      {
+        "name": "Дунаевцы",
+        "en_name": "dunaevtsy"
+      },
+      {
+        "name": "Изяслав",
+        "en_name": "yziaslav"
+      },
+      {
+        "name": "Каменец-Подольский",
+        "en_name": "kamenets-podolskyi"
+      },
+      {
+        "name": "Красилов",
+        "en_name": "krasylov"
+      },
+      {
+        "name": "Летичев",
+        "en_name": "letychev"
+      },
+      {
+        "name": "Нетешин",
+        "en_name": "neteshyn"
+      },
+      {
+        "name": "Новая Ушица",
+        "en_name": "novaia_ushytsa"
+      },
+      {
+        "name": "Полонное",
+        "en_name": "polonnoe"
+      },
+      {
+        "name": "Славута",
+        "en_name": "slavuta"
+      },
+      {
+        "name": "Староконстантинов",
+        "en_name": "starokonstantynov"
+      },
+      {
+        "name": "Старая Синява",
+        "en_name": "staraia_syniava"
+      },
+      {
+        "name": "Теофиполь",
+        "en_name": "teofypol"
+      },
+      {
+        "name": "Чемеровцы",
+        "en_name": "chemerovtsy"
+      },
+      {
+        "name": "Шепетовка",
+        "en_name": "shepetovka"
+      },
+      {
+        "name": "Ярмолинцы",
+        "en_name": "iarmolyntsy"
+      }
+    ]
+  },
+  {
+    "group_name": "Республика Крым",
+    "group_en_name": "respublyka_krym",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Симферополь",
+        "en_name": "symferopol"
+      },
+      {
+        "name": "Феодосия",
+        "en_name": "feodosyia"
+      },
+      {
+        "name": "Керчь",
+        "en_name": "kerch"
+      },
+      {
+        "name": "Алушта",
+        "en_name": "alushta"
+      },
+      {
+        "name": "Нижнегорский",
+        "en_name": "nyzhnegorskyi"
+      },
+      {
+        "name": "Раздольное",
+        "en_name": "razdolnoe"
+      },
+      {
+        "name": "Бахчисарай",
+        "en_name": "bakhchysarai"
+      },
+      {
+        "name": "Саки",
+        "en_name": "saky"
+      },
+      {
+        "name": "Красноперекопск",
+        "en_name": "krasnoperekopsk"
+      },
+      {
+        "name": "Ленино",
+        "en_name": "lenyno"
+      },
+      {
+        "name": "Советский",
+        "en_name": "sovetskyi"
+      },
+      {
+        "name": "Судак",
+        "en_name": "sudak"
+      },
+      {
+        "name": "Евпатория",
+        "en_name": "evpatoryia"
+      },
+      {
+        "name": "Первомайское",
+        "en_name": "pervomaiskoe"
+      },
+      {
+        "name": "Черноморское",
+        "en_name": "chernomorskoe"
+      },
+      {
+        "name": "Севастополь",
+        "en_name": "sevastopol"
+      },
+      {
+        "name": "Ялта",
+        "en_name": "ialta"
+      },
+      {
+        "name": "Красногвардейское",
+        "en_name": "krasnogvardeiskoe"
+      },
+      {
+        "name": "Белогорск",
+        "en_name": "belogorsk"
+      },
+      {
+        "name": "Кировское",
+        "en_name": "kyrovskoe"
+      },
+      {
+        "name": "Джанкой",
+        "en_name": "dzhankoi"
+      },
+      {
+        "name": "Коктебель",
+        "en_name": "koktebel"
+      },
+      {
+        "name": "Алупка",
+        "en_name": "alupka"
+      },
+      {
+        "name": "Гурзуф",
+        "en_name": "gurzuf"
+      },
+      {
+        "name": "Мисхор",
+        "en_name": "myskhor"
+      },
+      {
+        "name": "Кореиз",
+        "en_name": "koreyz"
+      },
+      {
+        "name": "Форос",
+        "en_name": "foros"
+      },
+      {
+        "name": "Николаевка",
+        "en_name": "nykolaevka"
+      }
+    ]
+  },
+  {
+    "group_name": "Черновицкая",
+    "group_en_name": "chernovytskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Черновцы",
+        "en_name": "chernovtsy"
+      },
+      {
+        "name": "Вижница",
+        "en_name": "vyzhnytsa"
+      },
+      {
+        "name": "Герца",
+        "en_name": "gertsa"
+      },
+      {
+        "name": "Глубокая",
+        "en_name": "glubokaia"
+      },
+      {
+        "name": "Заставна",
+        "en_name": "zastavna"
+      },
+      {
+        "name": "Кельменцы",
+        "en_name": "kelmentsy"
+      },
+      {
+        "name": "Кицмань",
+        "en_name": "kytsman"
+      },
+      {
+        "name": "Новоселица",
+        "en_name": "novoselytsa"
+      },
+      {
+        "name": "Путила",
+        "en_name": "putyla"
+      },
+      {
+        "name": "Сокиряны",
+        "en_name": "sokyriany"
+      },
+      {
+        "name": "Сторожинец",
+        "en_name": "storozhynets"
+      },
+      {
+        "name": "Хотин",
+        "en_name": "khotyn"
+      },
+      {
+        "name": "Новоднестровск",
+        "en_name": "novodnestrovsk"
+      }
+    ]
+  },
+  {
+    "group_name": "Черкасская",
+    "group_en_name": "cherkasskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Черкассы",
+        "en_name": "cherkassy"
+      },
+      {
+        "name": "Городище",
+        "en_name": "gorodyshche"
+      },
+      {
+        "name": "Драбов",
+        "en_name": "drabov"
+      },
+      {
+        "name": "Жашков",
+        "en_name": "zhashkov"
+      },
+      {
+        "name": "Звенигородка",
+        "en_name": "zvenygorodka"
+      },
+      {
+        "name": "Золотоноша",
+        "en_name": "zolotonosha"
+      },
+      {
+        "name": "Каменка",
+        "en_name": "kamenka"
+      },
+      {
+        "name": "Канев",
+        "en_name": "kanev"
+      },
+      {
+        "name": "Катеринополь",
+        "en_name": "katerynopol"
+      },
+      {
+        "name": "Корсунь-Шевченковский",
+        "en_name": "korsun-shevchenkovskyi"
+      },
+      {
+        "name": "Лысянка",
+        "en_name": "lysianka"
+      },
+      {
+        "name": "Маньковка",
+        "en_name": "mankovka"
+      },
+      {
+        "name": "Монастырище",
+        "en_name": "monastyryshche"
+      },
+      {
+        "name": "Смела",
+        "en_name": "smela"
+      },
+      {
+        "name": "Тальное",
+        "en_name": "talnoe"
+      },
+      {
+        "name": "Умань",
+        "en_name": "uman"
+      },
+      {
+        "name": "Христиновка",
+        "en_name": "khrystynovka"
+      },
+      {
+        "name": "Чигирин",
+        "en_name": "chygyryn"
+      },
+      {
+        "name": "Чернобай",
+        "en_name": "chernobai"
+      },
+      {
+        "name": "Шпола",
+        "en_name": "shpola"
+      },
+      {
+        "name": "Ватутино",
+        "en_name": "vatutyno"
+      }
+    ]
+  },
+  {
+    "group_name": "Кировоградская",
+    "group_en_name": "kyrovogradskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Кировоград",
+        "en_name": "kyrovograd"
+      },
+      {
+        "name": "Бобринец",
+        "en_name": "bobrynets"
+      },
+      {
+        "name": "Ольшанка",
+        "en_name": "olshanka"
+      },
+      {
+        "name": "Гайворон",
+        "en_name": "gaivoron"
+      },
+      {
+        "name": "Голованевск",
+        "en_name": "golovanevsk"
+      },
+      {
+        "name": "Добровеличковка",
+        "en_name": "dobrovelychkovka"
+      },
+      {
+        "name": "Долинская",
+        "en_name": "dolynskaia"
+      },
+      {
+        "name": "Знаменка",
+        "en_name": "znamenka"
+      },
+      {
+        "name": "Компанеевка",
+        "en_name": "kompaneevka"
+      },
+      {
+        "name": "Малая Виска",
+        "en_name": "malaia_vyska"
+      },
+      {
+        "name": "Новгородкa",
+        "en_name": "novgorodka"
+      },
+      {
+        "name": "Новоархангельск",
+        "en_name": "novoarkhangelsk"
+      },
+      {
+        "name": "Новомиргород",
+        "en_name": "novomyrgorod"
+      },
+      {
+        "name": "Новоукраинка",
+        "en_name": "novoukraynka"
+      },
+      {
+        "name": "Александровка",
+        "en_name": "aleksandrovka"
+      },
+      {
+        "name": "Александрия",
+        "en_name": "aleksandryia"
+      },
+      {
+        "name": "Онуфриевка",
+        "en_name": "onufryevka"
+      },
+      {
+        "name": "Петрово",
+        "en_name": "petrovo"
+      },
+      {
+        "name": "Светловодск",
+        "en_name": "svetlovodsk"
+      },
+      {
+        "name": "Ульяновка",
+        "en_name": "ulianovka"
+      },
+      {
+        "name": "Устиновка",
+        "en_name": "ustynovka"
+      }
+    ]
+  },
+  {
+    "group_name": "Ивано-Франковская",
+    "group_en_name": "yvano-frankovskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Ивано-Франковск",
+        "en_name": "yvano-frankovsk"
+      },
+      {
+        "name": "Богородчаны",
+        "en_name": "bogorodchany"
+      },
+      {
+        "name": "Болехов",
+        "en_name": "bolekhov"
+      },
+      {
+        "name": "Верховина",
+        "en_name": "verkhovyna"
+      },
+      {
+        "name": "Галич",
+        "en_name": "galych"
+      },
+      {
+        "name": "Городенка",
+        "en_name": "gorodenka"
+      },
+      {
+        "name": "Долина",
+        "en_name": "dolyna"
+      },
+      {
+        "name": "Калуш",
+        "en_name": "kalush"
+      },
+      {
+        "name": "Коломыя",
+        "en_name": "kolomyia"
+      },
+      {
+        "name": "Косов",
+        "en_name": "kosov"
+      },
+      {
+        "name": "Надворная",
+        "en_name": "nadvornaia"
+      },
+      {
+        "name": "Рогатин",
+        "en_name": "rogatyn"
+      },
+      {
+        "name": "Рожнятов",
+        "en_name": "rozhniatov"
+      },
+      {
+        "name": "Снятин",
+        "en_name": "sniatyn"
+      },
+      {
+        "name": "Тысменица",
+        "en_name": "tysmenytsa"
+      },
+      {
+        "name": "Тлумач",
+        "en_name": "tlumach"
+      },
+      {
+        "name": "Яремча",
+        "en_name": "iaremcha"
+      },
+      {
+        "name": "Бурштын",
+        "en_name": "burshtyn"
+      },
+      {
+        "name": "Буковель",
+        "en_name": "bukovel"
+      },
+      {
+        "name": "Ворохта",
+        "en_name": "vorokhta"
+      }
+    ]
+  },
+  {
+    "group_name": "Херсонская",
+    "group_en_name": "khersonskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Херсон",
+        "en_name": "kherson"
+      },
+      {
+        "name": "Берислав",
+        "en_name": "beryslav"
+      },
+      {
+        "name": "Белозерка",
+        "en_name": "belozerka"
+      },
+      {
+        "name": "Великая Лепетиха",
+        "en_name": "velykaia_lepetykha"
+      },
+      {
+        "name": "Великая Александровка",
+        "en_name": "velykaia_aleksandrovka"
+      },
+      {
+        "name": "Верхний Рогачик",
+        "en_name": "verkhnyi_rogachyk"
+      },
+      {
+        "name": "Высокополье",
+        "en_name": "vysokopole"
+      },
+      {
+        "name": "Геническ",
+        "en_name": "genychesk"
+      },
+      {
+        "name": "Голая Пристань",
+        "en_name": "golaia_prystan"
+      },
+      {
+        "name": "Горностаевка",
+        "en_name": "gornostaevka"
+      },
+      {
+        "name": "Ивановка",
+        "en_name": "yvanovka"
+      },
+      {
+        "name": "Каланчак",
+        "en_name": "kalanchak"
+      },
+      {
+        "name": "Каховка",
+        "en_name": "kakhovka"
+      },
+      {
+        "name": "Нижние Серогозы",
+        "en_name": "nyzhnye_serogozy"
+      },
+      {
+        "name": "Новая Каховка",
+        "en_name": "novaia_kakhovka"
+      },
+      {
+        "name": "Нововоронцовка",
+        "en_name": "novovorontsovka"
+      },
+      {
+        "name": "Новотроицкое",
+        "en_name": "novotroytskoe"
+      },
+      {
+        "name": "Скадовск",
+        "en_name": "skadovsk"
+      },
+      {
+        "name": "Цюрупинск",
+        "en_name": "tsiurupynsk"
+      },
+      {
+        "name": "Чаплинка",
+        "en_name": "chaplynka"
+      },
+      {
+        "name": "Железный Порт",
+        "en_name": "zheleznyi_port"
+      }
+    ]
+  },
+  {
+    "group_name": "Черниговская",
+    "group_en_name": "chernygovskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Чернигов",
+        "en_name": "chernygov"
+      },
+      {
+        "name": "Бахмач",
+        "en_name": "bakhmach"
+      },
+      {
+        "name": "Бобровица",
+        "en_name": "bobrovytsa"
+      },
+      {
+        "name": "Борзна",
+        "en_name": "borzna"
+      },
+      {
+        "name": "Варва",
+        "en_name": "varva"
+      },
+      {
+        "name": "Городня",
+        "en_name": "gorodnia"
+      },
+      {
+        "name": "Ичня",
+        "en_name": "ychnia"
+      },
+      {
+        "name": "Козелец",
+        "en_name": "kozelets"
+      },
+      {
+        "name": "Короп",
+        "en_name": "korop"
+      },
+      {
+        "name": "Корюковка",
+        "en_name": "koriukovka"
+      },
+      {
+        "name": "Куликовка",
+        "en_name": "kulykovka"
+      },
+      {
+        "name": "Мена",
+        "en_name": "mena"
+      },
+      {
+        "name": "Нежин",
+        "en_name": "nezhyn"
+      },
+      {
+        "name": "Новгород-Северский",
+        "en_name": "novgorod-severskyi"
+      },
+      {
+        "name": "Носовка",
+        "en_name": "nosovka"
+      },
+      {
+        "name": "Прилуки",
+        "en_name": "pryluky"
+      },
+      {
+        "name": "Репки",
+        "en_name": "repky"
+      },
+      {
+        "name": "Семеновка",
+        "en_name": "semenovka"
+      },
+      {
+        "name": "Сосница",
+        "en_name": "sosnytsa"
+      },
+      {
+        "name": "Сребное",
+        "en_name": "srebnoe"
+      },
+      {
+        "name": "Талалаевка",
+        "en_name": "talalaevka"
+      },
+      {
+        "name": "Щорс",
+        "en_name": "shchors"
+      }
+    ]
+  },
+  {
+    "group_name": "Донецкая",
+    "group_en_name": "donetskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Донецк",
+        "en_name": "donetsk"
+      },
+      {
+        "name": "Амвросиевка",
+        "en_name": "amvrosyevka"
+      },
+      {
+        "name": "Артемовск",
+        "en_name": "artemovsk"
+      },
+      {
+        "name": "Великая Новоселка",
+        "en_name": "velykaia_novoselka"
+      },
+      {
+        "name": "Волноваха",
+        "en_name": "volnovakha"
+      },
+      {
+        "name": "Володарское",
+        "en_name": "volodarskoe"
+      },
+      {
+        "name": "Горловка",
+        "en_name": "gorlovka"
+      },
+      {
+        "name": "Дебальцево",
+        "en_name": "debaltsevo"
+      },
+      {
+        "name": "Дзержинск",
+        "en_name": "dzerzhynsk"
+      },
+      {
+        "name": "Доброполье",
+        "en_name": "dobropole"
+      },
+      {
+        "name": "Дружковка",
+        "en_name": "druzhkovka"
+      },
+      {
+        "name": "Енакиево",
+        "en_name": "enakyevo"
+      },
+      {
+        "name": "Кировское",
+        "en_name": "kyrovskoe"
+      },
+      {
+        "name": "Константиновка",
+        "en_name": "konstantynovka"
+      },
+      {
+        "name": "Краматорск",
+        "en_name": "kramatorsk"
+      },
+      {
+        "name": "Красноармейск",
+        "en_name": "krasnoarmeisk"
+      },
+      {
+        "name": "Красный Лиман",
+        "en_name": "krasnyi_lyman"
+      },
+      {
+        "name": "Макеевка",
+        "en_name": "makeevka"
+      },
+      {
+        "name": "Мангуш",
+        "en_name": "mangush"
+      },
+      {
+        "name": "Марьинка",
+        "en_name": "marynka"
+      },
+      {
+        "name": "Мариуполь",
+        "en_name": "maryupol"
+      },
+      {
+        "name": "Новоазовск",
+        "en_name": "novoazovsk"
+      },
+      {
+        "name": "Александровка",
+        "en_name": "aleksandrovka"
+      },
+      {
+        "name": "Селидово",
+        "en_name": "selydovo"
+      },
+      {
+        "name": "Славянск",
+        "en_name": "slaviansk"
+      },
+      {
+        "name": "Снежное",
+        "en_name": "snezhnoe"
+      },
+      {
+        "name": "Старобешево",
+        "en_name": "starobeshevo"
+      },
+      {
+        "name": "Тельманово",
+        "en_name": "telmanovo"
+      },
+      {
+        "name": "Торез",
+        "en_name": "torez"
+      },
+      {
+        "name": "Харцызск",
+        "en_name": "khartsyzsk"
+      },
+      {
+        "name": "Шахтарск",
+        "en_name": "shakhtarsk"
+      },
+      {
+        "name": "Ясиноватая",
+        "en_name": "iasynovataia"
+      },
+      {
+        "name": "Авдеевка",
+        "en_name": "avdeevka"
+      },
+      {
+        "name": "Димитров",
+        "en_name": "dymytrov"
+      },
+      {
+        "name": "Докучаевск",
+        "en_name": "dokuchaevsk"
+      },
+      {
+        "name": "Ждановка",
+        "en_name": "zhdanovka"
+      },
+      {
+        "name": "Новогродовка",
+        "en_name": "novogrodovka"
+      },
+      {
+        "name": "Угледар",
+        "en_name": "ugledar"
+      },
+      {
+        "name": "Курахово",
+        "en_name": "kurakhovo"
+      }
+    ]
+  },
+  {
+    "group_name": "Днепропетровская",
+    "group_en_name": "dnepropetrovskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Днепропетровск",
+        "en_name": "dnepropetrovsk"
+      },
+      {
+        "name": "Апостоловo",
+        "en_name": "apostolovo"
+      },
+      {
+        "name": "Васильковка",
+        "en_name": "vasylkovka"
+      },
+      {
+        "name": "Верхнеднепровск",
+        "en_name": "verkhnedneprovsk"
+      },
+      {
+        "name": "Вольногорск",
+        "en_name": "volnogorsk"
+      },
+      {
+        "name": "Днепродзержинск",
+        "en_name": "dneprodzerzhynsk"
+      },
+      {
+        "name": "Желтые Воды",
+        "en_name": "zheltye_vody"
+      },
+      {
+        "name": "Кривой Рог",
+        "en_name": "kryvoi_rog"
+      },
+      {
+        "name": "Кринички",
+        "en_name": "krynychky"
+      },
+      {
+        "name": "Магдалиновка",
+        "en_name": "magdalynovka"
+      },
+      {
+        "name": "Марганец",
+        "en_name": "marganets"
+      },
+      {
+        "name": "Межевая",
+        "en_name": "mezhevaia"
+      },
+      {
+        "name": "Никополь",
+        "en_name": "nykopol"
+      },
+      {
+        "name": "Новомосковск",
+        "en_name": "novomoskovsk"
+      },
+      {
+        "name": "Орджоникидзе",
+        "en_name": "ordzhonykydze"
+      },
+      {
+        "name": "Павлоград",
+        "en_name": "pavlograd"
+      },
+      {
+        "name": "Першотравенск",
+        "en_name": "pershotravensk"
+      },
+      {
+        "name": "Петриковка",
+        "en_name": "petrykovka"
+      },
+      {
+        "name": "Петропавловка",
+        "en_name": "petropavlovka"
+      },
+      {
+        "name": "Покровское",
+        "en_name": "pokrovskoe"
+      },
+      {
+        "name": "Пятихатки",
+        "en_name": "piatykhatky"
+      },
+      {
+        "name": "Синельниково",
+        "en_name": "synelnykovo"
+      },
+      {
+        "name": "Соленое",
+        "en_name": "solenoe"
+      },
+      {
+        "name": "Софиевка",
+        "en_name": "sofyevka"
+      },
+      {
+        "name": "Терновка",
+        "en_name": "ternovka"
+      },
+      {
+        "name": "Томаковка",
+        "en_name": "tomakovka"
+      },
+      {
+        "name": "Царичанка",
+        "en_name": "tsarychanka"
+      },
+      {
+        "name": "Широкое",
+        "en_name": "shyrokoe"
+      },
+      {
+        "name": "Юрьевка",
+        "en_name": "iurevka"
+      },
+      {
+        "name": "Юбилейный",
+        "en_name": "iubyleinyi"
+      }
+    ]
+  },
+  {
+    "group_name": "Винницкая",
+    "group_en_name": "vynnytskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Винница",
+        "en_name": "vynnytsa"
+      },
+      {
+        "name": "Жмеринка",
+        "en_name": "zhmerynka"
+      },
+      {
+        "name": "Казатин",
+        "en_name": "kazatyn"
+      },
+      {
+        "name": "Крыжополь",
+        "en_name": "kryzhopol"
+      },
+      {
+        "name": "Липовец",
+        "en_name": "lypovets"
+      },
+      {
+        "name": "Литин",
+        "en_name": "lytyn"
+      },
+      {
+        "name": "Могилев-Подольский",
+        "en_name": "mogylev-podolskyi"
+      },
+      {
+        "name": "Мурованые Куриловцы",
+        "en_name": "murovanye_kurylovtsy"
+      },
+      {
+        "name": "Немиров",
+        "en_name": "nemyrov"
+      },
+      {
+        "name": "Оратов",
+        "en_name": "oratov"
+      },
+      {
+        "name": "Песчанка",
+        "en_name": "peschanka"
+      },
+      {
+        "name": "Погребище",
+        "en_name": "pogrebyshche"
+      },
+      {
+        "name": "Теплик",
+        "en_name": "teplyk"
+      },
+      {
+        "name": "Тывров",
+        "en_name": "tyvrov"
+      },
+      {
+        "name": "Томашполь",
+        "en_name": "tomashpol"
+      },
+      {
+        "name": "Тростянец",
+        "en_name": "trostianets"
+      },
+      {
+        "name": "Тульчин",
+        "en_name": "tulchyn"
+      },
+      {
+        "name": "Хмельник",
+        "en_name": "khmelnyk"
+      },
+      {
+        "name": "Черновцы",
+        "en_name": "chernovtsy"
+      },
+      {
+        "name": "Чечельник",
+        "en_name": "chechelnyk"
+      },
+      {
+        "name": "Шаргород",
+        "en_name": "shargorod"
+      },
+      {
+        "name": "Ямполь",
+        "en_name": "iampol"
+      },
+      {
+        "name": "Бар",
+        "en_name": "bar"
+      },
+      {
+        "name": "Бершадь",
+        "en_name": "bershad"
+      },
+      {
+        "name": "Гайсин",
+        "en_name": "gaisyn"
+      },
+      {
+        "name": "Ильинцы",
+        "en_name": "ylyntsy"
+      },
+      {
+        "name": "Калиновка",
+        "en_name": "kalynovka"
+      },
+      {
+        "name": "Гнивань",
+        "en_name": "gnyvan"
+      },
+      {
+        "name": "Ладыжин",
+        "en_name": "ladyzhyn"
+      }
+    ]
+  },
+  {
+    "group_name": "Сумская",
+    "group_en_name": "sumskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Сумы",
+        "en_name": "sumy"
+      },
+      {
+        "name": "Белополье",
+        "en_name": "belopole"
+      },
+      {
+        "name": "Бурынь",
+        "en_name": "buryn"
+      },
+      {
+        "name": "Великая Писаревка",
+        "en_name": "velykaia_pysarevka"
+      },
+      {
+        "name": "Глухов",
+        "en_name": "glukhov"
+      },
+      {
+        "name": "Конотоп",
+        "en_name": "konotop"
+      },
+      {
+        "name": "Краснополье",
+        "en_name": "krasnopole"
+      },
+      {
+        "name": "Кролевец",
+        "en_name": "krolevets"
+      },
+      {
+        "name": "Лебедин",
+        "en_name": "lebedyn"
+      },
+      {
+        "name": "Липовая Долина",
+        "en_name": "lypovaia_dolyna"
+      },
+      {
+        "name": "Недригайлов",
+        "en_name": "nedrygailov"
+      },
+      {
+        "name": "Ахтырка",
+        "en_name": "akhtyrka"
+      },
+      {
+        "name": "Путивль",
+        "en_name": "putyvl"
+      },
+      {
+        "name": "Ромны",
+        "en_name": "romny"
+      },
+      {
+        "name": "Середина-Буда",
+        "en_name": "seredyna-buda"
+      },
+      {
+        "name": "Тростянец",
+        "en_name": "trostianets"
+      },
+      {
+        "name": "Шостка",
+        "en_name": "shostka"
+      },
+      {
+        "name": "Ямполь",
+        "en_name": "iampol"
+      }
+    ]
+  },
+  {
+    "group_name": "Полтавская",
+    "group_en_name": "poltavskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Полтава",
+        "en_name": "poltava"
+      },
+      {
+        "name": "Великая Багачка",
+        "en_name": "velykaia_bagachka"
+      },
+      {
+        "name": "Гадяч",
+        "en_name": "gadiach"
+      },
+      {
+        "name": "Глобино",
+        "en_name": "globyno"
+      },
+      {
+        "name": "Гребенка",
+        "en_name": "grebenka"
+      },
+      {
+        "name": "Диканька",
+        "en_name": "dykanka"
+      },
+      {
+        "name": "Зеньков",
+        "en_name": "zenkov"
+      },
+      {
+        "name": "Карловка",
+        "en_name": "karlovka"
+      },
+      {
+        "name": "Кобеляки",
+        "en_name": "kobeliaky"
+      },
+      {
+        "name": "Козельщина",
+        "en_name": "kozelshchyna"
+      },
+      {
+        "name": "Комсомольск",
+        "en_name": "komsomolsk"
+      },
+      {
+        "name": "Котельва",
+        "en_name": "kotelva"
+      },
+      {
+        "name": "Лохвица",
+        "en_name": "lokhvytsa"
+      },
+      {
+        "name": "Лубны",
+        "en_name": "lubny"
+      },
+      {
+        "name": "Машевка",
+        "en_name": "mashevka"
+      },
+      {
+        "name": "Миргород",
+        "en_name": "myrgorod"
+      },
+      {
+        "name": "Новые Санжары",
+        "en_name": "novye_sanzhary"
+      },
+      {
+        "name": "Оржица",
+        "en_name": "orzhytsa"
+      },
+      {
+        "name": "Пирятин",
+        "en_name": "pyriatyn"
+      },
+      {
+        "name": "Решетиловка",
+        "en_name": "reshetylovka"
+      },
+      {
+        "name": "Семеновка",
+        "en_name": "semenovka"
+      },
+      {
+        "name": "Хорол",
+        "en_name": "khorol"
+      },
+      {
+        "name": "Чернухи",
+        "en_name": "chernukhy"
+      },
+      {
+        "name": "Чутово",
+        "en_name": "chutovo"
+      },
+      {
+        "name": "Шишаки",
+        "en_name": "shyshaky"
+      },
+      {
+        "name": "Кременчуг",
+        "en_name": "kremenchug"
+      }
+    ]
+  },
+  {
+    "group_name": "Тернопольская",
+    "group_en_name": "ternopolskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Тернополь",
+        "en_name": "ternopol"
+      },
+      {
+        "name": "Бережаны",
+        "en_name": "berezhany"
+      },
+      {
+        "name": "Борщев",
+        "en_name": "borshchev"
+      },
+      {
+        "name": "Бучач",
+        "en_name": "buchach"
+      },
+      {
+        "name": "Гусятин",
+        "en_name": "gusiatyn"
+      },
+      {
+        "name": "Залещики",
+        "en_name": "zaleshchyky"
+      },
+      {
+        "name": "Збараж",
+        "en_name": "zbarazh"
+      },
+      {
+        "name": "Зборов",
+        "en_name": "zborov"
+      },
+      {
+        "name": "Козова",
+        "en_name": "kozova"
+      },
+      {
+        "name": "Кременец",
+        "en_name": "kremenets"
+      },
+      {
+        "name": "Лановцы",
+        "en_name": "lanovtsy"
+      },
+      {
+        "name": "Монастыриска",
+        "en_name": "monastyryska"
+      },
+      {
+        "name": "Подволочиск",
+        "en_name": "podvolochysk"
+      },
+      {
+        "name": "Подгайцы",
+        "en_name": "podgaitsy"
+      },
+      {
+        "name": "Теребовля",
+        "en_name": "terebovlia"
+      },
+      {
+        "name": "Чертков",
+        "en_name": "chertkov"
+      },
+      {
+        "name": "Шумское",
+        "en_name": "shumskoe"
+      }
+    ]
+  },
+  {
+    "group_name": "Харьковская",
+    "group_en_name": "kharkovskaia",
+    "is_possible": true,
+    "attributes": [
+      {
+        "name": "Харьков",
+        "en_name": "kharkov"
+      },
+      {
+        "name": "Балаклея",
+        "en_name": "balakleia"
+      },
+      {
+        "name": "Барвенково",
+        "en_name": "barvenkovo"
+      },
+      {
+        "name": "Близнюки",
+        "en_name": "blyzniuky"
+      },
+      {
+        "name": "Богодухов",
+        "en_name": "bogodukhov"
+      },
+      {
+        "name": "Боровая",
+        "en_name": "borovaia"
+      },
+      {
+        "name": "Валки",
+        "en_name": "valky"
+      },
+      {
+        "name": "Великий Бурлук",
+        "en_name": "velykyi_burluk"
+      },
+      {
+        "name": "Волчанск",
+        "en_name": "volchansk"
+      },
+      {
+        "name": "Двуречная",
+        "en_name": "dvurechnaia"
+      },
+      {
+        "name": "Дергачи",
+        "en_name": "dergachy"
+      },
+      {
+        "name": "Зачепиловка",
+        "en_name": "zachepylovka"
+      },
+      {
+        "name": "Змиев",
+        "en_name": "zmyev"
+      },
+      {
+        "name": "Золочев",
+        "en_name": "zolochev"
+      },
+      {
+        "name": "Изюм",
+        "en_name": "yzium"
+      },
+      {
+        "name": "Кегичевка",
+        "en_name": "kegychevka"
+      },
+      {
+        "name": "Коломак",
+        "en_name": "kolomak"
+      },
+      {
+        "name": "Красноград",
+        "en_name": "krasnograd"
+      },
+      {
+        "name": "Краснокутск",
+        "en_name": "krasnokutsk"
+      },
+      {
+        "name": "Купянск",
+        "en_name": "kupiansk"
+      },
+      {
+        "name": "Лозовая",
+        "en_name": "lozovaia"
+      },
+      {
+        "name": "Новая Водолага",
+        "en_name": "novaia_vodolaga"
+      },
+      {
+        "name": "Первомайский",
+        "en_name": "pervomaiskyi"
+      },
+      {
+        "name": "Печенеги",
+        "en_name": "pechenegy"
+      },
+      {
+        "name": "Сахновщина",
+        "en_name": "sakhnovshchyna"
+      },
+      {
+        "name": "Чугуев",
+        "en_name": "chuguev"
+      },
+      {
+        "name": "Шевченково",
+        "en_name": "shevchenkovo"
+      },
+      {
+        "name": "Люботин",
+        "en_name": "liubotyn"
+      }
+    ]
+  },
+  {
     "group_name": "Марка автомобиля",
     "group_en_name": "car_make",
     "is_possible": true,
@@ -15057,4 +17735,4 @@
       }
     ]
   }
-]	
+]
