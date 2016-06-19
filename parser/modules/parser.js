@@ -1,14 +1,11 @@
-//var Item = MODEL('item').schema;
-var Http = require('./http.js');
-var File = require('./file.js');
-var ItemConfig = require('./itemConfig');
-var FieldHandler = require('./fieldHandler');
-var cheerio = require('cheerio');
-var async = require('async');
-
-var ItemsList = require('../models/itemsList').schema;
-var Items = require(__dirname + '/../models/items').schema;
-var ItemHandler = require(__dirname + '/../modules/itemHandler');
+var Http = require('./http.js'),
+    ItemConfig = require('./itemConfig'),
+    FieldHandler = require('./fieldHandler'),
+    cheerio = require('cheerio'),
+    async = require('async'),
+    ItemsList = require('../models/itemsList').schema,
+    Items = require(__dirname + '/../models/items').schema,
+    ItemHandler = require(__dirname + '/../modules/itemHandler');
 
 exports.getItemLinks = function (itemsListPage, configFile) {
 
@@ -39,7 +36,25 @@ exports.getItemLinks = function (itemsListPage, configFile) {
 
 exports.processLink = function (link, configFile, cb) {
     var self = this;
-    //get link page content    
+    //get link page content
+    /*    var c = new Crawler({
+     maxConnections : 10,
+
+     callback : function (error, result, $) {
+
+     $('script').remove();
+     $('style').remove();
+     $('meta').remove();
+
+     var normalItemPageLinks = self.getItemLinks($, configFile);
+     self.removeLinksIfInDB(normalItemPageLinks, function (err, updatedLinks) {
+     self.processItems(updatedLinks, configFile, function (err) {
+     cb(err);
+     });
+     });
+     }
+     });
+     c.queue(link);*/
     self.getPageContent(link, function (err, page) {
         if (!err) {
             var parsedPage = self.getParsedHttpPage(page);
@@ -95,7 +110,7 @@ exports.processItems = function (linksArray, configFile, cb) {
     }, function (err) {
         cb(err);
     });
-}
+};
 
 exports.processEachItemLinks = function (itemsArray, cb) {
     var self = this;
@@ -127,14 +142,14 @@ exports.processEachItemLinks = function (itemsArray, cb) {
         cb(err);
     });
 
-}
+};
 
 exports.getPageContent = function (itemLink, cb) {
     var page = new Http(itemLink);
     page.getPageContent(function (err, html) {
         cb(err, html);
     });
-}
+};
 
 exports.getParsedHttpPage = function (page) {
     var $ = cheerio.load(page, {
@@ -145,11 +160,11 @@ exports.getParsedHttpPage = function (page) {
     $('meta').remove();
 
     return $;
-}
+};
 
 exports.getActiveItems = function (cb) {
     //get items from db to parse. with links and config files
     ItemsList.getActiveItemsList(function (err, list) {
         cb(err, list);
     });
-}
+};
