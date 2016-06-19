@@ -28,7 +28,7 @@ ItemHandler.prototype.getItemAttributes = function () {
 
         var itemFieldObject = {
             'value': fieldHandler.getFieldValue(),
-            'search_value': ''
+            //'search_value': ''
         };
         /*        var itemFieldObject = {
          //'name': field_config['name'],
@@ -53,29 +53,33 @@ ItemHandler.prototype.getItemAttributes = function () {
 ItemHandler.prototype.processPossibleValues = function (cb) {
 
     var self = this;
-//fix this
-    AttributesGroups.getPossible(function (err, groups) {
-        async.each(groups, function (group, callback) {
+    //fix this
+    // ? ? ? ? ??  LEAVE IT OR REMOVE
 
-            if (self.item_fields[group['group_en_name']]) {
-                var possibleObjectField = self.item_fields[group['group_en_name']];
-                console.log(possibleObjectField);
 
-                for (var i in group['attributes']) {
-                    console.log(group['attributes'][i]);
-                    if (possibleObjectField['value'][0].indexOf(group['attributes'][i]) > -1) {
-                        //console.log('содержит ' + group['attributes'][i]);
-                        possibleObjectField['value'] = [group['attributes'][i]];
-                        //possibleObjectField['display_value'] = [i];
-                    }
-                }
-            }
-            callback();
-        }, function (err) {
-            cb(err, null);
-        });
+    /*AttributesGroups.getPossible(function (err, groups) {
+     async.each(groups, function (group, callback) {
 
-    });
+     if (self.item_fields[group['group_en_name']]) {
+     var possibleObjectField = self.item_fields[group['group_en_name']];
+     console.log(possibleObjectField);
+
+     for (var i in group['attributes']) {
+     console.log(group['attributes'][i]);
+     if (possibleObjectField['value'][0].indexOf(group['attributes'][i]) > -1) {
+     //console.log('содержит ' + group['attributes'][i]);
+     possibleObjectField['value'] = [group['attributes'][i]];
+     //possibleObjectField['display_value'] = [i];
+     }
+     }
+     }
+     callback();
+     }, function (err) {
+     cb(err, null);
+     });
+
+     });*/
+    cb(null, null);
 };
 
 ItemHandler.prototype.returnItemAttributes = function () {
