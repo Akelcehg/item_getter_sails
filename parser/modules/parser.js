@@ -48,8 +48,8 @@ exports.processLink = function (link, configFile, cb) {
 
             //remove items that have links id db
 
-            self.removeLinksIfInDB(normalItemPageLinks, function (err, links) {
-                self.processItems(normalItemPageLinks, configFile, function (err) {
+            self.removeLinksIfInDB(normalItemPageLinks, function (err, updatedLinks) {
+                self.processItems(updatedLinks, configFile, function (err) {
                     cb(err);
                 });
             });
