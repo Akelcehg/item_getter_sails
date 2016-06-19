@@ -27,23 +27,23 @@ ItemHandler.prototype.getItemAttributes = function () {
         );
 
         var itemFieldObject = {
-         'value': fieldHandler.getFieldValue(),
-         'search_value': ''
+            'value': fieldHandler.getFieldValue(),
+            'search_value': ''
         };
         /*        var itemFieldObject = {
          //'name': field_config['name'],
          'value': fieldHandler.getFieldValue()
          };*/
-/*        var fieldName = field_config['field_name'];
-        var fieldObj = {};
-        fieldObj[fieldName] = itemFieldObject;
-        self.item_fields[fieldName] = itemFieldObject;
-        var itemFieldObject = {};*/
+        /*        var fieldName = field_config['field_name'];
+         var fieldObj = {};
+         fieldObj[fieldName] = itemFieldObject;
+         self.item_fields[fieldName] = itemFieldObject;
+         var itemFieldObject = {};*/
         var fieldName = field_config['field_name'];
-        
+
         //self.item_fields[fieldName] = fieldHandler.getFieldValue();
         self.item_fields[fieldName] = itemFieldObject;
-        
+
         //self.item_fields.push(itemFieldObject);
 
         //https://habrahabr.ru/post/177761/

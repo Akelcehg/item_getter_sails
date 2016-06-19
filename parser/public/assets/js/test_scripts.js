@@ -10,7 +10,7 @@ $(document).ready(function() {
         self.children('.loading-icon').show();
 
         $.post({
-            url: "/items/test_http/",            
+            url: "/items/test_http/",
             data: {
                 'itemId': itemId
             }
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
             if (response['status'] === 'ok' && response['item_json']) {
 
-                //JSON.stringify(obj, undefined, 4);                
+                //JSON.stringify(obj, undefined, 4);
                 $('.parsed_item_div').append('<div class="alert alert-success">' +
                     '<button type="button" class="close" data-dismiss="alert">×</button> Результат парсинга страницы' +
                     '<a href="' + itemLink + '" class="parsed_item_href" target="_black">Ссылка на Item</a>' +
@@ -106,20 +106,20 @@ $(document).ready(function() {
             }
         });
         e.preventDefault();
-    });    
+    });
 
     $("#start_parse").click(function(e) {
 
-        var self = $(this);        
+        var self = $(this);
 
         $.post({
             url: "/controls/start_parse/"
         }).done(function(response) {
 
-            if (response['status'] === 'ok') {                
-                $.Notification.notify('success','top right','Запуска парсера', 'Успешно запущен')
+            if (response['status'] === 'ok') {
+                $.Notification.notify('success', 'top right', 'Запуска парсера', 'Успешно запущен')
             } else {
-                $.Notification.notify('error','top right','Запуска парсера', 'Успешно запущен')
+                $.Notification.notify('error', 'top right', 'Запуска парсера', 'Успешно запущен')
             }
         });
         e.preventDefault();
@@ -127,20 +127,36 @@ $(document).ready(function() {
 
     $("#convert_json").click(function(e) {
 
-        var self = $(this);        
+        var self = $(this);
 
         $.post({
             url: "/controls/convert_json/"
         }).done(function(response) {
 
-            if (response['status'] === 'ok') {                
-                $.Notification.notify('success','top right','Запуска парсера', 'Успешно запущен')
+            if (response['status'] === 'ok') {
+                $.Notification.notify('success', 'top right', 'Запуска парсера', 'Успешно запущен')
             } else {
-                $.Notification.notify('error','top right','Запуска парсера', 'Успешно запущен')
+                $.Notification.notify('error', 'top right', 'Запуска парсера', 'Успешно запущен')
             }
         });
         e.preventDefault();
     });
 
+
+    $("#load_groups").click(function(e) {
+        var self = $(this);
+
+        $.post({
+            url: "/controls/load_groups/"
+        }).done(function(response) {
+
+            if (response['status'] === 'ok') {
+                $.Notification.notify('success', 'top right', 'Загрузка групп', 'Успешно загружены')
+            } else {
+                $.Notification.notify('error', 'top right', 'Загрузка групп', 'Ошибка при загрузке')
+            }
+        });
+        e.preventDefault();
+    });
 
 });
