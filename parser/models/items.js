@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
+    async = require('async'),
     autoIncrement = require('mongoose-auto-increment');
 
 var ItemSchema = new Schema({
@@ -25,6 +26,24 @@ ItemSchema.plugin(autoIncrement.plugin, {model: 'item', field: 'itemId', startAt
 
 ItemSchema.methods.saveItem = function (attrbutesObject, cb) {
     cb();
+};
+
+ItemSchema.statics.updateLinksOnSavedItems = function (links, cb) {
+    this.model('items').find({
+        'link': {"$in": links}
+    }, function (err, itemsLinks) {
+
+        for (var i in itemsLinks) {
+            var index = links.indexOf(itemsLinks[i]['link']);
+            if (index > -1) {
+                links.splice(index, 1);
+            }
+
+        }
+        
+        cb(null, links);
+
+    }).select('link -_id');
 };
 
 exports.schema = mongoose.model('items', ItemSchema);

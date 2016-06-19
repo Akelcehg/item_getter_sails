@@ -15,16 +15,23 @@ function FieldHandler(node, nodeAttribute, page, bind_node, bind_node_attribute,
     this.modifiers_values = modifiers_values;
 }
 
-FieldHandler.prototype.getFieldValue = function() {
+FieldHandler.prototype.getFieldValue = function () {
     //вернуть все значения поля. ?массив
-    return this.getNodesData(this);
+
+    var nodeArray = this.getNodesData(this), normalArray = [];
+
+    for (var i in nodeArray) {
+        if (nodeArray[i]) normalArray.push(nodeArray[i]);
+    }
+    
+    return normalArray;
 };
 
-FieldHandler.prototype.getNodesData = function() {
+FieldHandler.prototype.getNodesData = function () {
     var self = this;
     /*var $ = cheerio.load(this.page, {
-        normalizeWhitespace: true
-    });*/
+     normalizeWhitespace: true
+     });*/
     var $ = this.page;
 
     var nodeData = [];
@@ -36,11 +43,11 @@ FieldHandler.prototype.getNodesData = function() {
     nodesArray.shift();
     var childrenNodes = nodesArray;
 
-    $(parentNode).each(function(i, elem) {
+    $(parentNode).each(function (i, elem) {
 
         var parent = $(this);
 
-        childrenNodes.forEach(function(item, i, arr) {
+        childrenNodes.forEach(function (item, i, arr) {
             parent = parent.children(item)
         });
 
@@ -75,7 +82,7 @@ function getValueByAttributeType(attribute, parent) {
 }
 
 //function compareBindValue(valueNodeParent) {
-FieldHandler.prototype.compareBindValue = function(valueNodeParent) {
+FieldHandler.prototype.compareBindValue = function (valueNodeParent) {
     var self = this;
 
     var bindNodesArray = self.bind_node.split(' ');
@@ -84,7 +91,7 @@ FieldHandler.prototype.compareBindValue = function(valueNodeParent) {
 
     bindNodesArray.shift();
 
-    bindNodesArray.forEach(function(bindItem, i, arr) {
+    bindNodesArray.forEach(function (bindItem, i, arr) {
         bindNodeParent = bindNodeParent.children(bindItem);
     });
 
@@ -97,7 +104,7 @@ FieldHandler.prototype.compareBindValue = function(valueNodeParent) {
     }
 }
 
-FieldHandler.prototype.executeModifiers = function(nodeData) {
+FieldHandler.prototype.executeModifiers = function (nodeData) {
 
     for (var i in this.modifiers) {
         for (var j in nodeData) {

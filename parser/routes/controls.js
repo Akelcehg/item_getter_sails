@@ -1,8 +1,10 @@
 var express = require('express'),
     router = express.Router(),
     async = require('async'),
-    Parser = require(__dirname + '/../modules/parser');
+    Parser = require(__dirname + '/../modules/parser'),
+    _is_parsing = false;
 AttributesGroups = require('../models/attributesGroups').schema;
+
 
 router.get('/', function (req, res, next) {
     res.render('controls/index');
@@ -10,28 +12,33 @@ router.get('/', function (req, res, next) {
 
 router.post('/start_parse', function (req, res, next) {
 
-    async.waterfall([
-        function (callback) {
-            //getting all active items with links from database
-            Parser.getActiveItems(function (err, activeItemsList) {
-                callback(err, activeItemsList)
+    console.log("Starting parsing");
+    console.log(_is_parsing);
+    if (_is_parsing === false) {
+        _is_parsing = true;
+        async.waterfall([
+            function (callback) {
+                console.log("a");
+                //getting all active items with links from database
+                Parser.getActiveItems(function (err, activeItemsList) {
+                    callback(err, activeItemsList)
+                });
+            },
+            function (activeItemsList, callback) {
+                Parser.processEachItemLinks(activeItemsList, function (err, itemPageContent) {
+                    callback(err, itemPageContent);
+                });
+            }
+        ], function (err, result) {
+            if (err) console.log(err);
+            else console.log('Done');
+            _is_parsing = false;
+            res.json({
+                'status': 'ok'
             });
-        },
-        function (activeItemsList, callback) {
-            Parser.processEachItemLinks(activeItemsList, function (err, itemPageContent) {
-                callback(err, itemPageContent);
-            });
-
-        }
-    ], function (err, result) {
-        if (err) console.log(err);
-        else console.log('Done')
-        res.json({
-            'status': 'ok'
         });
-    });
 
-
+    }
 });
 
 router.post('/convert_json', function (req, res, next) {
