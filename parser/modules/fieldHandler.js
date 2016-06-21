@@ -23,15 +23,13 @@ FieldHandler.prototype.getFieldValue = function () {
     for (var i in nodeArray) {
         if (nodeArray[i]) normalArray.push(nodeArray[i]);
     }
-    
+
     return normalArray;
 };
 
 FieldHandler.prototype.getNodesData = function () {
     var self = this;
-    /*var $ = cheerio.load(this.page, {
-     normalizeWhitespace: true
-     });*/
+
     var $ = this.page;
 
     var nodeData = [];
@@ -98,7 +96,7 @@ FieldHandler.prototype.compareBindValue = function (valueNodeParent) {
     var returnedBindNodeValue = getValueByAttributeType(self.bind_node_attribute, bindNodeParent);
 
     if (returnedBindNodeValue) returnedBindNodeValue = returnedBindNodeValue.trim();
-
+    
     if (returnedBindNodeValue === self.expected_value) {
         return true;
     }
