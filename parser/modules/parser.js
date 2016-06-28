@@ -92,7 +92,7 @@ exports.processItems = function (linksArray, configFile, cb) {
                 var itemObject = new ItemHandler(configFile['item_fields'], parsedPage);
 
                 itemObject.getItemAttributes();
-                itemObject.processPossibleValues(function () {
+                itemObject.processPossibleValues(function (err) {
 
                     var currentItem = new Items({
                         link: link,

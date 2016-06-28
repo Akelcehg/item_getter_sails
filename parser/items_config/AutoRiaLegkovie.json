@@ -17,12 +17,14 @@
         "field_attribute": "text()"
     },{
         "name": "Марка",
-        "field_name": "make",
+        "field_name": "car_make",
+        "is_possible" : true,
         "field_node": "h1.head span[itemprop=brand]",
         "field_attribute": "text()"
     },{
         "name": "Модель",
         "field_name": "model",
+        "is_possible" : true,
         "field_node": "span[itemprop=name]",
         "field_attribute": "text()"        
     },{
@@ -89,6 +91,7 @@
         "field_attribute": "text()"
     }, {
         "name": "Тип транспорта",
+        "is_possible" : true,
         "field_name": "transport_type",
         "field_node": "dd span.argument",
         "field_attribute": "text()",

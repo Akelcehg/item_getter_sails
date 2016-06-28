@@ -53,6 +53,25 @@ ItemHandler.prototype.getItemAttributes = function () {
 ItemHandler.prototype.processPossibleValues = function (cb) {
 
     var self = this;
+    var possibleValuesArray = [];
+
+    //console.log(self.item_fields_config);
+     self.item_fields_config.forEach(function(configField, i, arr) {
+
+     if (configField.is_possible) {
+         possibleValuesArray.push(
+             {"attributes.name": self.item_fields[configField['field_name']]['value']}
+         )
+     }
+
+     });
+
+    AttributesGroups.getPossible(possibleValuesArray, function (err, groups) {
+        //console.log (groups);
+        cb(null, null);
+    });
+
+
     //fix this
     // ? ? ? ? ??  LEAVE IT OR REMOVE
 
@@ -79,7 +98,8 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
      });
 
      });*/
-    cb(null, null);
+
+    //cb(null, null);
 };
 
 ItemHandler.prototype.returnItemAttributes = function () {
