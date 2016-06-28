@@ -27,8 +27,8 @@ ItemHandler.prototype.getItemAttributes = function () {
         );
 
         var itemFieldObject = {
-            'value': fieldHandler.getFieldValue()
-            //'search_value': ''
+            'value': fieldHandler.getFieldValue(),
+            'search_value': ''
         };
         /*        var itemFieldObject = {
          //'name': field_config['name'],

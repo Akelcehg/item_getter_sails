@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var ItemSchema = new Schema({
     link: String,
     name: String,
-    itemId: Number,
+    itemId: {type: Number, index: true},
     createdAt: {type: Date, default: Date.now},
     attributes: Object
     //attributes: Object
