@@ -55,7 +55,6 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
     var self = this;
     var possibleValuesArray = [];
 
-    //console.log(self.item_fields_config);
     self.item_fields_config.forEach(function (configField, i, arr) {
 
         if (configField.is_possible) {
@@ -84,8 +83,7 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
             }
 
         }
-
-
+        
         groupsIndexes.forEach(function (group, i, arr) {
             /*console.log (group['group_name']);
              console.log (self.item_fields[group['group_name']]);*/
@@ -97,36 +95,6 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
 
         cb(null, null);
     });
-
-
-    //fix this
-    // ? ? ? ? ??  LEAVE IT OR REMOVE
-
-
-    /*AttributesGroups.getPossible(function (err, groups) {
-     async.each(groups, function (group, callback) {
-
-     if (self.item_fields[group['group_en_name']]) {
-     var possibleObjectField = self.item_fields[group['group_en_name']];
-     console.log(possibleObjectField);
-
-     for (var i in group['attributes']) {
-     console.log(group['attributes'][i]);
-     if (possibleObjectField['value'][0].indexOf(group['attributes'][i]) > -1) {
-     //console.log('содержит ' + group['attributes'][i]);
-     possibleObjectField['value'] = [group['attributes'][i]];
-     //possibleObjectField['display_value'] = [i];
-     }
-     }
-     }
-     callback();
-     }, function (err) {
-     cb(err, null);
-     });
-
-     });*/
-
-    //cb(null, null);
 };
 
 ItemHandler.prototype.returnItemAttributes = function () {
