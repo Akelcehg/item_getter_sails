@@ -65,7 +65,6 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
                 }
             )
         }
-
     });
 
     AttributesGroups.getPossible(possibleValuesArray, function (err, groupsIndexes) {
@@ -83,11 +82,8 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
             }
 
         }
-        
-        groupsIndexes.forEach(function (group, i, arr) {
-            /*console.log (group['group_name']);
-             console.log (self.item_fields[group['group_name']]);*/
 
+        groupsIndexes.forEach(function (group, i, arr) {
             if (self.item_fields[group['group_name']]) {
                 self.item_fields[group['group_name']]['search_value'] = group['attribute_id'];
             }
