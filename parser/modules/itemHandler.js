@@ -76,12 +76,13 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
                 groupsIndexes.forEach(function (group) {
 
                     if (self.item_fields[i].value[0] == group.value) {
-                        self.item_fields[i].search_value = group.attribute_id;
+                        self.item_fields[i].search_value = [group.attribute_id];
                     }
                 });
             }
-
+            if (!self.item_fields[i].search_value) self.item_fields[i].search_value = self.item_fields[i].value;
         }
+
 
         groupsIndexes.forEach(function (group, i, arr) {
             if (self.item_fields[group['group_name']]) {
