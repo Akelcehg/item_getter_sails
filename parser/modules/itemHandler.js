@@ -68,7 +68,6 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
     });
 
     AttributesGroups.getPossible(possibleValuesArray, function (err, groupsIndexes) {
-        console.log(groupsIndexes);
 
         for (var i in self.item_fields) {
 

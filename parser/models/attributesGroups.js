@@ -6,6 +6,7 @@ var AttributesGroupsSchema = new Schema({
     group_name: String,
     group_en_name: String,
     is_possible: Boolean,
+    group_id : Number,
     createdAt: {type: Date, default: Date.now},
     //attributes: Array
     attributes: [{
@@ -19,6 +20,7 @@ var AttributesGroupsSchema = new Schema({
 
 //AttributesGroupsSchema.index({ "_userId": 1, "number": 1 }, { unique: true });
 AttributesGroupsSchema.set('collection', 'attributes_groups');
+AttributesGroupsSchema.plugin(autoIncrement.plugin, {model: 'attributes_groups', field: 'group_id', startAt: 1});
 
 var CounterSchema = Schema({
     _id: {type: String, required: true},
@@ -32,12 +34,12 @@ AttributesGroupsSchema.pre('save', function (next) {
     var doc = this;
 
     for (var i = 0; i < this.attributes.length; i++) {
-        this.attributes[i]['attributeId'] = i + 1;
+        this.attributes[i]['attributeId'] = i + 1+this.group_id;
     }
 
     var c = new counter();
     c._id = doc.group_en_name;
-    c.seq = doc['attributes.attributeId'] = doc.attributes.length;
+    c.seq = doc['attributes.attributeId'] = doc.attributes.length+this.group_id;
     c.save(function (err) {
         if (err) next(err);
         else next();
