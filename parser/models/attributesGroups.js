@@ -80,30 +80,41 @@ AttributesGroupsSchema.statics.getPossible = function (conditionArray, cb) {
      } else cb(null, attributesGroups);
      }).select('group_en_name');*/
 
+  //  console.log(conditionArray);
+    var filterArray = [];
+
+    for (var i = 0; i < conditionArray.length; i++) {
+        filterArray.push(
+            {$eq : ['$$attribute.name',conditionArray[i]['attributes.name']]}
+        )
+    }
+//console.log (filterArray);
     this.model('attributes_groups').aggregate([
         // Get just the docs that contain a shapes element where color is 'red'
         //{$match: {'attributes.name': 'E-Class'}},
         //{$match: {'attributes.name': 'Луцк'}},
-        {$match: {$or: [{'attributes.name': 'E-Class'}, {'attributes.name': 'Луцк'}]}},
+        {$match: {$or: conditionArray}},
         {
             $project: {
+                'group_en_name' : 1,
+                attributes: {
 
-                attributes: {$filter: {
-                 input: '$attributes',
-                 as: 'attribute',
-                 //cond: {$eq: ['$$attribute.name', 'E-Class']},
-                 //cond: {$eq: ['$$attribute.name', 'E-Class']},
-                    cond: { $or: [
-                        { $eq: ['$$attribute.name', 'E-Class'] },
-                        { $eq: ['$$attribute.name', 'Луцк'] }
-                    ] }
-                 }}
+                    $filter: {
+                        input: '$attributes',
+                        as: 'attribute',
+                        //cond: {$eq: ['$$attribute.name', 'E-Class']},
+                        //cond: {$eq: ['$$attribute.name', 'E-Class']},
+                        cond: {
+                            $or: filterArray
+                        }
+                    }
+                }
             }
         }
     ]).exec(function (err, attributesGroups) {
         //console.log (attributesGroups[0].attributes[0].attributeId);
         //console.log (attributesGroups[1].attributes[0].attributeId);
-        //console.log(attributesGroups);
+        console.log(attributesGroups);
         if (err) {
             console.log(err);
             cb(err, []);
