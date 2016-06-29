@@ -59,15 +59,42 @@ ItemHandler.prototype.processPossibleValues = function (cb) {
     self.item_fields_config.forEach(function (configField, i, arr) {
 
         if (configField.is_possible) {
+
             possibleValuesArray.push(
-                {"attributes.name": self.item_fields[configField['field_name']]['value'][0]}
+                {
+                    "attributes.name": self.item_fields[configField['field_name']]['value'][0]
+                }
             )
         }
 
     });
 
-    AttributesGroups.getPossible(possibleValuesArray, function (err, groups) {
-        //console.log (groups);
+    AttributesGroups.getPossible(possibleValuesArray, function (err, groupsIndexes) {
+        console.log(groupsIndexes);
+
+        for (var i in self.item_fields) {
+
+            if (self.item_fields[i].value[0]) {
+                groupsIndexes.forEach(function (group) {
+
+                    if (self.item_fields[i].value[0] == group.value) {
+                        self.item_fields[i].search_value = group.attribute_id;
+                    }
+                });
+            }
+
+        }
+
+
+        groupsIndexes.forEach(function (group, i, arr) {
+            /*console.log (group['group_name']);
+             console.log (self.item_fields[group['group_name']]);*/
+
+            if (self.item_fields[group['group_name']]) {
+                self.item_fields[group['group_name']]['search_value'] = group['attribute_id'];
+            }
+        });
+
         cb(null, null);
     });
 

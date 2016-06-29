@@ -103,11 +103,13 @@ AttributesGroupsSchema.statics.getPossible = function (conditionArray, cb) {
     ]).exec(function (err, attributesGroups) {
 
         var indexArray = [];
+
         attributesGroups.forEach(function (attribute, i, arr) {
             indexArray.push(
                 {
                     "group_name": attribute['group_en_name'],
-                    "attribute_id": attribute.attributes[0].attributeId,
+                    "value": attribute.attributes[0].name,
+                    "attribute_id": attribute.attributes[0].attributeId
                 }
             );
         });
