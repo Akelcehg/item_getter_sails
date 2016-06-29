@@ -71,32 +71,21 @@ AttributesGroupsSchema.methods.getAttributes = function (cb) {
 
 AttributesGroupsSchema.statics.getPossible = function (conditionArray, cb) {
 
-    /*    this.model('attributes_groups').find({
-     $or: conditionArray
-     }, function (err, attributesGroups) {
-     if (err) {
-     console.log(err);
-     cb(err, []);
-     } else cb(null, attributesGroups);
-     }).select('group_en_name');*/
-
-  //  console.log(conditionArray);
     var filterArray = [];
 
     for (var i = 0; i < conditionArray.length; i++) {
         filterArray.push(
-            {$eq : ['$$attribute.name',conditionArray[i]['attributes.name']]}
+            {$eq: ['$$attribute.name', conditionArray[i]['attributes.name']]}
         )
     }
-//console.log (filterArray);
+
     this.model('attributes_groups').aggregate([
-        // Get just the docs that contain a shapes element where color is 'red'
-        //{$match: {'attributes.name': 'E-Class'}},
-        //{$match: {'attributes.name': 'Луцк'}},
+
         {$match: {$or: conditionArray}},
         {
             $project: {
-                'group_en_name' : 1,
+                'group_en_name': 1,
+
                 attributes: {
 
                     $filter: {
@@ -112,27 +101,22 @@ AttributesGroupsSchema.statics.getPossible = function (conditionArray, cb) {
             }
         }
     ]).exec(function (err, attributesGroups) {
-        //console.log (attributesGroups[0].attributes[0].attributeId);
-        //console.log (attributesGroups[1].attributes[0].attributeId);
-        console.log(attributesGroups);
+
+        var indexArray = [];
+        attributesGroups.forEach(function (attribute, i, arr) {
+            indexArray.push(
+                {
+                    "group_name": attribute['group_en_name'],
+                    "attribute_id": attribute.attributes[0].attributeId,
+                }
+            );
+        });
+
         if (err) {
             console.log(err);
             cb(err, []);
-        } else cb(null, attributesGroups);
+        } else cb(null, indexArray);
     });
-
-    /*    this.model('attributes_groups').find()
-     .where('attributes', {$elemMatch: {"name": "E-Class"}})
-     .exec(function (err, attributesGroups) {
-
-     console.log(attributesGroups);
-
-     if (err) {
-     console.log(err);
-     cb(err, []);
-     } else cb(null, attributesGroups);
-     })*/
-
 
 };
 
