@@ -145,6 +145,7 @@
     }, {
         "name": "Цвет",
         "field_name": "color",
+        "is_possible" : true,
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
@@ -153,6 +154,7 @@
     }, {
         "name": "Город",
         "field_name": "city",
+        "is_possible" : true,
         "field_node": "dd span.argument",
         "field_attribute": "text()",
         "bind_node": "dd span.label",
