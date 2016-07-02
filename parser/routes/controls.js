@@ -147,7 +147,7 @@ router.post('/load_groups', function (req, res, next) {
         var x = JSON.parse(data);
         if (err) return console.log(err);
         
-        async.each(x, function (group, callback) {
+        async.eachSeries(x, function (group, callback) {
             var newGroup = new AttributesGroups(group);
 
             newGroup.save(function (err) {

@@ -6,7 +6,7 @@ var AttributesGroupsSchema = new Schema({
     group_name: String,
     group_en_name: String,
     is_possible: Boolean,
-    group_id : Number,
+    group_id: Number,
     createdAt: {type: Date, default: Date.now},
     //attributes: Array
     attributes: [{
@@ -22,28 +22,61 @@ var AttributesGroupsSchema = new Schema({
 AttributesGroupsSchema.set('collection', 'attributes_groups');
 AttributesGroupsSchema.plugin(autoIncrement.plugin, {model: 'attributes_groups', field: 'group_id', startAt: 1});
 
+
 var CounterSchema = Schema({
-    _id: {type: String, required: true},
+    name: {type: String, required: true},
     seq: {type: Number, default: 1}
 });
+
 CounterSchema.set('collection', 'counter');
 
 var counter = mongoose.model('counter', CounterSchema);
 
 AttributesGroupsSchema.pre('save', function (next) {
+
     var doc = this;
+    counter.find({'name': "group_counter"},function (err, counterObj) {
+        if (counterObj.length == 0) {
+            var c = new counter();
+            c.name = "group_counter";
+            c.seq = 1;
+            c.save(function (err) {
+                for (var i = 0; i < doc.attributes.length; i++) {
+                    doc.attributes[i]['attributeId'] = i + 1;
+                }
+                next(err);
+            });
+            /*            console.log ("das");
+             next();*/
+        } else {
 
-    for (var i = 0; i < this.attributes.length; i++) {
-        this.attributes[i]['attributeId'] = i + 1+this.group_id;
-    }
+            var newSeq = counterObj[0].seq + doc.attributes.length;
 
-    var c = new counter();
-    c._id = doc.group_en_name;
-    c.seq = doc['attributes.attributeId'] = doc.attributes.length+this.group_id;
-    c.save(function (err) {
-        if (err) next(err);
-        else next();
+            for (var i = 0; i < doc.attributes.length; i++) {
+                doc.attributes[i]['attributeId'] = i + 1+counterObj[0].seq;
+            }
+
+
+            counter.findOneAndUpdate({'name': "group_counter"}, {
+                "seq": newSeq
+            }, {upsert: true}, function (err, doc) {
+                next(err);
+            });
+        }
     });
+    /*var doc = this;
+
+     for (var i = 0; i < this.attributes.length; i++) {
+     this.attributes[i]['attributeId'] = i + 1+this.group_id;
+     }
+
+     var c = new counter();
+     c._id = doc.group_en_name;
+     c.seq = doc['attributes.attributeId'] = doc.attributes.length+this.group_id;
+     c.save(function (err) {
+     if (err) next(err);
+     else next();
+     });*/
 });
 
 AttributesGroupsSchema.statics.getAll = function (attrs, cb) {

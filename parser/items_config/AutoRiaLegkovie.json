@@ -32,8 +32,7 @@
         "field_name": "mileage",
         "field_node": "div.base-information.delimeter div.run strong",
         "field_attribute": "text()",
-        "modifiers" : ["replaceString","digits"],
-        "modifiers_values" : [["тыс. км","000"]]
+        "modifiers" : ["digits"]
     }, {
         "name": "Телефон",
         "field_name": "phone",
