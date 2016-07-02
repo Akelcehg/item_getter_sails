@@ -35,7 +35,7 @@ var counter = mongoose.model('counter', CounterSchema);
 AttributesGroupsSchema.pre('save', function (next) {
 
     var doc = this;
-    counter.find({'name': "group_counter"},function (err, counterObj) {
+    counter.find({'name': "group_counter"}, function (err, counterObj) {
         if (counterObj.length == 0) {
             var c = new counter();
             c.name = "group_counter";
@@ -46,17 +46,11 @@ AttributesGroupsSchema.pre('save', function (next) {
                 }
                 next(err);
             });
-            /*            console.log ("das");
-             next();*/
         } else {
-
             var newSeq = counterObj[0].seq + doc.attributes.length;
-
             for (var i = 0; i < doc.attributes.length; i++) {
-                doc.attributes[i]['attributeId'] = i + 1+counterObj[0].seq;
+                doc.attributes[i]['attributeId'] = i + 1 + counterObj[0].seq;
             }
-
-
             counter.findOneAndUpdate({'name': "group_counter"}, {
                 "seq": newSeq
             }, {upsert: true}, function (err, doc) {
@@ -64,19 +58,6 @@ AttributesGroupsSchema.pre('save', function (next) {
             });
         }
     });
-    /*var doc = this;
-
-     for (var i = 0; i < this.attributes.length; i++) {
-     this.attributes[i]['attributeId'] = i + 1+this.group_id;
-     }
-
-     var c = new counter();
-     c._id = doc.group_en_name;
-     c.seq = doc['attributes.attributeId'] = doc.attributes.length+this.group_id;
-     c.save(function (err) {
-     if (err) next(err);
-     else next();
-     });*/
 });
 
 AttributesGroupsSchema.statics.getAll = function (attrs, cb) {
